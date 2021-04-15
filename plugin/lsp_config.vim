@@ -14,11 +14,11 @@ nnoremap <silent> ?? :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <leader>r :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>a :lua vim.lsp.buf.code_action()<CR>
 
-" Gotos
-nnoremap <silent> <leader>gd :lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> <leader>gi :lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <leader>gr :lua vim.lsp.buf.references()<CR>
-nnoremap <silent> <leader>gD :lua vim.lsp.buf.declaration()<CR>
+" Gotos, better in telescope
+" nnoremap <silent> <leader>gd :lua vim.lsp.buf.definition()<CR>
+" nnoremap <silent> <leader>gi :lua vim.lsp.buf.implementation()<CR>
+" nnoremap <silent> <leader>gr :lua vim.lsp.buf.references()<CR>
+" nnoremap <silent> <leader>gD :lua vim.lsp.buf.declaration()<CR>
 
 " And below some things not currently in my workflow
 
