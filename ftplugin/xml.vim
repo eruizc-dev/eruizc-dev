@@ -1,1 +1,1 @@
-set expandtab tabstop=2
+setlocal expandtab tabstop=2
