@@ -3,4 +3,5 @@ backupdir/
 swap/
 undodir/
 plugged/
+secrets.vim
 .netrwhist
