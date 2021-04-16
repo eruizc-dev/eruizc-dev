@@ -2,21 +2,12 @@
 source $HOME/.config/nvim/plug_init.vim
 
 " Residual files
-if !isdirectory($HOME."/.config/nvim")
-    call mkdir($HOME."/.config/nvim", "", 0770)
-endif
-if !isdirectory($HOME."/.config/nvim/backupdir")
-    call mkdir($HOME."/.config/nvim/backupdir", "", 0770)
-endif
 if !isdirectory($HOME."/.config/nvim/undodir")
     call mkdir($HOME."/.config/nvim/undodir", "", 0770)
 endif
-if !isdirectory($HOME."/.config/nvim/swap")
-    call mkdir($HOME."/.config/nvim/swap", "", 0770)
-endif
 set undofile undodir=~/.config/nvim/undodir//
-set backupdir=~/.config/nvim/backupdir//
-set directory=~/.config/nvim/swap//
+set nobackup
+set noswapfile
 
 " Quality of life
 let mapleader=' '
