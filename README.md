@@ -15,6 +15,7 @@
 
  - QuickFixList
     - <https://youtu.be/IoyW8XYGqjM>
+ - Nvim-compe's snippets
 
 ### Plugins I'm curious about:
 

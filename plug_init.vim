@@ -33,6 +33,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'     " God bless tpope and kristijanhusak
 Plug 'mbbill/undotree'                  " I don't want to know what my life would be without this
 Plug 'nvim-telescope/telescope.nvim'    " God bles TJ
 Plug 'preservim/nerdtree'               " Cooler than I originally thought
+Plug 'vim-test/vim-test'
 
 " Functional
 Plug 'neovim/nvim-lspconfig'    " Bring me the language serversss
