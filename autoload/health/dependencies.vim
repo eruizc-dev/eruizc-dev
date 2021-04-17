@@ -2,10 +2,6 @@ function! health#dependencies#check() abort
 
     let files = [
     \   'git', 'rg',
-    \   'java', 'jdtls',
-    \   'gopls',
-    \   'npm', 'node',
-    \   'cargo',
     \   'lazygit', 'lazydocker'
     \]
 
@@ -22,7 +18,7 @@ function health#dependencies#check_recheable(file)
         call health#report_warn(
         \   a:file.' could not be found', [
         \       'make sure it is installed',
-        \       'make sure it is in path or use absolute path',
+        \       'make sure it is in path or use absolute path instead',
         \])
     endif
 endfunction

@@ -7,6 +7,9 @@ lspconfig.jdtls.setup{
     cmd = { 'jdtls' },
     root_dir = lspconfig.util.root_pattern('pom.xml', 'gradle.build', '.git')
 }
+lspconfig.bashls.setup{}
+lspconfig.rust_analyzer.setup{}
+lspconfig.clangd.setup{}
 EOF
 
 " Action mapping
