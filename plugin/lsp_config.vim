@@ -10,6 +10,8 @@ lspconfig.jdtls.setup{
 lspconfig.bashls.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.clangd.setup{}
+lspconfig.jsonls.setup{}
+lspconfig.vimls.setup{}
 EOF
 
 " Action mapping
