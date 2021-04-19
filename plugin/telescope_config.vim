@@ -1,6 +1,7 @@
 lua << EOF
+local telescope = require('telescope')
 local actions = require('telescope.actions')
-require('telescope').setup{
+telescope.setup{
     defaults = {
         color_devicons = true,
         layout_defaults = {
@@ -17,7 +18,15 @@ require('telescope').setup{
             },
         },
     },
+    extensions = {
+        fzf = {
+            override_generic_sorter = false,
+            override_file_sorter = true,
+            case_mode = "smart_case"
+        }
+    }
 }
+telescope.load_extension('fzf')
 EOF
 
 command! Planets :lua require'telescope.builtin'.planets{}<cr>

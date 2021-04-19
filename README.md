@@ -59,6 +59,9 @@
 [**telescope-fzf-native.vim**](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
  - Telescope default searcher is not that great...
 
+[**lsp-symbols**](https://github.com/simrat39/symbols-outline.nvim):
+ - Cool
+
 ### Vimrcs I like to steal things from:
 
  - [Beginbot's](https://github.com/davidbegin/beginfiles/tree/c72ef20f9c613528af9f7b34be8d03093ad0d873/nvim)

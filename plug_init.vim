@@ -49,5 +49,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'ryanoasis/vim-devicons'       " nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'  " nerdtree
 Plug 'kyazdani42/nvim-web-devicons' " telescope
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " telescope
 
 call plug#end()
