@@ -1,4 +1,4 @@
-lua require('symbols-outline').setup(opts)
+lua require('symbols-outline').setup()
 
 nnoremap <silent> <leader>s :SymbolsOutline<CR>
 
