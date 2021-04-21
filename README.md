@@ -2,45 +2,36 @@
 
 ### To improve:
 
-**Testing**: brought to you by vim-test
-
- - [x] Run all tests
- - [x] Run a single test
- - [] Output in accesible floaterm
+ - Run tests inside floaterm
     - Currenlty opens a `:term1`, I'd like for it to have a dedicated floaterm I
       can toggle.
-
-**Developing**:
-
- - [] Launch programs within vim
-    - Like `:make` but more global
- - [] Jump to issue
+ - Unified way to run programs
+    - Golang runs with vim-go `:GoRun`
+    - Java doesn't run and the intellij command is super long to put into a
+      makefile. It also needs env variables that are not passed down.
+ - Debbug
+ - Jump to issue
     - When I change something and breaks in a buffer I don't have open I have
       for the program to compile and fail to know it. Maybe QuickFixList?
-
-**File management**:
-
- - [] Create/Delete files within vim
-    - Automatic snippets for file creation (like java, automagically add package
-      and class information.
-    - Netrw navigation too slow...
-    - Nerdtree navigation better but file creation sucks having to open menu
-
-**Miscelaneous**: (Is that how you spell it?)
- - Telescope result window is too big, preview window too small
  - LSP save buffers on rename
     - Currently doing `:bufdo w`, which saves buffers I may not wanna save (like
       sql ones triggering dadbod.
  - Highlight spelling errors in markdown
- - `=` to work in markdown
+ - Vertical alignment (`=`) to work in markdown
+ - Git blame to know who and why a line is there, maybe git-messenger?
+ - Better manage sessions, maybe vim-startify?
 
 ### Features I should try
 
  - QuickFixList
     - <https://youtu.be/IoyW8XYGqjM>
  - Nvim-compe's snippets
+ - lsputils for prettier code actions
 
 ### Plugins I'm curious about:
+
+[**vim-startify**](https://github.com/mhinz/vim-startify)
+ - Don't forget to steal this amazing ascii art: <https://github.com/shaunsingh/vimrc/blob/3ac1dd5864223bf92f8c815f9483bd13fe344356/init.vim#L338>
 
 [**git-messenger**](https://github.com/rhysd/git-messenger.vim):
  - (git) Blame my coworkers
@@ -55,12 +46,6 @@
 
 [**vim-delve**](https://github.com/sebdah/vim-delve)
  - Debug golang within vim idk
-
-[**telescope-fzf-native.vim**](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
- - Telescope default searcher is not that great...
-
-[**lsp-symbols**](https://github.com/simrat39/symbols-outline.nvim):
- - Cool
 
 ### Vimrcs I like to steal things from:
 
