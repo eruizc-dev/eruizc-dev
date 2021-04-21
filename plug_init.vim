@@ -25,13 +25,18 @@ Plug 'troydm/zoomwintab.vim'
 Plug 'voldikss/vim-floaterm'
 
 " Visuals
+Plug 'Xuyuanp/nerdtree-git-plugin'  " nerdtree
 Plug 'dikiaap/minimalist'           " Better than gruvbox
+Plug 'kyazdani42/nvim-web-devicons' " telescope
+Plug 'ryanoasis/vim-devicons'       " nerdtree
 Plug 'vim-airline/vim-airline'
 
 " Utilities
+Plug 'RishabhRD/nvim-lsputils'  " Do I even use this?
 Plug 'kristijanhusak/vim-dadbod-ui'     " God bless tpope and kristijanhusak
 Plug 'mbbill/undotree'                  " I don't want to know what my life would be without this
 Plug 'nvim-telescope/telescope.nvim'    " God bles TJ
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " telescope
 Plug 'preservim/nerdtree'               " Cooler than I originally thought
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'vim-test/vim-test'
@@ -39,17 +44,11 @@ Plug 'vim-test/vim-test'
 " Functional
 Plug 'neovim/nvim-lspconfig'    " Bring me the language serversss
 Plug 'hrsh7th/nvim-compe'       " Best completion
-Plug 'RishabhRD/nvim-lsputils'  " Do I even use this?
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " It makes my code look pretty
 
 " Language specific
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" Plugins for plugins
-Plug 'ryanoasis/vim-devicons'       " nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'  " nerdtree
-Plug 'kyazdani42/nvim-web-devicons' " telescope
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " telescope
-
 call plug#end()
+
