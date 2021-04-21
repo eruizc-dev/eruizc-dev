@@ -20,6 +20,8 @@
  - Vertical alignment (`=`) to work in markdown
  - Git blame to know who and why a line is there, maybe git-messenger?
  - Better manage sessions, maybe vim-startify?
+ - It's HIIIIDDDDEOUS when I open a file with ranger and it splits, can I have
+   it fullscreen pls?
 
 ### Features I should try
 

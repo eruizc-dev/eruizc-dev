@@ -9,6 +9,7 @@ nnoremap <silent> <leader>3 :FloatermToggle term3<CR>
 nnoremap <silent> <leader>4 :FloatermToggle term4<CR>
 nnoremap <silent> <leader>5 :FloatermToggle term5<CR>
 
+nnoremap <silent> <leader>f :FloatermShowOrNew ranger<CR>
 nnoremap <silent> <leader>lg :FloatermShowOrNew lazygit<CR>
 nnoremap <silent> <leader>ld :FloatermShowOrNew lazydocker<CR>
 
