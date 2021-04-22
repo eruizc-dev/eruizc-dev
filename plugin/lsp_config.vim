@@ -17,5 +17,6 @@ lspconfig.clangd.setup{}
 lspconfig.jsonls.setup{}
 lspconfig.vimls.setup{}
 lspconfig.yamlls.setup{}
+lspconfig.solargraph.setup{}
 EOF
 
