@@ -3,7 +3,8 @@ function! health#dependencies#check() abort
     let files = [
     \   'git', 'rg',
     \   'ranger',
-    \   'lazygit', 'lazydocker'
+    \   'lazygit', 'lazydocker',
+    \   'solargraph', 'rubocop', 'rubocop-rspec',
     \]
 
     for file in files
