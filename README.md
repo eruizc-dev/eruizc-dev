@@ -22,6 +22,8 @@
  - Better manage sessions, maybe vim-startify?
  - It's HIIIIDDDDEOUS when I open a file with ranger and it splits, can I have
    it fullscreen pls?
+ - ALE looks cool for highlighting, but I feel like it needs some configuration.
+   How heavy it really is to run?
 
 ### Features I should try
 

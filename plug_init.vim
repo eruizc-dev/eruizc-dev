@@ -40,6 +40,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " telescope
 Plug 'preservim/nerdtree'               " Cooler than I originally thought
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'vim-test/vim-test'
+Plug 'dense-analysis/ale', { 'for': 'ruby' }
 
 " Functional
 Plug 'neovim/nvim-lspconfig'    " Bring me the language serversss
