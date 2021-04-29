@@ -22,8 +22,14 @@
  - Better manage sessions, maybe vim-startify?
  - It's HIIIIDDDDEOUS when I open a file with ranger and it splits, can I have
    it fullscreen pls?
- - ALE looks cool for highlighting, but I feel like it needs some configuration.
-   How heavy it really is to run?
+ - Error highlight and linting isn't good. It goes to the right and off my
+   screen. Maybe have a popup or color it with message in the status line? Try
+   ALE plugin
+ - Telescope's Grep_Files has a really weird searching algo, can't find
+ anything with it. Maybe investigate why and how to include fzf's algo into
+ grep_files.
+ - Try dadbod async branch
+   <https://github.com/kristijanhusak/vim-dadbod-ui/issues/46>
 
 ### Features I should try
 
@@ -35,7 +41,8 @@
 ### Plugins I'm curious about:
 
 [**vim-startify**](https://github.com/mhinz/vim-startify)
- - Don't forget to steal this amazing ascii art: <https://github.com/shaunsingh/vimrc/blob/3ac1dd5864223bf92f8c815f9483bd13fe344356/init.vim#L338>
+ - Don't forget to steal this amazing ascii art:
+ <https://github.com/shaunsingh/vimrc/blob/3ac1dd5864223bf92f8c815f9483bd13fe344356/init.vim#L338>
 
 [**git-messenger**](https://github.com/rhysd/git-messenger.vim):
  - (git) Blame my coworkers
@@ -56,6 +63,11 @@
 
 [**nvim-dap**](https://github.com/mfussenegger/nvim-dap)
  - More debuggin
+
+[**ale**](https://github.com/dense-analysis/ale)
+ - Has better highlighting than lsp, I don't see some error messages because
+   they too much to the right sometimes
+
 ### Vimrcs I like to steal things from:
 
  - [Beginbot's](https://github.com/davidbegin/beginfiles/tree/c72ef20f9c613528af9f7b34be8d03093ad0d873/nvim)
