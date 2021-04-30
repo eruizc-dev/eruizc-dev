@@ -61,4 +61,5 @@
  - [Beginbot's](https://github.com/davidbegin/beginfiles/tree/c72ef20f9c613528af9f7b34be8d03093ad0d873/nvim)
  - [ThePrimeagen's](https://github.com/awesome-streamers/awesome-streamerrc/tree/master/ThePrimeagen)
  - [Tpope's](https://github.com/tpope/tpope)
+ - [TJ](https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim)
 
