@@ -1,6 +1,7 @@
 function! health#dependencies#check() abort
 
     let files = [
+    \   'tsc',
     \   'git', 'rg',
     \   'ranger',
     \   'lazygit', 'lazydocker',
