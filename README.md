@@ -37,6 +37,7 @@
     - <https://youtu.be/IoyW8XYGqjM>
  - Nvim-compe's snippets
  - lsputils for prettier code actions
+ - Live grep lags? <https://github.com/awesome-streamers/awesome-streamerrc/blob/93f50a8933371446e9b3c133d39ab13648a5dde3/ThePrimeagen/plugin/telescope.vim#L3>
 
 ### Plugins I'm curious about:
 
@@ -67,6 +68,9 @@
 [**ale**](https://github.com/dense-analysis/ale)
  - Has better highlighting than lsp, I don't see some error messages because
    they too much to the right sometimes
+
+[**moonlight.nvim**](https://github.com/shaunsingh/moonlight.nvim)
+ - Cool colorscheme
 
 ### Vimrcs I like to steal things from:
 
