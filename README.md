@@ -22,9 +22,6 @@
  - Better manage sessions, maybe vim-startify?
  - It's HIIIIDDDDEOUS when I open a file with ranger and it splits, can I have
    it fullscreen pls?
- - Error highlight and linting isn't good. It goes to the right and off my
-   screen. Maybe have a popup or color it with message in the status line? Try
-   ALE plugin
  - Telescope's Grep_Files has a really weird searching algo, can't find
  anything with it. Maybe investigate why and how to include fzf's algo into
  grep_files.
