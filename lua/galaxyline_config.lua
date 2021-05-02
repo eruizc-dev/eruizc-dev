@@ -133,7 +133,7 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticInfo = {
-        provider = function() return vim.lsp.diagnostic.get_count(0, 'Info') end,
+        provider = function() return vim.lsp.diagnostic.get_count(0, 'Information') end,
         icon = icons.lsp_info,
         highlight = { colors.cyan, colors.bg },
         separator = " ",
