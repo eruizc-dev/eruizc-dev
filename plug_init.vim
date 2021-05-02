@@ -29,7 +29,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'  " nerdtree
 Plug 'dikiaap/minimalist'           " Better than gruvbox
 Plug 'kyazdani42/nvim-web-devicons' " telescope
 Plug 'ryanoasis/vim-devicons'       " nerdtree
-Plug 'vim-airline/vim-airline'
+Plug 'glepnir/galaxyline.nvim'
+"Plug 'vim-airline/vim-airline'
 
 " Utilities
 Plug 'RishabhRD/nvim-lsputils'  " Do I even use this?
