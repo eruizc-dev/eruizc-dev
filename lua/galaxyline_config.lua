@@ -1,6 +1,7 @@
 local gl = require('galaxyline')
 local gls = gl.section
 local vcs = require('galaxyline.provider_vcs')
+local fileinfo = require('galaxyline.provider_fileinfo')
 
 local colors = {
     bg = '#282a36',
@@ -90,7 +91,7 @@ gls.left = {{
     }
 }, {
     FileName = {
-        provider = 'FileName',
+        provider = function() return fileinfo.get_current_file_name() or 'null' end,
         highlight = { colors.fg, colors.section_bg },
         separator = " ",
         separator_highlight = {colors.section_bg, colors.bg},
@@ -98,7 +99,8 @@ gls.left = {{
 }, {
     Diagnostics = {
         provider = get_formated_line_main_diagnostic,
-        highlight = { colors.red, colors.bg }
+        highlight = { colors.red, colors.bg },
+        condition = vim.lsp.buf_is_attached
     }
 }}
 
@@ -109,6 +111,7 @@ gls.right = {{
         highlight = { colors.red, colors.bg },
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
+        condition = vim.lsp.buf_is_attached
     }
 }, {
     DiagnosticWarn = {
@@ -117,6 +120,7 @@ gls.right = {{
         highlight = { colors.yellow, colors.bg},
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
+        condition = vim.lsp.buf_is_attached
     }
 }, {
     DiagnosticInfo = {
@@ -125,6 +129,7 @@ gls.right = {{
         highlight = { colors.blue, colors.bg },
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
+        condition = vim.lsp.buf_is_attached
     }
 }, {
     GitBranch = {
