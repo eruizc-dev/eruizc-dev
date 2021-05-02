@@ -10,9 +10,6 @@
     - Java doesn't run and the intellij command is super long to put into a
       makefile. It also needs env variables that are not passed down.
  - Debbug
- - Jump to issue
-    - When I change something and breaks in a buffer I don't have open I have
-      for the program to compile and fail to know it. Maybe QuickFixList?
  - LSP save buffers on rename
     - Currently doing `:bufdo w`, which saves buffers I may not wanna save (like
       sql ones triggering dadbod.
@@ -30,8 +27,6 @@
 
 ### Features I should try
 
- - QuickFixList
-    - <https://youtu.be/IoyW8XYGqjM>
  - Nvim-compe's snippets
  - lsputils for prettier code actions
  - Live grep lags? <https://github.com/awesome-streamers/awesome-streamerrc/blob/93f50a8933371446e9b3c133d39ab13648a5dde3/ThePrimeagen/plugin/telescope.vim#L3>
