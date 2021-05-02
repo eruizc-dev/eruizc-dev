@@ -1,7 +1,14 @@
+nnoremap <silent> <C-j> :lnext<CR>
+nnoremap <silent> <C-k> :lprevious<CR>
 nnoremap <silent> ? :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <leader>r :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>a :lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <leader>gi :lua vim.lsp.buf.implementation()<CR>
+
+augroup load_diagnostics_into_localist
+    autocmd!
+    autocmd! BufWrite,BufEnter,InsertLeave * :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
+augroup END
 
 lua << EOF
 local lspconfig = require('lspconfig')
@@ -43,7 +50,7 @@ lspconfig.sumneko_lua.setup {
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
-    signs = true,
+    signs = false,
     virtual_text = false,
   }
 )
