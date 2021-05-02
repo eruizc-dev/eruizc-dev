@@ -34,17 +34,11 @@ local icons = {
 }
 
 
-local diagnostics_icons = { icons.lsp_error,
+local diagnostics_icons = {
+    icons.lsp_error,
     icons.lsp_warn,
     icons.lsp_info,
     icons.lsp_hint
-}
-
-local diagnostic_severities = {
-    'Error',
-    'Warning',
-    'Info',
-    'Hint',
 }
 
 local function get_line_main_diagnostic()
@@ -63,40 +57,15 @@ local function get_formated_line_main_diagnostic()
     return ' '..main_icon..' '..diagnostic.message
 end
 
-local function get_formated_git_changes()
-    local add = vcs.diff_add() or 0
-    local modified = vcs.diff_modified() or 0
-    local remove = vcs.diff_remove() or 0
-    return '+'..add..'*'..modified..'-'..remove
-end
-
 local function in_git_repo()
     local branch_name = vcs.get_git_branch()
     return branch_name ~= nil
 end
 
-local function mode_color()
-    local mode_colors = {
-        n = colors.cyan,
-        i = colors.green,
-        c = colors.orange,
-        V = colors.magenta,
-        [''] = colors.magenta,
-        v = colors.magenta,
-        R = colors.red,
-    }
-
-    local color = mode_colors[vim.fn.mode()]
-    if color == nil then
-        color = colors.red
-    end
-
-    return color
-end
-
 local function get_mode_name()
     local alias = {
         n = 'NORMAL',
+        t = 'TERMINAL',
         i = 'INSERT',
         c = 'SEARCH',
         v = 'VISUAL',
