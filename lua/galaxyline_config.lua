@@ -125,7 +125,7 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticWarn = {
-        provider = function() return vim.lsp.diagnostic.get_count(0, 'Warn') end,
+        provider = function() return vim.lsp.diagnostic.get_count(0, 'Warning') end,
         icon = icons.lsp_warn,
         highlight = { colors.yellow, colors.bg},
         separator = " ",
@@ -133,9 +133,17 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticInfo = {
-        provider = function() return vim.lsp.diagnostic.get_count(0, 'Info')..' ' end,
+        provider = function() return vim.lsp.diagnostic.get_count(0, 'Info') end,
         icon = icons.lsp_info,
         highlight = { colors.cyan, colors.bg },
+        separator = " ",
+        separator_highlight = { colors.section_bg, colors.bg },
+    }
+}, {
+    DiagnosticHint = {
+        provider = function() return vim.lsp.diagnostic.get_count(0, 'Hint')..' ' end,
+        icon = icons.lsp_hint,
+        highlight = { colors.fg, colors.bg },
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
     }
