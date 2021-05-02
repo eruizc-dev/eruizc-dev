@@ -4,16 +4,16 @@ local fileinfo = require('galaxyline.provider_fileinfo')
 local condition = require('galaxyline.condition')
 
 local colors = {
-    bg = '#282a36',
-    fg = '#f8f8f2',
+    bg = '#585858',
+    fg = '#eeeeee',
     section_bg = '#38393f',
     yellow = '#f1fa8c',
-    cyan = '#8be9fd',
-    green = '#50fa7b',
-    orange = '#ffb86c',
-    magenta = '#ff79c6',
-    blue = '#8be9fd',
-    red = '#ff5555'
+    cyan = '#87d7ff',
+    green = '#afd787',
+    orange = '#d7875f',
+    magenta = '#af87d7',
+    blue = '#5fafd7',
+    red = '#d75f5f'
 }
 
 local icons = {
@@ -41,10 +41,17 @@ local diagnostics_icons = {
     icons.lsp_hint
 }
 
+local function mode_color(severity)
+    if (severity == 1) then return colors.red end
+    if (severity == 2) then return colors.yellow end
+    if (severity == 3) then return colors.cyan end
+    if (severity == 4) then return colors.fg end
+    return colors.fg
+end
+
 local function get_line_main_diagnostic()
     local diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
     if (#diagnostics == 0) then return nil end
-    table.sort(diagnostics, function(a, b) return a.severity < b.severity end)
     return diagnostics[1]
 end
 
@@ -52,6 +59,7 @@ local function get_formated_line_main_diagnostic()
     local diagnostic = get_line_main_diagnostic()
     if (diagnostic == nil) then return nil end
 
+    vim.api.nvim_command('hi GalaxyDiagnostics guifg='..mode_color(diagnostic.severity))
     local main_icon = diagnostics_icons[diagnostic.severity]
 
     return ' '..main_icon..' '..diagnostic.message
@@ -72,9 +80,9 @@ local function get_mode_name()
 end
 
 galaxyline.section.left = {{
-    FirstElement = {
+    LeftSeparator = {
         provider = function() return '▋' end,
-        highlight = { colors.cyan, colors.section_bg }
+        highlight = { colors.blue, colors.bg }
     },
 }, {
     ViMode = {
@@ -91,28 +99,29 @@ galaxyline.section.left = {{
     }
 }, {
     FileName = {
-        provider = function() return fileinfo.get_current_file_name() or 'null' end,
-        highlight = { colors.fg, colors.section_bg },
-        separator = " ",
-        separator_highlight = {colors.section_bg, colors.bg},
+        provider = function() return fileinfo.get_current_file_name() end,
         condition = condition.buffer_not_empty,
+        highlight = { colors.fg, colors.section_bg },
     }
 }, {
     Diagnostics = {
         provider = get_formated_line_main_diagnostic,
-        highlight = { colors.red, colors.bg },
-        condition = condition.check_active_lsp
+        highlight = { colors.red, colors.section_bg },
     }
 }}
 
 galaxyline.section.right = {{
+     RightSeparator = {
+        provider = function() return '' end,
+        highlight = { colors.section_bg, colors.bg }
+    }
+}, {
     DiagnosticError = {
         provider = function() return vim.lsp.diagnostic.get_count(0, 'Error') end,
         icon = icons.lsp_error,
         highlight = { colors.red, colors.bg },
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
-        condition = condition.check_active_lsp
     }
 }, {
     DiagnosticWarn = {
@@ -121,24 +130,22 @@ galaxyline.section.right = {{
         highlight = { colors.yellow, colors.bg},
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
-        condition = condition.check_active_lsp
     }
 }, {
     DiagnosticInfo = {
-        provider = function() return vim.lsp.diagnostic.get_count(0, 'Info') end,
+        provider = function() return vim.lsp.diagnostic.get_count(0, 'Info')..' ' end,
         icon = icons.lsp_info,
-        highlight = { colors.blue, colors.bg },
+        highlight = { colors.cyan, colors.bg },
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
-        condition = condition.check_active_lsp
     }
 }, {
     GitBranch = {
         provider = function () return vcs.get_git_branch()..' ' end,
         icon = ' '..icons.git_branch..' ',
-        highlight = { colors.bg, colors.cyan },
+        highlight = { colors.fg, colors.magenta },
         separator = "",
-        separator_highlight = { colors.bg, colors.cyan },
+        separator_highlight = { colors.bg, colors.magenta },
         condition = condition.check_git_workspace
     }
 }}
