@@ -62,12 +62,18 @@
 [**nvim-dap**](https://github.com/mfussenegger/nvim-dap)
  - More debuggin
 
+[**nvim-dap-ui**](https://github.com/rcarriga/nvim-dap-ui)
+ - Debuggin but ui
+
 [**ale**](https://github.com/dense-analysis/ale)
  - Has better highlighting than lsp, I don't see some error messages because
    they too much to the right sometimes
 
 [**moonlight.nvim**](https://github.com/shaunsingh/moonlight.nvim)
  - Cool colorscheme
+
+[**nvim-bqf**](https://github.com/kevinhwang91/nvim-bqf)
+ - Better quickfix? I gotta try quickfix, I should try this after that
 
 ### Vimrcs I like to steal things from:
 
