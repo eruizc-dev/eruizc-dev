@@ -30,7 +30,6 @@ Plug 'dikiaap/minimalist'           " Better than gruvbox
 Plug 'kyazdani42/nvim-web-devicons' " telescope
 Plug 'ryanoasis/vim-devicons'       " nerdtree
 Plug 'glepnir/galaxyline.nvim'
-"Plug 'vim-airline/vim-airline'
 
 " Utilities
 Plug 'RishabhRD/nvim-lsputils'  " Do I even use this?
@@ -41,7 +40,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " telescope
 Plug 'preservim/nerdtree'               " Cooler than I originally thought
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'vim-test/vim-test'
-"Plug 'dense-analysis/ale', { 'for': 'ruby' }
 
 " Functional
 Plug 'neovim/nvim-lspconfig'    " Bring me the language serversss
