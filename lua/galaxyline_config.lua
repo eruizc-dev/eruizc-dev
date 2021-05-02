@@ -1,5 +1,4 @@
-local gl = require('galaxyline')
-local gls = gl.section
+local galaxyline = require('galaxyline')
 local vcs = require('galaxyline.provider_vcs')
 local fileinfo = require('galaxyline.provider_fileinfo')
 local condition = require('galaxyline.condition')
@@ -35,7 +34,6 @@ local icons = {
     lsp_hint = ''
 }
 
-
 local diagnostics_icons = {
     icons.lsp_error,
     icons.lsp_warn,
@@ -59,11 +57,6 @@ local function get_formated_line_main_diagnostic()
     return ' '..main_icon..' '..diagnostic.message
 end
 
-local function in_git_repo()
-    local branch_name = vcs.get_git_branch()
-    return branch_name ~= nil
-end
-
 local function get_mode_name()
     local alias = {
         n = 'NORMAL',
@@ -78,7 +71,7 @@ local function get_mode_name()
     return alias[vim.fn.mode()] or vim.fn.mode()..' MODE'
 end
 
-gls.left = {{
+galaxyline.section.left = {{
     FirstElement = {
         provider = function() return '▋' end,
         highlight = { colors.cyan, colors.section_bg }
@@ -108,18 +101,18 @@ gls.left = {{
     Diagnostics = {
         provider = get_formated_line_main_diagnostic,
         highlight = { colors.red, colors.bg },
-        condition = vim.lsp.buf_is_attached
+        condition = condition.check_active_lsp
     }
 }}
 
-gls.right = {{
+galaxyline.section.right = {{
     DiagnosticError = {
         provider = function() return vim.lsp.diagnostic.get_count(0, 'Error') end,
         icon = icons.lsp_error,
         highlight = { colors.red, colors.bg },
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
-        condition = vim.lsp.buf_is_attached
+        condition = condition.check_active_lsp
     }
 }, {
     DiagnosticWarn = {
@@ -128,7 +121,7 @@ gls.right = {{
         highlight = { colors.yellow, colors.bg},
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
-        condition = vim.lsp.buf_is_attached
+        condition = condition.check_active_lsp
     }
 }, {
     DiagnosticInfo = {
@@ -137,15 +130,15 @@ gls.right = {{
         highlight = { colors.blue, colors.bg },
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
-        condition = vim.lsp.buf_is_attached
+        condition = condition.check_active_lsp
     }
 }, {
     GitBranch = {
         provider = function () return vcs.get_git_branch()..' ' end,
-        condition = in_git_repo,
         icon = ' '..icons.git_branch..' ',
         highlight = { colors.bg, colors.cyan },
         separator = "",
         separator_highlight = { colors.bg, colors.cyan },
+        condition = condition.check_git_workspace
     }
 }}
