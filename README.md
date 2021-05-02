@@ -82,4 +82,6 @@
     - Neovim god
  - [kraftwerk28](https://github.com/kraftwerk28/dotfiles/tree/master/.config/nvim)
     - Idk who he is but he's got a nice `utils.lua`  file
+ - [mnabila](https://github.com/mnabila/nvimrc)
+    - Cool galaxyline
 
