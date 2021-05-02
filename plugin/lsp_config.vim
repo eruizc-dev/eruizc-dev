@@ -10,6 +10,16 @@ augroup load_diagnostics_into_localist
     autocmd! BufWrite,BufEnter,InsertLeave * :lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
 augroup END
 
+hi LspDiagnosticsSignError guifg=#d75f5f
+hi LspDiagnosticsSignWarning guifg=#f1fa8c
+hi LspDiagnosticsSignInformation guifg=#87d7ff
+hi LspDiagnosticsSignHint guifg=#eeeeee
+
+sign define LspDiagnosticsSignError text= texthl=LspDiagnosticsSignError
+sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsSignWarning
+sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsSignInformation linehl= numhl=
+sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsSignHint linehl= numhl=
+
 lua << EOF
 local lspconfig = require('lspconfig')
 lspconfig.bashls.setup{}
@@ -50,7 +60,7 @@ lspconfig.sumneko_lua.setup {
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
-    signs = false,
+    signs = true,
     virtual_text = false,
   }
 )
