@@ -2,6 +2,7 @@ local gl = require('galaxyline')
 local gls = gl.section
 local vcs = require('galaxyline.provider_vcs')
 local fileinfo = require('galaxyline.provider_fileinfo')
+local condition = require('galaxyline.condition')
 
 local colors = {
     bg = '#282a36',
@@ -90,11 +91,18 @@ gls.left = {{
         separator_highlight = { colors.bg, colors.section_bg }
     }
 }, {
+    FileIcon = {
+        provider = fileinfo.get_file_icon,
+        condition = condition.buffer_not_empty,
+        highlight = { fileinfo.get_file_icon_color, colors.section_bg }
+    }
+}, {
     FileName = {
         provider = function() return fileinfo.get_current_file_name() or 'null' end,
         highlight = { colors.fg, colors.section_bg },
         separator = " ",
         separator_highlight = {colors.section_bg, colors.bg},
+        condition = condition.buffer_not_empty,
     }
 }, {
     Diagnostics = {
@@ -140,12 +148,4 @@ gls.right = {{
         separator = "",
         separator_highlight = { colors.bg, colors.cyan },
     }
-}, {
-    LineInfo = {
-        provider = 'LineColumn',
-        highlight = { colors.fg, colors.section_bg },
-        separator = "",
-        separator_highlight = { colors.cyan, colors.section_bg },
-    }
 }}
-
