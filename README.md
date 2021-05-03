@@ -70,6 +70,12 @@
 [**nvim-bqf**](https://github.com/kevinhwang91/nvim-bqf)
  - Better quickfix? I gotta try quickfix, I should try this after that
 
+[**diffview**](https://github.com/sindrets/diffview.nvim)
+ - Watch git diffs
+
+[**defaults**](https://github.com/mjlbach/defaults.nvim)
+ - Better vim defaults? Can it beat tpope's sensible.vim?
+
 ### Vimrcs I like to steal things from:
 
  - [Beginbot's](https://github.com/davidbegin/beginfiles/tree/master/nvim)
