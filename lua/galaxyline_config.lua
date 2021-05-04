@@ -65,43 +65,24 @@ local function get_formated_line_main_diagnostic()
     return ' '..main_icon..' '..diagnostic.message
 end
 
-local function get_mode_name()
-    local alias = {
-        n = 'NORMAL',
-        t = 'TERMINAL',
-        i = 'INSERT',
-        c = 'SEARCH',
-        v = 'VISUAL',
-        V = 'VISUAL L',
-        [''] = 'VISUAL B',
-        R = 'REPLACE',
-    }
-    return alias[vim.fn.mode()] or vim.fn.mode()..' MODE'
-end
-
 galaxyline.section.left = {{
     LeftSeparator = {
         provider = function() return '▋' end,
         highlight = { colors.blue, colors.bg }
     },
 }, {
-    ViMode = {
-        provider = get_mode_name,
-        highlight = { colors.fg, colors.bg },
-        separator = " ",
-        separator_highlight = { colors.bg, colors.section_bg }
-    }
-}, {
     FileIcon = {
         provider = fileinfo.get_file_icon,
-        condition = condition.buffer_not_empty,
-        highlight = { fileinfo.get_file_icon_color, colors.section_bg }
+        highlight = { fileinfo.get_file_icon_color, colors.bg },
+        condition = condition.buffer_not_empty
     }
 }, {
     FileName = {
-        provider = function() return fileinfo.get_current_file_name() end,
-        condition = condition.buffer_not_empty,
-        highlight = { colors.fg, colors.section_bg },
+        provider = function() return fileinfo.get_current_file_path(nil, icons.lock) end,
+        highlight = { colors.fg, colors.bg },
+        separator = "",
+        separator_highlight = { colors.bg, colors.section_bg },
+        condition = condition.buffer_not_empty
     }
 }, {
     Diagnostics = {

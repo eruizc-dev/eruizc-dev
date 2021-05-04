@@ -29,7 +29,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'  " nerdtree
 Plug 'dikiaap/minimalist'           " Better than gruvbox
 Plug 'kyazdani42/nvim-web-devicons' " telescope
 Plug 'ryanoasis/vim-devicons'       " nerdtree
-Plug 'glepnir/galaxyline.nvim'
+Plug 'eruizc-dev/galaxyline.nvim', { 'branch': 'merge-all' }
 
 " Utilities
 Plug 'RishabhRD/nvim-lsputils'  " Do I even use this?
