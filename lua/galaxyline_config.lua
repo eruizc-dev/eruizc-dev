@@ -130,7 +130,7 @@ galaxyline.section.right = {{
     }
 }, {
     GitBranch = {
-        provider = function () return vcs.get_git_branch()..' ' end,
+        provider = function () return (vcs.get_git_branch() or '')..' ' end,
         icon = ' '..icons.git_branch..' ',
         highlight = { colors.fg, colors.magenta },
         separator = "",
