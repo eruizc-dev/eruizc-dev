@@ -24,6 +24,7 @@
  grep_files.
  - Try dadbod async branch
    <https://github.com/kristijanhusak/vim-dadbod-ui/issues/46>
+ - Galaxyline dies when I open a dadbod-ui query buffer
 
 ### Features I should try
 
