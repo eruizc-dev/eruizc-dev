@@ -76,6 +76,10 @@
 [**defaults**](https://github.com/mjlbach/defaults.nvim)
  - Better vim defaults? Can it beat tpope's sensible.vim?
 
+[**trouble-nvim**](https://github.com/folke/lsp-trouble.nvim)
+ - I already solved mostly of the thing this plugin wants to fix, but I like the
+   location list folding. Can I have that??
+
 ### Vimrcs I like to steal things from:
 
  - [Beginbot's](https://github.com/davidbegin/beginfiles/tree/master/nvim)
