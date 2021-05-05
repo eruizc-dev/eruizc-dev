@@ -14,6 +14,8 @@ nnoremap <silent> <leader>lg :FloatermShowOrNew lazygit<CR>
 nnoremap <silent> <leader>ld :FloatermShowOrNew lazydocker<CR>
 
 " Maybe PR this into floaterm?
+" Ping tomle.zaku#6812 if you do, he's using this function too
+
 command! -nargs=* -complete=customlist,floaterm#cmdline#complete -bang -range
 \   FloatermShowOrNew call floaterm_config#show_or_new(<bang>0, [visualmode(), <range>, <line1>, <line2>], <q-args>)
 
@@ -29,4 +31,3 @@ function! floaterm_config#show_or_new(bang, rangeargs, cmdargs)
     call floaterm#run('new', a:bang, a:rangeargs, "--autoclose=2 --title=".cmd." ".a:cmdargs)
 endfunction
 
-command! Floaterms call floaterm_config#idk()
