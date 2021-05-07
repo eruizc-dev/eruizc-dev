@@ -29,10 +29,8 @@ lspconfig.jdtls.setup{ cmd = { 'jdtls' } }
 lspconfig.jsonls.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.solargraph.setup{}
-lspconfig.tsserver.setup{}
-lspconfig.vimls.setup{}
-lspconfig.yamlls.setup{}
 lspconfig.solargraph.setup{}
+lspconfig.sqls.setup{}
 lspconfig.sumneko_lua.setup {
   cmd = { "lua-language-server" };
   settings = {
@@ -56,6 +54,9 @@ lspconfig.sumneko_lua.setup {
     },
   },
 }
+lspconfig.tsserver.setup{}
+lspconfig.vimls.setup{}
+lspconfig.yamlls.setup{}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
