@@ -24,6 +24,9 @@
  grep_files.
  - Try dadbod async branch
    <https://github.com/kristijanhusak/vim-dadbod-ui/issues/46>
+ - Add sql lsp
+ - Symbols-outline doesn't have \<silent\> tags
+
 
 ### Features I should try
 
@@ -79,6 +82,9 @@
 [**trouble-nvim**](https://github.com/folke/lsp-trouble.nvim)
  - I already solved mostly of the thing this plugin wants to fix, but I like the
    location list folding. Can I have that??
+
+[**go.nvim**](https://github.com/ray-x/go.nvim)
+ - Does it replace vim-go?
 
 ### Vimrcs I like to steal things from:
 
