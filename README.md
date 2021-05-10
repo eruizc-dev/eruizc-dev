@@ -31,7 +31,6 @@
 ### Features I should try
 
  - Nvim-compe's snippets
- - lsputils for prettier code actions
  - Live grep lags? <https://github.com/awesome-streamers/awesome-streamerrc/blob/93f50a8933371446e9b3c133d39ab13648a5dde3/ThePrimeagen/plugin/telescope.vim#L3>
 
 ### Plugins I'm curious about:
