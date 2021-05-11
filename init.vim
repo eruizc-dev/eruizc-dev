@@ -47,3 +47,5 @@ nnoremap <silent> <C-l> <C-i>
 
 " Workaroud for this https://github.com/hrsh7th/nvim-compe/issues/286
 let g:omni_sql_default_compl_type = 'syntax'
+
+lua require("eruizc")
