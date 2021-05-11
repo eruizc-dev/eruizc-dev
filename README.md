@@ -85,6 +85,8 @@
 [**go.nvim**](https://github.com/ray-x/go.nvim)
  - Does it replace vim-go?
 
+[**lspsaga.nvim**](https://github.com/glepnir/lspsaga.nvim)
+
 ### Vimrcs I like to steal things from:
 
  - [Beginbot's](https://github.com/davidbegin/beginfiles/tree/master/nvim)
