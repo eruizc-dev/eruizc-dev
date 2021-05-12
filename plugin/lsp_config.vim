@@ -40,7 +40,10 @@ lspconfig.sumneko_lua.setup {
         path = vim.split(package.path, ';'),
       },
       diagnostics = {
-        globals = { 'vim' },
+        globals = {
+          "vim", -- vim
+          "describe", "it", "before_each", "after_each", "teardown", "pending", "clear", -- Busted
+        },
       },
       workspace = {
         library = {
@@ -68,4 +71,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 EOF
-
