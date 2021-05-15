@@ -18,7 +18,7 @@ set splitright splitbelow
 set noerrorbells
 set number relativenumber
 set nowrap
-set softtabstop=0 shiftwidth=0 smartindent
+set tabstop=4 softtabstop=0 shiftwidth=0 smartindent
 
 " Visuals
 syntax on
