@@ -26,7 +26,8 @@
    <https://github.com/kristijanhusak/vim-dadbod-ui/issues/46>
  - Add sql lsp
  - Symbols-outline doesn't have \<silent\> tags
-
+ - List of TODOS in project, with telescope maybe
+ - Browse stackoverflow with Telescope
 
 ### Features I should try
 
@@ -86,6 +87,11 @@
  - Does it replace vim-go?
 
 [**lspsaga.nvim**](https://github.com/glepnir/lspsaga.nvim)
+
+[**spellsitter.nvim**](https://github.com/lewis6991/spellsitter.nvim)
+
+[**vim-SpellCheck**](https://github.com/inkarkat/vim-SpellCheck)
+
 
 ### Vimrcs I like to steal things from:
 
