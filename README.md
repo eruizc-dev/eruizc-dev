@@ -92,6 +92,8 @@
 
 [**vim-SpellCheck**](https://github.com/inkarkat/vim-SpellCheck)
 
+[**hologram.nvim**](https://github.com/edluffy/hologram.nvim)
+
 
 ### Vimrcs I like to steal things from:
 
