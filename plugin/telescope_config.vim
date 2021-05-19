@@ -1,4 +1,5 @@
-nnoremap <leader>p <cmd>Telescope find_files<cr>
+nnoremap <Leader>p :lua require'eruizc.telescope'.find_sources()<cr>
+nnoremap <Leader>t :lua require'eruizc.telescope'.find_tests()<cr>
 nnoremap <leader>P <cmd>Telescope live_grep<cr>
 nnoremap <leader>config <cmd>lua require("eruizc.telescope").vimrc()<cr>
 
