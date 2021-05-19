@@ -28,6 +28,8 @@
  - Symbols-outline doesn't have \<silent\> tags
  - List of TODOS in project, with telescope maybe
  - Browse stackoverflow with Telescope
+ - I need Git diff what's right now vs what was a couple commits back or currently in
+   another branch
 
 ### Features I should try
 
