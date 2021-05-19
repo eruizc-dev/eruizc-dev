@@ -30,13 +30,6 @@ set confirm
 inoremap <silent> <C-j> <C-n>
 inoremap <silent> <C-k> <C-p>
 
-" File navigation
-
-" nnoremap <silent> <C-j> Still unused
-" nnoremap <silent> <C-k> Still unused
-nnoremap <silent> <C-h> <C-o>
-nnoremap <silent> <C-l> <C-i>
-
 " Workaroud for this https://github.com/hrsh7th/nvim-compe/issues/286
 let g:omni_sql_default_compl_type = 'syntax'
 
