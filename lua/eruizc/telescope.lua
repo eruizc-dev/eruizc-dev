@@ -1,6 +1,6 @@
-local telescope = require('telescope')
-local builtin = require('telescope.builtin')
-local actions = require('telescope.actions')
+local telescope = require("telescope")
+local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
 
 local searchers = {}
 
@@ -35,7 +35,7 @@ telescope.setup({
   }
 })
 
-telescope.load_extension('fzf')
+telescope.load_extension("fzf")
 
 function searchers.vimrc()
   builtin.find_files({
