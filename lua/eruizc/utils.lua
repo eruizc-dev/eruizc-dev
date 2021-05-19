@@ -1,6 +1,6 @@
-local M = {}
+local utils = {}
 
-function M.u(code)
+function utils.u(code)
     if type(code) == 'string' then code = tonumber('0x' .. code) end
     local c = string.char
     if code <= 0x7f then return c(code) end
@@ -21,4 +21,8 @@ function M.u(code)
     return table.concat(t)
 end
 
-return M
+function utils.find_repos()
+
+end
+
+return utils
