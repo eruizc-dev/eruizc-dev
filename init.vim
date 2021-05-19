@@ -1,14 +1,6 @@
 " Load plugins, stolen from BEGINBOT (https://github.com/davidbegin/beginfiles/blob/c72ef20f9c613528af9f7b34be8d03093ad0d873/nvim/init.vim#L9)
 source $HOME/.config/nvim/plug_init.vim
 
-" Residual files
-if !isdirectory($HOME."/.config/nvim/undodir")
-    call mkdir($HOME."/.config/nvim/undodir", "", 0770)
-endif
-set undofile undodir=~/.config/nvim/undodir//
-set nobackup
-set noswapfile
-
 " Quality of life
 let mapleader=' '
 set exrc
