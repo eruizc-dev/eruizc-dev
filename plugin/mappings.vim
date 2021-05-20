@@ -14,11 +14,12 @@ nnoremap <silent> gi    :lua vim.lsp.buf.implementation()<cr>
 nnoremap <silent> <leader>blame :GitMessenger<cr>
 
 """SEARCH FILES"""
-nnoremap <silent> <leader>p         :lua require'eruizc.telescope'.find_sources()<cr>
-nnoremap <silent> <leader>t         :lua require'eruizc.telescope'.find_tests()<cr>
+nnoremap <silent> <leader>p         :Telescope find_files<cr>
 nnoremap <silent> <leader>P         :Telescope live_grep<cr>
+nnoremap <silent> <leader>s         :lua require'eruizc.telescope'.find_sources()<cr>
+nnoremap <silent> <leader>t         :lua require'eruizc.telescope'.find_tests()<cr>
 nnoremap <silent> <leader>config    :lua require("eruizc.telescope").vimrc()<cr>
-nnoremap <silent> <C-p> :NERDTreeToggle<CR>
+"nnoremap <silent> <C-p>             :NERDTreeToggle<CR>
 
 """CODE FAST"""
 nnoremap <silent> ?         :lua vim.lsp.buf.hover()<cr>
@@ -35,7 +36,7 @@ nnoremap <silent> <leader>4 :FloatermToggle	--title=terminal term4<cr>
 nnoremap <silent> <leader>5 :FloatermToggle	--title=terminal term5<cr>
 
 """TUIS"""
-nnoremap <silent> <leader>f 	:FloatermTui	ranger<cr>
+"nnoremap <silent> <leader>f 	:FloatermTui	ranger<cr>
 nnoremap <silent> <leader>lg	:FloatermTui	lazygit<cr>
 nnoremap <silent> <leader>ld	:FloatermTui	lazydocker<cr>
 
