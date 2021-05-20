@@ -10,6 +10,9 @@ nnoremap <silent> gr    :Telescope lsp_references<cr>
 nnoremap <silent> gd    :Telescope lsp_definitions<cr>
 nnoremap <silent> gi    :lua vim.lsp.buf.implementation()<cr>
 
+"""GIT"""
+nnoremap <silent> <leader>blame :GitMessenger<cr>
+
 """SEARCH FILES"""
 nnoremap <silent> <leader>p         :lua require'eruizc.telescope'.find_sources()<cr>
 nnoremap <silent> <leader>t         :lua require'eruizc.telescope'.find_tests()<cr>

@@ -50,5 +50,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " It makes my code l
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" Testing
+Plug 'rhysd/git-messenger.vim'
+
 call plug#end()
 
