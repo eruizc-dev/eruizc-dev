@@ -9,13 +9,15 @@ telescope.setup({
     prompt_prefix = " ",
     width = 0.75,
     height = 0.95,
-	shorten_path = true,
     color_devicons = true,
-    layout_strategy = "horizontal",
+    layout_strategy = "vertical",
     layout_defaults = {
-        horizontal = {
-            preview_width = 0.50
-        },
+      horizontal = {
+        preview_width = 0.5
+      },
+	  vertical = {
+		  preview_height = 0.65
+	  },
     },
     mappings = {
       i = {
@@ -37,6 +39,14 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 
+local function get_source_files()
+  return vim.g.source_directory and vim.g.source_directory.."/*"
+end
+
+local function get_test_files()
+  return vim.g.test_directory and vim.g.test_directory.."/*"
+end
+
 function searchers.vimrc()
   builtin.find_files({
     prompt_title = "Configuration",
@@ -45,20 +55,26 @@ function searchers.vimrc()
 end
 
 function searchers.find_sources()
-  local test_files = vim.g.tests_directory and vim.g.tests_directory.."/*"
+  local source_files = get_source_files()
+  local test_files = get_test_files()
+  local title = (source_files and "Source Files ("..source_files..")") or "Source Files"
   builtin.find_files({
-    prompt_title = "Source Files",
+    prompt_title = title,
+    layout_strategy = "horizontal",
     cwd = vim.g.source_directory or "./",
-	file_ignore_patterns = { test_files }
+    file_ignore_patterns = { test_files }
   })
 end
 
 function searchers.find_tests()
-  local source_files = vim.g.source_directory and vim.g.source_directory.."/*"
+  local source_files = get_source_files()
+  local test_files = get_test_files()
+  local title = (test_files and "Test Files ("..test_files..")") or "Test Files"
   builtin.find_files({
-    prompt_title = "Test Files",
-    cwd = vim.g.tests_directory or "./",
-	file_ignore_patterns = { source_files }
+    prompt_title = title,
+    layout_strategy = "horizontal",
+    cwd = vim.g.test_directory or "./",
+    file_ignore_patterns = { source_files }
   })
 end
 
