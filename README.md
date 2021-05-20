@@ -96,6 +96,10 @@
 
 [**hologram.nvim**](https://github.com/edluffy/hologram.nvim)
 
+[**vim-rails**](https://github.com/tpope/vim-rails)
+ - Tpope
+ - What else do you need?
+ - Also rails
 
 ### Vimrcs I like to steal things from:
 
