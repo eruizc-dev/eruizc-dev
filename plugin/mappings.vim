@@ -26,6 +26,13 @@ nnoremap <silent> <leader>r :lua vim.lsp.buf.rename()<cr>
 nnoremap <silent> <leader>a :lua vim.lsp.buf.code_action()<cr>
 vnoremap <silent> <leader>a :lua vim.lsp.buf.range_code_action()<cr>
 
+"""COMPLETION"""
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <cr> compe#confirm('<cr>')
+inoremap <silent><expr> <space> compe#confirm('<space>')
+inoremap <silent><expr> <C-h> compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-l> compe#scroll({ 'delta': -4 })
+
 """TERMINALS"""
 tnoremap <silent> <leader><esc>	<C-\><C-n>:FloatermHide!<cr>
 
