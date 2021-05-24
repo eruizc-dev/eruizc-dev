@@ -25,6 +25,7 @@ nnoremap <silent> <leader>config    :lua require("eruizc.telescope").vimrc()<cr>
 nnoremap <silent> ?         :lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> <leader>r :lua vim.lsp.buf.rename()<cr>
 nnoremap <silent> <leader>a :lua vim.lsp.buf.code_action()<cr>
+vnoremap <silent> <leader>a :lua vim.lsp.buf.range_code_action()<cr>
 
 """TERMINALS"""
 tnoremap <silent> <leader><esc>	<C-\><C-n>:FloatermHide!<cr>
