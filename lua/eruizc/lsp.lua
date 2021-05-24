@@ -1,5 +1,18 @@
 local lspconfig = require("lspconfig")
 
+local function get_lua_runtime()
+  local result = {};
+  for _, path in pairs(vim.api.nvim_list_runtime_paths()) do
+    local lua_path = path .. "/lua/";
+    if vim.fn.isdirectory(lua_path) then
+      result[lua_path] = true
+    end
+  end
+  result[vim.fn.expand("$VIMRUNTIME/lua")] = true
+  result[vim.fn.expand("~/build/neovim/src/nvim/lua")] = true
+  return result;
+end
+
 lspconfig.bashls.setup{}
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
@@ -13,25 +26,16 @@ lspconfig.sumneko_lua.setup {
   cmd = { "lua-language-server" };
   settings = {
     Lua = {
-      runtime = {
-        version = "LuaJIT",
-        path = vim.split(package.path, ";"),
-      },
+      runtime = { version = "LuaJIT", },
       diagnostics = {
-        globals = {
-          "vim", -- vim
-          "describe", "it", "before_each", "after_each", "teardown", "pending", "clear", -- Busted
-        },
+        enable = true,
+        disable = { "trailing-space", },
+        globals = { "vim", "describe", "it", "before_each", "after_each", "teardown", "pending", "clear", },
       },
       workspace = {
-        library = {
-          [vim.fn.expand("~/.config/nvim/lua")] = true,
-          [vim.fn.expand("~/.config/nvim/plugged/plenary.nvim/lua")] = true,
-          [vim.fn.expand("~/.config/nvim/plugged/nvim-lspconfig/lua")] = true,
-        },
-      },
-      telemetry = {
-        enable = false,
+        library = get_lua_runtime(),
+        maxPreload = 1024,
+        preloadFileSize = 1024,
       },
     },
   },
@@ -39,8 +43,6 @@ lspconfig.sumneko_lua.setup {
 lspconfig.tsserver.setup{}
 lspconfig.vimls.setup{}
 lspconfig.yamlls.setup{}
-
-vim.lsp.handlers['textDocument/codeAction'] = require'lsputil.codeAction'.code_action_handler
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
