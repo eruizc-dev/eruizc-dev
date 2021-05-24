@@ -101,6 +101,9 @@
  - What else do you need?
  - Also rails
 
+[**nvim-cheat.sh**](https://github.com/RishabhRD/nvim-cheat.sh)
+ - cheats!
+
 ### Vimrcs I like to steal things from:
 
  - [Beginbot's](https://github.com/davidbegin/beginfiles/tree/master/nvim)
