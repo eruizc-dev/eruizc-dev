@@ -52,6 +52,7 @@ Plug 'rhysd/git-messenger.vim'
 
 " Mine
 Plug 'eruizc-dev/rubberduck.nvim'
+Plug 'kristijanhusak/vim-dadbod-completion'
 
 call plug#end()
 

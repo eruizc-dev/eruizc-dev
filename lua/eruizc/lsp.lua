@@ -9,7 +9,7 @@ lspconfig.jsonls.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.solargraph.setup{}
 lspconfig.solargraph.setup{}
-lspconfig.sqls.setup{}
+--lspconfig.sqls.setup{}
 lspconfig.sumneko_lua.setup{
   cmd = { "lua-language-server" };
   settings = {

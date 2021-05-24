@@ -16,12 +16,10 @@ compe.setup({
   documentation = true,
 
   source = {
-    path = true,
     buffer = true,
     nvim_lsp = true,
     nvim_lua = true,
-    calc = false,
-    vsnip = false,
-    ultisnips = false,
+    path = true,
+    vim_dadbod_completion = true,
   }
 })
