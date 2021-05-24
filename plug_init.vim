@@ -53,5 +53,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Testing
 Plug 'rhysd/git-messenger.vim'
 
+" Mine
+Plug 'eruizc-dev/rubberduck.nvim'
+
 call plug#end()
 

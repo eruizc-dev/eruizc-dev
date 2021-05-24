@@ -38,6 +38,7 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("rubberduck")
 
 local function get_source_files()
   return vim.g.source_directory and vim.g.source_directory.."/*"
