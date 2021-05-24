@@ -15,35 +15,26 @@
       sql ones triggering dadbod.
  - Highlight spelling errors in markdown
  - Vertical alignment (`=`) to work in markdown
- - Git blame to know who and why a line is there, maybe git-messenger?
  - Better manage sessions, maybe vim-startify?
  - It's HIIIIDDDDEOUS when I open a file with ranger and it splits, can I have
    it fullscreen pls?
- - Telescope's Grep_Files has a really weird searching algo, can't find
- anything with it. Maybe investigate why and how to include fzf's algo into
- grep_files.
  - Try dadbod async branch
    <https://github.com/kristijanhusak/vim-dadbod-ui/issues/46>
  - Add sql lsp
  - Symbols-outline doesn't have \<silent\> tags
  - List of TODOS in project, with telescope maybe
- - Browse stackoverflow with Telescope
- - I need Git diff what's right now vs what was a couple commits back or currently in
-   another branch
+ - I need Git diff what's right now vs what was a couple commits back or
+ currently in another branch
 
 ### Features I should try
 
  - Nvim-compe's snippets
- - Live grep lags? <https://github.com/awesome-streamers/awesome-streamerrc/blob/93f50a8933371446e9b3c133d39ab13648a5dde3/ThePrimeagen/plugin/telescope.vim#L3>
 
 ### Plugins I'm curious about:
 
 [**vim-startify**](https://github.com/mhinz/vim-startify)
  - Don't forget to steal this amazing ascii art:
  <https://github.com/shaunsingh/vimrc/blob/3ac1dd5864223bf92f8c815f9483bd13fe344356/init.vim#L338>
-
-[**git-messenger**](https://github.com/rhysd/git-messenger.vim):
- - (git) Blame my coworkers
 
 [**git-worktree.nvim**](https://github.com/ThePrimeagen/git-worktree.nvim):
  - I need to learn about bare repos and worktrees before
@@ -65,13 +56,6 @@
 [**nvim-dap-ui**](https://github.com/rcarriga/nvim-dap-ui)
  - Debuggin but ui
 
-[**ale**](https://github.com/dense-analysis/ale)
- - Has better highlighting than lsp, I don't see some error messages because
-   they too much to the right sometimes
-
-[**moonlight.nvim**](https://github.com/shaunsingh/moonlight.nvim)
- - Cool colorscheme
-
 [**nvim-bqf**](https://github.com/kevinhwang91/nvim-bqf)
  - Better quickfix? I gotta try quickfix, I should try this after that
 
@@ -87,8 +71,6 @@
 
 [**go.nvim**](https://github.com/ray-x/go.nvim)
  - Does it replace vim-go?
-
-[**lspsaga.nvim**](https://github.com/glepnir/lspsaga.nvim)
 
 [**spellsitter.nvim**](https://github.com/lewis6991/spellsitter.nvim)
 
