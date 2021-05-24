@@ -15,11 +15,11 @@ nnoremap <silent> <leader>blame :GitMessenger<cr>
 
 """SEARCH FILES"""
 nnoremap <silent> <leader>p         :Telescope find_files<cr>
-nnoremap <silent> <leader>P         :Telescope live_grep<cr>
-nnoremap <silent> <leader>s         :lua require'eruizc.telescope'.find_sources()<cr>
-nnoremap <silent> <leader>t         :lua require'eruizc.telescope'.find_tests()<cr>
+nnoremap <silent> <leader>P 		:lua require("telescope.builtin").grep_string({ search = "" })<cr>
+nnoremap <silent> <leader>s         :lua require("eruizc.telescope").find_sources()<cr>
+nnoremap <silent> <leader>t         :lua require("eruizc.telescope").find_tests()<cr>
 nnoremap <silent> <leader>config    :lua require("eruizc.telescope").vimrc()<cr>
-"nnoremap <silent> <C-p>             :NERDTreeToggle<CR>
+"nnoremap <silent> <C-p>             :NERDTreeToggle<cr>
 
 """CODE FAST"""
 nnoremap <silent> ?         :lua vim.lsp.buf.hover()<cr>
@@ -41,7 +41,7 @@ nnoremap <silent> <leader>lg	:FloatermTui	lazygit<cr>
 nnoremap <silent> <leader>ld	:FloatermTui	lazydocker<cr>
 
 """UNDOS"""
-nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<CR>
+nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
 
 
 """UNMAPS"""
