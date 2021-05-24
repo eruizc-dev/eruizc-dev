@@ -25,10 +25,8 @@ Plug 'troydm/zoomwintab.vim'
 Plug 'voldikss/vim-floaterm'
 
 " Visuals
-Plug 'Xuyuanp/nerdtree-git-plugin'  " nerdtree
 Plug 'dikiaap/minimalist'           " Better than gruvbox
 Plug 'kyazdani42/nvim-web-devicons' " telescope
-Plug 'ryanoasis/vim-devicons'       " nerdtree
 Plug 'eruizc-dev/galaxyline.nvim', { 'branch': 'merge-all' }
 
 " Utilities
@@ -37,7 +35,6 @@ Plug 'kristijanhusak/vim-dadbod-ui'     " God bless tpope and kristijanhusak
 Plug 'mbbill/undotree'                  " I don't want to know what my life would be without this
 Plug 'nvim-telescope/telescope.nvim'    " God bles TJ
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } " telescope
-Plug 'preservim/nerdtree'               " Cooler than I originally thought
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'vim-test/vim-test'
 

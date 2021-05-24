@@ -19,7 +19,6 @@ nnoremap <silent> <leader>P 		:lua require("telescope.builtin").grep_string({ se
 nnoremap <silent> <leader>s         :lua require("eruizc.telescope").find_sources()<cr>
 nnoremap <silent> <leader>t         :lua require("eruizc.telescope").find_tests()<cr>
 nnoremap <silent> <leader>config    :lua require("eruizc.telescope").vimrc()<cr>
-"nnoremap <silent> <C-p>             :NERDTreeToggle<cr>
 
 """CODE FAST"""
 nnoremap <silent> ?         :lua vim.lsp.buf.hover()<cr>
