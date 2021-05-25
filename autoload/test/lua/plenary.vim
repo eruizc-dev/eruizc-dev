@@ -6,7 +6,7 @@ function! test#lua#plenary#build_position(type, position)
     if a:type ==# "nearest" || a:type ==# "file"
         return ["--headless", "-c 'PlenaryBustedFile ".a:position["file"]."'"]
     else
-        return ["--headless", '-c "PlenaryBustedDirectory spec"']
+		return ["--headless", '-c "PlenaryBustedDirectory ."']
     endif
 endfunction
 
