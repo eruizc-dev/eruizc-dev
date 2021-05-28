@@ -1,0 +1,14 @@
+[core]
+    editor = nvim
+    autocrlf = input
+	excludesfile = /home/eruizc/.gitignore
+[init]
+    defaultBranch = master
+[pull]
+    rebase = true
+[alias]
+    nuke = "!f() { read -p 'You rly wanna nuke? (y/N): ' choice; case $choice in y|Y ) git reset --hard && git clean -fd;; * ) echo 'ABORTING';; esac }; f"
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
