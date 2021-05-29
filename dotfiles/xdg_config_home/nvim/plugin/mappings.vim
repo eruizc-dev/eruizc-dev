@@ -28,10 +28,14 @@ vnoremap <silent> <leader>a :lua vim.lsp.buf.range_code_action()<cr>
 
 """COMPLETION"""
 inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <cr> compe#confirm('<cr>')
-inoremap <silent><expr> <space> compe#confirm('<space>')
-inoremap <silent><expr> <C-h> compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-l> compe#scroll({ 'delta': -4 })
+inoremap <silent><expr> <cr> compe#confirm()..""
+inoremap <silent><expr> <space> compe#confirm().." "
+inoremap <silent><expr> ( compe#confirm().."("
+inoremap <silent><expr> [ compe#confirm().."["
+inoremap <silent><expr> { compe#confirm().."{"
+inoremap <silent><expr> . compe#confirm().."."
+inoremap <silent><expr> <C-h> compe#scroll({ 'delta': +3 })
+inoremap <silent><expr> <C-l> compe#scroll({ 'delta': -3 })
 
 """TERMINALS"""
 tnoremap <silent> <A-esc>   <C-\><C-n>:FloatermHide!<cr>
