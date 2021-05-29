@@ -46,7 +46,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'    " God bles TJ
 Plug 'vim-test/vim-test'
 Plug 'voldikss/vim-floaterm'
-Plug 'tpope/vim-dispatch'				" God bless TPOPEE
 
 " Language specific
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
