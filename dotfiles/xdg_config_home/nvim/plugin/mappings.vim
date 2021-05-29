@@ -55,12 +55,7 @@ tnoremap <silent> <A-5> <C-\><C-n>:FloatermToggle    --title=terminal term5<cr>
 nnoremap <silent> <leader>lg        :FloatermTui    lazygit<cr>
 nnoremap <silent> <leader>ld        :FloatermTui    lazydocker<cr>
 nnoremap <silent> <leader>ranger    :FloatermTui    ranger<cr>
-
-"""INTERPRETERS"""
-nnoremap <silent> <leader>lua       :FloatermTui    lua<cr>
 nnoremap <silent> <leader>node      :FloatermTui    node<cr>
-nnoremap <silent> <leader>python    :FloatermTui    python<cr>
-nnoremap <silent> <leader>ruby      :FloatermTui    ruby<cr>
 
 """UNDOS"""
 nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
