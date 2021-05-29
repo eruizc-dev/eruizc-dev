@@ -10,7 +10,7 @@ set splitright splitbelow
 set noerrorbells
 set number relativenumber
 set nowrap
-set tabstop=4 softtabstop=0 shiftwidth=0 smartindent
+set expandtab tabstop=4 softtabstop=0 shiftwidth=0 smartindent
 
 " Visuals
 syntax on
@@ -21,6 +21,8 @@ set showmatch
 set cursorline
 set guicursor=
 hi CursorLine cterm=bold
+hi Normal ctermbg=none guibg=none
+hi NonText ctermbg=none guibg=none
 
 " Menu
 set showcmd
