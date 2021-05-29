@@ -51,6 +51,7 @@ autostart({
   "flameshot",			-- Screenshots
   "picom",				-- Copositor (Window transparency)
   "xbindkeys --poll-rc",	-- Keymaps
+  "source ~/.fehbg", -- Load wallpaper
 })
 
 local themes = {
