@@ -27,7 +27,6 @@ nnoremap <silent> <leader>a :lua vim.lsp.buf.code_action()<cr>
 vnoremap <silent> <leader>a :lua vim.lsp.buf.range_code_action()<cr>
 
 """COMPLETION"""
-inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <cr> compe#confirm()..""
 inoremap <silent><expr> <space> compe#confirm().." "
 inoremap <silent><expr> ( compe#confirm().."("
