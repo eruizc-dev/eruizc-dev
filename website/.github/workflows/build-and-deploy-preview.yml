@@ -1,0 +1,47 @@
+name: Build and deploy preview
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build Gatsby Site
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@master
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '12'
+    - name: Install dependencies
+      run: npm ci
+    - name: Build Site
+      run: npm run build
+    - name: Archive Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: public
+        path: public
+
+  preview:
+    name: Deploy Preview Site
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@master
+    - name: Download Artifact
+      uses: actions/download-artifact@master
+      with:
+        name: public
+        path: public
+    - name: Inject slug/short variables
+      uses: rlespinasse/github-slug-action@v3.x
+    - name: Deploy preview to Firebase
+      uses: w9jds/firebase-action@master
+      with:
+        args: hosting:channel:deploy ${{env.GITHUB_REF_SLUG}}
+      env:
+        FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}

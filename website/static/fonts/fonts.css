@@ -1,0 +1,15 @@
+@font-face {
+  font-family: CostaRica;
+  font-weight: 400;
+  font-style: normal;
+  src: url("CostaRica.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  src: url("Montserrat-Regular.woff") format("woff");
+  font-display: swap;
+}

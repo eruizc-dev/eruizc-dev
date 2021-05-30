@@ -1,0 +1,10 @@
+# Dependencies
+node_modules/
+
+# Build
+.cache/
+public
+font-preload-cache.json
+
+# Firebase
+.firebase
