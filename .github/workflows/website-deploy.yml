@@ -1,9 +1,9 @@
-name: Build and deploy preview
+name: Deploy website
 on:
-  pull_request:
   push:
-    branches:
-      - master
+    branches: [ master ]
+    path: [ website/** ]
+
 jobs:
   build:
     name: Build Gatsby Site
@@ -14,19 +14,21 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v2
       with:
-        node-version: '12'
+        node-version: 12
     - name: Install dependencies
+      working-directory: ./website
       run: npm ci
     - name: Build Site
+      working-directory: ./website
       run: npm run build
     - name: Archive Artifact
       uses: actions/upload-artifact@master
       with:
         name: public
-        path: public
+        path: ./website/public
 
-  preview:
-    name: Deploy Preview Site
+  deploy:
+    name: Deploy Production Site
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -36,12 +38,12 @@ jobs:
       uses: actions/download-artifact@master
       with:
         name: public
-        path: public
-    - name: Inject slug/short variables
-      uses: rlespinasse/github-slug-action@v3.x
-    - name: Deploy preview to Firebase
+        path: ./website/public
+    - name: Deploy to Firebase
       uses: w9jds/firebase-action@master
       with:
-        args: hosting:channel:deploy ${{env.GITHUB_REF_SLUG}}
+        args: deploy
       env:
-        FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}
+        PROJECT_PATH: ./website
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
