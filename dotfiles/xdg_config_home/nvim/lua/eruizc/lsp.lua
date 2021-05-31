@@ -4,12 +4,15 @@ local utils = require("eruizc.utils")
 lspconfig.bashls.setup{}
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
-lspconfig.jdtls.setup{ cmd = { "jdtls" } }
+lspconfig.jdtls.setup{
+  cmd = { "jdtls" },
+  root_dir = function(f)
+    return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(f) or vim.fn.getcwd()
+  end
+}
 lspconfig.jsonls.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.solargraph.setup{}
-lspconfig.solargraph.setup{}
---lspconfig.sqls.setup{}
 lspconfig.sumneko_lua.setup{
   cmd = { "lua-language-server" };
   settings = {
