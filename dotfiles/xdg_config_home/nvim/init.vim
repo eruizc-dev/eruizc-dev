@@ -28,10 +28,6 @@ hi NonText ctermbg=none guibg=none
 set showcmd
 set confirm
 
-" Autocomplete
-inoremap <silent> <C-j> <C-n>
-inoremap <silent> <C-k> <C-p>
-
 " Workaroud for this https://github.com/hrsh7th/nvim-compe/issues/286
 let g:omni_sql_default_compl_type = 'syntax'
 
