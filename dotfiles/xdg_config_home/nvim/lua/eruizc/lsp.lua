@@ -1,8 +1,31 @@
 local lspconfig = require("lspconfig")
 local utils = require("eruizc.utils")
 
+local checkstyle = {
+  lintCommand = "checkstyle -c checkstyle.xml ${INPUT}",
+  lintFormats = { "[ERROR] %f:%l:%c: %m" },
+  lintStdin = true,
+  lintIgnoreExitCode = true,
+}
+
 lspconfig.bashls.setup{}
 lspconfig.clangd.setup{}
+lspconfig.efm.setup {
+  filetypes = { "java" },
+  on_attach = function(client)
+    client.resolved_capabilities.rename = false
+    client.resolved_capabilities.hover = false
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.completion = false
+  end,
+  root_dir = function() return vim.fn.getcwd() end,
+  settings = {
+    rootMarkers = { "checkstyle.xml" },
+    languages = {
+      java = { checkstyle },
+    }
+  },
+}
 lspconfig.gopls.setup{}
 lspconfig.jdtls.setup{
   cmd = { "jdtls" },
