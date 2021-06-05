@@ -33,6 +33,7 @@ inoremap <silent><expr> <C-l> compe#scroll({ 'delta': -3 })
 
 """TERMINALS"""
 tnoremap <silent> <A-esc>   <C-\><C-n>:FloatermHide!<cr>
+nnoremap <silent> <A-esc>   :FloatermHide!<cr>
 
 nnoremap <silent> <A-1> :FloatermToggle    --title=terminal term1<cr>
 nnoremap <silent> <A-2> :FloatermToggle    --title=terminal term2<cr>
