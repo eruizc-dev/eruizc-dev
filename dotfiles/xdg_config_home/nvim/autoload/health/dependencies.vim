@@ -5,7 +5,8 @@ function! health#dependencies#check() abort
     \   'git', 'rg',
     \   'ranger',
     \   'lazygit', 'lazydocker',
-    \   'solargraph', 'rubocop', 'rubocop-rspec',
+    \   'solargraph', 'rubocop',
+    \   'checkstyle'
     \]
 
     for file in files
