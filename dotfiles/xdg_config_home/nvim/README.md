@@ -96,4 +96,6 @@
     - Idk who he is but he's got a nice `utils.lua`  file
  - [mnabila](https://github.com/mnabila/nvimrc)
     - Cool galaxyline
+ - [elianiva](https://github.com/elianiva/dotfiles/tree/235c54445268f5838ac4a03669fde4d0a4738fea)
+    - Thanks for the efm configuration <3
 
