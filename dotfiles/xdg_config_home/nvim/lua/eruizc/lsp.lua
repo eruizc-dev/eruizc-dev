@@ -29,8 +29,8 @@ lspconfig.efm.setup {
 lspconfig.gopls.setup{}
 lspconfig.jdtls.setup{
   cmd = { "jdtls" },
-  root_dir = function(fname)
-    return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
+  root_dir = function(f)
+    return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(f) or vim.fn.getcwd()
   end
 }
 lspconfig.jsonls.setup{}
