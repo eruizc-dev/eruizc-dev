@@ -20,7 +20,6 @@
    it fullscreen pls?
  - Try dadbod async branch
    <https://github.com/kristijanhusak/vim-dadbod-ui/issues/46>
- - List of TODOS in project, with telescope maybe
  - I need Git diff what's right now vs what was a couple commits back or
  currently in another branch
 
