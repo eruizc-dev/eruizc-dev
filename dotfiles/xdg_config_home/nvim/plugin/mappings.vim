@@ -51,7 +51,6 @@ tnoremap <silent> <A-5> <C-\><C-n>:FloatermToggle    --title=terminal term5<cr>
 """TUIS"""
 nnoremap <silent> <leader>lg        :FloatermTui    lazygit<cr>
 nnoremap <silent> <leader>ld        :FloatermTui    lazydocker<cr>
-nnoremap <silent> <leader>ranger    :FloatermTui    ranger<cr>
 nnoremap <silent> <leader>node      :FloatermTui    node<cr>
 
 """UNDOS"""
