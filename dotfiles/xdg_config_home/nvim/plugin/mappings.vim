@@ -34,6 +34,7 @@ inoremap <silent><expr> <C-h> compe#scroll({ 'delta': +3 })
 inoremap <silent><expr> <C-l> compe#scroll({ 'delta': -3 })
 
 """TERMINALS"""
+tnoremap <silent> <C-o>     <C-\><C-n>
 tnoremap <silent> <A-esc>   <C-\><C-n>:FloatermHide!<cr>
 nnoremap <silent> <A-esc>   :FloatermHide!<cr>
 
