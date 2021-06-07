@@ -1,5 +1,4 @@
 local galaxyline = require('galaxyline')
-local vcs = require('galaxyline.provider_vcs')
 local fileinfo = require('galaxyline.provider_fileinfo')
 local condition = require('galaxyline.condition')
 
@@ -127,14 +126,5 @@ galaxyline.section.right = {{
         highlight = { colors.fg, colors.bg },
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
-    }
-}, {
-    GitBranch = {
-        provider = function () return (vcs.get_git_branch() or '')..' ' end,
-        icon = ' '..icons.git_branch..' ',
-        highlight = { colors.fg, colors.magenta },
-        separator = "",
-        separator_highlight = { colors.bg, colors.magenta },
-        condition = condition.check_git_workspace
     }
 }}
