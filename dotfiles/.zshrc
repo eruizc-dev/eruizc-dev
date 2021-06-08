@@ -54,10 +54,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # Rust
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
-export PATH=$PATH:'/home/eruizc/.cargo/bin'
+export PATH=$PATH:"$HOME/.cargo/bin"
 
 # Python
-export PATH=$PATH:'/home/eruizc/.local/bin'
+export PATH=$PATH:"$HOME/.local/bin"
 
 # Ruby
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
