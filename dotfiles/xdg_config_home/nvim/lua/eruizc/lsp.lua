@@ -3,7 +3,7 @@ local utils = require("eruizc.utils")
 local lsputil = require("lsputil.codeAction")
 
 local checkstyle = {
-  lintCommand = "checkstyle -c checkstyle.xml ${INPUT}",
+  lintCommand = "java -jar /usr/local/lib/checkstyle/checkstyle-8.39-all.jar -c checkstyle.xml ${INPUT}",
   lintFormats = { "[ERROR] %f:%l:%c: %m" },
   lintStdin = true,
   lintIgnoreExitCode = true,
@@ -62,7 +62,7 @@ lspconfig.yamlls.setup{}
 
 vim.lsp.handlers["textDocument/codeAction"] = lsputil.code_action_handler
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    signs = true,
-    virtual_text = false,
+  underline = true,
+  signs = true,
+  virtual_text = false,
 })

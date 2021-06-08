@@ -22,9 +22,6 @@
    <https://github.com/kristijanhusak/vim-dadbod-ui/issues/46>
  - I need Git diff what's right now vs what was a couple commits back or
  currently in another branch
- - EFM triggers on keystroke, this causes too many checkstyle invocations (I've
-   seen 30+ in simultaneous) and this takes 60%+ cpu usage. Should trigger on
-   exit insert mode or, at least, trigger on save.
  - A way to handle `todo.md` files, I use them a lot
 
 ### Features I should try
