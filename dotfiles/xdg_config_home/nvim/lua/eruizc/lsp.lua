@@ -46,7 +46,14 @@ lspconfig.sumneko_lua.setup{
       diagnostics = {
         enable = true,
         disable = { "trailing-space", },
-        globals = { "vim", "describe", "it", "before_each", "after_each", "teardown", "pending", "clear", },
+        globals = {
+          -- Neovim
+          "vim",
+          -- Awesome
+          "awesome", "client", "root",
+          -- Busted
+          "describe", "it", "before_each", "after_each", "teardown", "pending", "clear"
+        },
       },
       workspace = {
         library = utils.get_lua_runtime(),
