@@ -26,6 +26,7 @@ alias log='tail -f `fzf`'
 alias nvim='nvim'
 alias vim='nvim'
 alias vi='nvim'
+alias open='xdg-open'
 
 alias install='sudo pacman -S'
 alias update='sudo pacman -Syu'
