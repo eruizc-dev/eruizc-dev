@@ -12,7 +12,6 @@ local checkstyle = {
 lspconfig.bashls.setup{}
 lspconfig.clangd.setup{}
 lspconfig.efm.setup {
-  autostart = false,
   filetypes = { "java" },
   on_attach = function(client)
     client.resolved_capabilities.rename = false
