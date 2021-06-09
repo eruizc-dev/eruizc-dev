@@ -50,7 +50,7 @@ lspconfig.sumneko_lua.setup{
           -- Neovim
           "vim",
           -- Awesome
-          "awesome", "client", "root",
+          "awesome", "client", "root", "screen",
           -- Busted
           "describe", "it", "before_each", "after_each", "teardown", "pending", "clear"
         },
