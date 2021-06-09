@@ -40,6 +40,11 @@ lspconfig.rust_analyzer.setup{}
 lspconfig.solargraph.setup{}
 lspconfig.sumneko_lua.setup{
   cmd = { "lua-language-server" };
+  root_dir = function(fname)
+    local nvim_dir = lspconfig.util.root_pattern('lua')(fname)
+    if nvim_dir then return nvim_dir..'/lua' end
+    return lspconfig.util.root_pattern('rc.lua', 'init.lua', 'init.vim', '.git')(fname) or vim.fn.getcwd()
+  end,
   settings = {
     Lua = {
       runtime = { version = "LuaJIT", },
