@@ -1,7 +1,17 @@
+colors:
+  normal:
+    black: '0x585858'
+    red: '0xd75f5f'
+    green: '0xafd787'
+    yellow: '0xf1fa8c'
+    blue: '0x5fafd7'
+    magenta: '0x8467a0'
+    cyan: '0x87d7ff'
+    white: '0xeeeeee'
+
 background_opacity: 0.87
 font:
   normal:
     family: TerminessTTF Nerd Font Mono
     style: Medium
   size: 19.0
-
