@@ -6,7 +6,7 @@ HISTFILE="$HOME/.local/historyfile"
 HISTSIZE=1000
 SAVEHIST=1000
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="refined"
 HIST_STAMPS="yyyy-mm-dd"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
