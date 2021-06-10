@@ -5,7 +5,6 @@ local lsputil = require("lsputil.codeAction")
 local checkstyle = {
   lintCommand = "java -jar /usr/local/lib/checkstyle/checkstyle-8.39-all.jar -c checkstyle.xml ${INPUT}",
   lintFormats = { "[ERROR] %f:%l:%c: %m" },
-  lintStdin = true,
   lintIgnoreExitCode = true,
 }
 
