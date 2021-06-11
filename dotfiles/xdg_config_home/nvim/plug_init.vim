@@ -39,6 +39,7 @@ Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'hrsh7th/nvim-compe'
 Plug 'neovim/nvim-lspconfig'
+Plug 'simrat39/symbols-outline.nvim'
 
 " Utilities
 Plug 'eruizc-dev/rubberduck.nvim'
