@@ -29,6 +29,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Git
 Plug 'rhysd/git-messenger.vim'
+Plug 'tpope/vim-fugitive'
 
 " Database
 Plug 'tpope/vim-dadbod'         			" God bless tpope
@@ -50,7 +51,5 @@ Plug 'voldikss/vim-floaterm'
 
 " Language specific
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
-
