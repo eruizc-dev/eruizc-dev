@@ -5,10 +5,15 @@ nnoremap <silent> <C-h> <C-o>
 nnoremap <silent> <C-l> <C-i>
 
 """GOTOS"""
-nnoremap <silent> gf    gf
 nnoremap <silent> gr    :Telescope lsp_references<cr>
 nnoremap <silent> gd    :Telescope lsp_definitions<cr>
 nnoremap <silent> gi    :lua vim.lsp.buf.implementation()<cr>
+
+"""BUFFER"""
+nnoremap <silent> <C-o>         :ZoomWinTabToggle<cr>
+nnoremap <silent> <C-W>o        :only<cr>
+nnoremap <silent> <C-w_o>       :only<cr>
+nnoremap <silent> <C-w><C-o>    :only<cr>
 
 """GIT"""
 nnoremap <silent> <leader>blame :GitMessenger<cr>
@@ -59,4 +64,6 @@ nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
 
 """UNMAPS"""
 nnoremap U :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
+let g:zoomwintab_remap = v:false
+
 
