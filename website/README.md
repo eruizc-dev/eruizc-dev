@@ -1,11 +1,11 @@
-![ERC](https://eruizc.dev/metaimg.png)
+# eruizc-dev
 
-# Emiliano Ruiz Carletti
+**Url**: https://eruizc.dev
 
-Welcome to my dev profile! I wish for the day we can seamlessly interact with
-computers, I like to experiment with a multitude of tools that allow me to stay
-closer with my binary friends. As a result I've become a big fan of:
+### Local development
 
- - Comand line interfaces
- - Vim editor
- - Tiling window managers
+ 1. Clone repo (ofc)
+ 2. Install dependencies `npm ci`
+ 3. Run local `npm run start`
+ 4. Open `http://localhost:8000`
+
