@@ -2,7 +2,7 @@ local telescope = require("telescope")
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
 
-local searchers = {}
+local finders = {}
 
 telescope.setup({
   defaults = {
@@ -10,7 +10,7 @@ telescope.setup({
     width = 0.75,
     height = 0.95,
     color_devicons = true,
-    layout_strategy = "vertical",
+    layout_strategy = "horizontal",
     layout_defaults = {
       horizontal = {
         preview_width = 0.5
@@ -48,14 +48,14 @@ local function get_test_files()
   return vim.g.test_directory and vim.g.test_directory.."/*"
 end
 
-function searchers.vimrc()
+function finders.vimrc()
   builtin.find_files({
     prompt_title = "Configuration",
     cwd = "$HOME/.config/nvim",
   })
 end
 
-function searchers.find_sources()
+function finders.find_sources()
   local source_files = get_source_files()
   local test_files = get_test_files()
   local title = (source_files and "Source Files ("..source_files..")") or "Source Files"
@@ -67,7 +67,7 @@ function searchers.find_sources()
   })
 end
 
-function searchers.find_tests()
+function finders.find_tests()
   local source_files = get_source_files()
   local test_files = get_test_files()
   local title = (test_files and "Test Files ("..test_files..")") or "Test Files"
@@ -79,5 +79,15 @@ function searchers.find_tests()
   })
 end
 
-return searchers
+function finders.ripgrep()
+  builtin.grep_string({
+    search = "",
+    layout_strategy = "horizontal",
+    layout_config = {
+      preview_width = 0.98
+    },
+  })
+end
+
+return finders
 
