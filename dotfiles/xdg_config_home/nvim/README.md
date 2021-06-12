@@ -7,15 +7,15 @@
       can toggle.
  - Unified way to run programs
     - Golang runs with vim-go `:GoRun`
-    - Java doesn't run and the intellij command is super long to put into a
-      makefile. It also needs env variables that are not passed down.
+    - Java doesn't run (with maven) and the intellij command is super long to
+    put into a makefile. It also needs env variables that are not passed down.
  - Debbug
  - LSP save buffers on rename
     - Currently doing `:bufdo w`, which saves buffers I may not wanna save (like
       sql ones triggering dadbod.
  - Highlight spelling errors in markdown
  - Vertical alignment (`=`) to work in markdown
- - Better manage sessions, maybe vim-startify?
+ - Better manage sessions, maybe vim-startify? Harpoon?
  - It's HIIIIDDDDEOUS when I open a file with ranger and it splits, can I have
    it fullscreen pls?
  - Try dadbod async branch
@@ -23,6 +23,12 @@
  - I need Git diff what's right now vs what was a couple commits back or
  currently in another branch
  - A way to handle `todo.md` files, I use them a lot
+ - `TestNearest` doesn't work with gradle in nested classes
+ - Telescope source files hides files I wanna search!
+    - I wanna be able so see gitignored config files like .evn
+    - I wanna be able to see hidden files like .gitignore or .github/
+    - I don't wanna see gitignored directories like node_moudles/ or build/
+ - Preview images with telescope
 
 ### Features I should try
 
@@ -30,72 +36,56 @@
 
 ### Plugins I'm curious about:
 
-[**vim-startify**](https://github.com/mhinz/vim-startify)
- - Don't forget to steal this amazing ascii art:
- <https://github.com/shaunsingh/vimrc/blob/3ac1dd5864223bf92f8c815f9483bd13fe344356/init.vim#L338>
+#### Utils
 
-[**git-worktree.nvim**](https://github.com/ThePrimeagen/git-worktree.nvim):
- - I need to learn about bare repos and worktrees before
- - <https://youtu.be/2uEqYw-N8uE>
+ - [**harpoon**](https://github.com/ThePrimeagen/harpoon)
+ - [**LuaSnip**](https://github.com/L3MON4D3/LuaSnip)
 
-[**vim-dispatch**](https://github.com/tpope/vim-dispatch):
- - This may solve some issues I currenlty have
- - I may need some better UI
+#### Git
 
-[**vim-delve**](https://github.com/sebdah/vim-delve)
- - Debug golang within vim idk
+ - [**git-worktree.nvim**](https://github.com/ThePrimeagen/git-worktree.nvim): <https://youtu.be/2uEqYw-N8uE>
+ - [**diffview**](https://github.com/sindrets/diffview.nvim)
+ - [**vgit.nvim**](https://github.com/tanvirtin/vgit.nvim): looks cooler than
+   fugitive
 
-[**vimspector**](https://github.com/puremourning/vimspector)
- - Debuggin
+#### Debug
 
-[**nvim-dap**](https://github.com/mfussenegger/nvim-dap)
- - More debuggin
+ - [**vim-delve**](https://github.com/sebdah/vim-delve): golang debug
+ - [**vimspector**](https://github.com/puremourning/vimspector): vim debugg
+ - [**nvim-dap**](https://github.com/mfussenegger/nvim-dap): debug adapter
+   protocol
+ - [**nvim-dap-ui**](https://github.com/rcarriga/nvim-dap-ui): dap ui
+ - [**nvim-bqf**](https://github.com/kevinhwang91/nvim-bqf): Better quickfix
+ - [**trouble-nvim**](https://github.com/folke/lsp-trouble.nvim): I already
+   solved mostly of the thing this plugin wants to fix, but I like the location
+   list folding. Can I have that??
 
-[**nvim-dap-ui**](https://github.com/rcarriga/nvim-dap-ui)
- - Debuggin but ui
+#### Language specifig
 
-[**nvim-bqf**](https://github.com/kevinhwang91/nvim-bqf)
- - Better quickfix? I gotta try quickfix, I should try this after that
+ - [**vim-go**](https://github.com/fatih/vim-go): long install/update times, and
+   breaks with lsp... Was that fixed?
+ - [**go.nvim**](https://github.com/ray-x/go.nvim): Does it replace vim-go?
+ - [**vim-rails**](https://github.com/tpope/vim-rails): tpope and rails
 
-[**diffview**](https://github.com/sindrets/diffview.nvim)
- - Watch git diffs
+#### Spelling
 
-[**defaults**](https://github.com/mjlbach/defaults.nvim)
- - Better vim defaults? Can it beat tpope's sensible.vim?
+ - [**spellsitter.nvim**](https://github.com/lewis6991/spellsitter.nvim)
+ - [**vim-SpellCheck**](https://github.com/inkarkat/vim-SpellCheck)
 
-[**trouble-nvim**](https://github.com/folke/lsp-trouble.nvim)
- - I already solved mostly of the thing this plugin wants to fix, but I like the
-   location list folding. Can I have that??
+#### Styling
 
-[**go.nvim**](https://github.com/ray-x/go.nvim)
- - Does it replace vim-go?
-
-[**spellsitter.nvim**](https://github.com/lewis6991/spellsitter.nvim)
-
-[**vim-SpellCheck**](https://github.com/inkarkat/vim-SpellCheck)
-
-[**hologram.nvim**](https://github.com/edluffy/hologram.nvim)
-
-[**vim-rails**](https://github.com/tpope/vim-rails)
- - Tpope
- - What else do you need?
- - Also rails
-
-[**nvim-cheat.sh**](https://github.com/RishabhRD/nvim-cheat.sh)
- - cheats!
+ - [**hologram.nvim**](https://github.com/edluffy/hologram.nvim)
+ - [**vim-startify**](https://github.com/mhinz/vim-startify)
+    - Don't forget to steal this amazing ascii art:
+      <https://github.com/shaunsingh/vimrc/blob/3ac1dd5864223bf92f8c815f9483bd13fe344356/init.vim#L338>
 
 ### Vimrcs I like to steal things from:
 
  - [Beginbot's](https://github.com/davidbegin/beginfiles/tree/master/nvim)
  - [ThePrimeagen's](https://github.com/awesome-streamers/awesome-streamerrc/tree/master/ThePrimeagen)
- - [Tpope's](https://github.com/tpope/tpope)
-    - Vim god
- - [TJ](https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim)
-    - Neovim god
- - [kraftwerk28](https://github.com/kraftwerk28/dotfiles/tree/master/.config/nvim)
-    - Idk who he is but he's got a nice `utils.lua`  file
- - [mnabila](https://github.com/mnabila/nvimrc)
-    - Cool galaxyline
- - [elianiva](https://github.com/elianiva/dotfiles/tree/235c54445268f5838ac4a03669fde4d0a4738fea)
-    - Thanks for the efm configuration <3
+ - [Tpope's](https://github.com/tpope/tpope): Vim god
+ - [TJ](https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim): Neovim god
+ - [kraftwerk28](https://github.com/kraftwerk28/dotfiles/tree/master/.config/nvim): nice `utils.lua`
+ - [mnabila](https://github.com/mnabila/nvimrc): Cool galaxyline
+ - [elianiva](https://github.com/elianiva/dotfiles): Thanks for the efm configuration <3
 
