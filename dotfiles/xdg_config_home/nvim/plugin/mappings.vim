@@ -25,6 +25,9 @@ nnoremap <silent> <leader>s         :lua require("eruizc.telescope").find_source
 nnoremap <silent> <leader>t         :lua require("eruizc.telescope").find_tests()<cr>
 nnoremap <silent> <leader>config    :lua require("eruizc.telescope").vimrc()<cr>
 
+"""HELPERS"""
+nnoremap <silent> <leader>cs    :Cheatsheet<cr>
+
 """CODE FAST"""
 nnoremap <silent> ?         :lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> <leader>r :lua vim.lsp.buf.rename()<cr>
