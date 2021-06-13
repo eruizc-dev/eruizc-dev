@@ -19,7 +19,7 @@ nnoremap <silent> <C-w><C-o>    :only<cr>
 nnoremap <silent> <leader>blame :GitMessenger<cr>
 
 """SEARCH FILES"""
-nnoremap <silent> <leader>p         :Telescope find_files<cr>
+nnoremap <silent> <leader>p         :lua require("eruizc.telescope").find_files()<cr>
 nnoremap <silent> <leader>P         :lua require("eruizc.telescope").ripgrep()<cr>
 nnoremap <silent> <leader>s         :lua require("eruizc.telescope").find_sources()<cr>
 nnoremap <silent> <leader>t         :lua require("eruizc.telescope").find_tests()<cr>

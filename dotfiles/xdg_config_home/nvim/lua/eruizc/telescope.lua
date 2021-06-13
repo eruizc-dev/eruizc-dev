@@ -55,6 +55,13 @@ function finders.vimrc()
   })
 end
 
+function finders.find_files()
+  builtin.find_files({
+    layout_strategy = "vertical",
+    find_command = { 'rg', '--files', '--hidden', '--no-ignore-global' }
+  })
+end
+
 function finders.find_sources()
   local source_files = get_source_files()
   local test_files = get_test_files()
