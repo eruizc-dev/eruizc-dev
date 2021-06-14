@@ -40,6 +40,11 @@
 
  - [**harpoon**](https://github.com/ThePrimeagen/harpoon)
  - [**LuaSnip**](https://github.com/L3MON4D3/LuaSnip)
+ - [**navigator.lua**](https://github.com/ray-x/navigator.lua): I love vi{, ci{
+   and others, the thing is that it doesn't work in languages like Python, Ruby,
+   Lua or even C if you have a one-line if.
+ - [**nvim-treesitter-textobjects**](https://github.com/nvim-treesitter/nvim-treesitter-textobjects):
+   Same as navigator.lua, but I think I like it better
 
 #### Git
 
@@ -59,6 +64,8 @@
  - [**trouble-nvim**](https://github.com/folke/lsp-trouble.nvim): I already
    solved mostly of the thing this plugin wants to fix, but I like the location
    list folding. Can I have that??
+ - [**lsp_extensions.nvim**](https://github.com/nvim-lua/lsp_extensions.nvim): I
+   like the workspace diagnostics, would be cool to have those in my statusbar
 
 #### Language specifig
 
