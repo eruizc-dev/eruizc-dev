@@ -88,6 +88,16 @@ end
 
 function finders.ripgrep()
   builtin.grep_string({
+    find_command = { 'rg',
+      '--hidden',
+      '--no-ignore-global',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case'
+    },
     search = "",
     layout_strategy = "horizontal",
   })
