@@ -45,6 +45,9 @@
    Lua or even C if you have a one-line if.
  - [**nvim-treesitter-textobjects**](https://github.com/nvim-treesitter/nvim-treesitter-textobjects):
    Same as navigator.lua, but I think I like it better
+ - [**nvim-ts-context-commentstring**](https://github.com/JoosepAlviste/nvim-ts-context-commentstring):
+   Name too long, but basically comment line(s) with treesitter. Pretty cool
+   huh?
 
 #### Git
 
