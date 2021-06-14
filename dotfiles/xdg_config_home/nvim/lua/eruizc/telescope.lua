@@ -90,9 +90,6 @@ function finders.ripgrep()
   builtin.grep_string({
     search = "",
     layout_strategy = "horizontal",
-    layout_config = {
-      preview_width = 0.70
-    },
   })
 end
 
