@@ -98,4 +98,5 @@
  - [kraftwerk28](https://github.com/kraftwerk28/dotfiles/tree/master/.config/nvim): nice `utils.lua`
  - [mnabila](https://github.com/mnabila/nvimrc): Cool galaxyline
  - [elianiva](https://github.com/elianiva/dotfiles): Thanks for the efm configuration <3
+ - [siduck76](https://github.com/siduck76/NvChad): Cool dragon
 
