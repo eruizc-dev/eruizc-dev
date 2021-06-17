@@ -61,6 +61,7 @@ tnoremap <silent> <A-5> <C-\><C-n>:FloatermToggle    --title=terminal term5<cr>
 nnoremap <silent> <leader>lg        :FloatermTui    lazygit<cr>
 nnoremap <silent> <leader>ld        :FloatermTui    lazydocker<cr>
 nnoremap <silent> <leader>node      :FloatermTui    node<cr>
+nnoremap <silent> <leader>spt       :FloatermTui    spt<cr>
 
 """UNDOS"""
 nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
