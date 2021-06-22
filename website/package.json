@@ -7,6 +7,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
+    "prepreview": "npm run build",
+    "preview": "firebase hosting:channel:deploy `git rev-parse --abbrev-ref HEAD`",
     "lint": "next lint"
   },
   "dependencies": {
