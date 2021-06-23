@@ -1,10 +1,9 @@
- 
 @font-face {
   font-family: CostaRica;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../public/fonts/CostaRica/CostaRica-Regular.woff") format("woff");
+  src: url("/fonts/CostaRica/CostaRica-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -12,7 +11,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../public/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
+  src: url("/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
 }
 
 html, body, .background {
