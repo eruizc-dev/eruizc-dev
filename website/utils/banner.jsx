@@ -4,17 +4,17 @@ import styled from 'styled-components';
 const BannerTitle = styled.h1`
   font-family: CostaRica;
   color: #35BF5C;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  font-size: 6vw;
+  margin: 0;
+  padding: 0px 33px;
+  font-size: calc(45px + 4.5vw);
 `
 
 const BannerSubtitle = styled.h2`
   font-family: Montserrat;
   color: #FFF;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
-  font-size: 2vw;
+  margin: 0;
+  padding: 0px 33px;
+  font-size: calc(10px + 1.5vw);
 `
 
 export default function Banner() {
