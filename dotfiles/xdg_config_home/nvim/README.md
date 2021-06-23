@@ -29,6 +29,8 @@
     - I wanna be able to see hidden files like .gitignore or .github/
     - I don't wanna see gitignored directories like node_moudles/ or build/
  - Preview images with telescope
+ - Some projects have large json files, I don't want telescope ripgrep to look
+   into them.
 
 ### Features I should try
 
