@@ -18,30 +18,5 @@ export default function Typed({ interval, children }) {
 
 Typed.defaultProps = {
   interval: 140,
-  children: '',
-}
-
-export function Cursor({ interval }) {
-
-  const [cursorVisible, setCursorVisible] = useState(true);
-
-  const cursorBlockStyle = {
-    backgroundColor: cursorVisible ? '#35BF5C' : 'transparent',
-    textDecoration: 'none',
-    display: 'inline-block'
-  }
-
-  useInterval(function() {
-    setCursorVisible(!cursorVisible);
-  }, interval);
-
-  return (
-    <span style={cursorBlockStyle}>
-      &nbsp;
-    </span>
-  );
-}
-
-Cursor.defaultProps = {
-  interval: 755
+  children: "",
 }
