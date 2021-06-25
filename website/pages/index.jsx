@@ -1,6 +1,8 @@
-import Head from 'next/head';
-import Center from '../utils/center';
-import Banner from '../utils/banner';
+import Head from 'next/head'
+import Center from '../utils/center'
+import BottomCenter from '../utils/bottomCenter'
+import Banner from '../utils/banner'
+import { Github, Twitter, Linkedin } from '../utils/icons'
 
 export default function Home() {
   return (
@@ -9,6 +11,11 @@ export default function Home() {
       <Center>
         <Banner />
       </Center>
+      <BottomCenter>
+        <Github />
+        <Twitter />
+        <Linkedin />
+      </BottomCenter>
     </>
   );
 }

@@ -14,7 +14,7 @@ Github.defaultProps = defaultProps;
 export function Github({ width, height, color }) {
   return(
     <a href="https://github.com/eruizc-dev">
-      <GithubIcon width={width} height={height} color={{fill: color}} />
+      <GithubIcon width={width} height={height} style={{fill: color}} />
     </a>
   )
 }
@@ -23,7 +23,7 @@ Twitter.defaultProps = defaultProps;
 export function Twitter({ width, height, color }) {
   return(
     <a href="https://twitter.com/eruizc_dev">
-      <TwitterIcon width={width} height={height} color={{fill: color}} />
+      <TwitterIcon width={width} height={height} style={{fill: color}} />
     </a>
   )
 }
@@ -32,7 +32,7 @@ Linkedin.defaultProps = defaultProps;
 export function Linkedin({ width, height, color }) {
   return(
     <a href="https://www.linkedin.com/in/eruizc/">
-      <LinkedinIcon width={width} height={height} color={{fill: color}} />
+      <LinkedinIcon width={width} height={height} style={{fill: color}} />
     </a>
   )
 }

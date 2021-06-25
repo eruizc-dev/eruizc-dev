@@ -1,7 +1,7 @@
 import Typed from '../utils/typed';
 import styled from 'styled-components';
 
-const BannerTitle = styled.h1`
+const Title = styled.h1`
   font-family: CostaRica;
   color: #35BF5C;
   margin: 0;
@@ -9,7 +9,7 @@ const BannerTitle = styled.h1`
   font-size: calc(45px + 4.5vw);
 `
 
-const BannerSubtitle = styled.h2`
+const Subtitle = styled.h2`
   font-family: Montserrat;
   color: #FFF;
   margin: 0;
@@ -23,14 +23,14 @@ export default function Banner() {
 
   return (
     <div>
-      <BannerTitle>
+      <Title>
         <Typed>
           {name}
         </Typed>
-      </BannerTitle>
-      <BannerSubtitle>
+      </Title>
+      <Subtitle>
         {subtitle}
-      </BannerSubtitle>
+      </Subtitle>
     </div>
   );
 }
