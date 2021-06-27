@@ -1,10 +1,9 @@
-# Dependencies
-node_modules/
+# dependencies
+/node_modules
 
-# Build
-.cache/
-public
-font-preload-cache.json
+# next.js
+/.next/
+/out/
 
 # Firebase
 .firebase
