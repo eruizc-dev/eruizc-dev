@@ -50,6 +50,8 @@
  - [**nvim-ts-context-commentstring**](https://github.com/JoosepAlviste/nvim-ts-context-commentstring):
    Name too long, but basically comment line(s) with treesitter. Pretty cool
    huh?
+ - [**orgmode.nvim**](https://github.com/kristijanhusak/orgmode.nvim)
+   I wanna be organized
 
 #### Git
 
