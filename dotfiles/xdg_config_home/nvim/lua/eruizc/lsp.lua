@@ -10,6 +10,11 @@ local checkstyle = {
 
 lspconfig.bashls.setup{}
 lspconfig.clangd.setup{}
+lspconfig.cssls.setup{
+  root_dir = function(f)
+    return lspconfig.util.root_pattern("package.json", ".git")(f) or vim.fn.getcwd()
+  end
+}
 lspconfig.efm.setup {
   filetypes = { "java" },
   on_attach = function(client)
@@ -27,6 +32,9 @@ lspconfig.efm.setup {
   },
 }
 lspconfig.gopls.setup{}
+lspconfig.html.setup{
+  root_dir = function() return vim.fn.getcwd() end
+}
 lspconfig.jdtls.setup{
   cmd = { "jdtls" },
   root_dir = function(f)
@@ -43,7 +51,9 @@ lspconfig.jdtls.setup{
     }
   }
 }
-lspconfig.jsonls.setup{}
+lspconfig.jsonls.setup{
+  root_dir = function() return vim.fn.getcwd() end
+}
 lspconfig.rust_analyzer.setup{}
 lspconfig.solargraph.setup{}
 lspconfig.sumneko_lua.setup{
