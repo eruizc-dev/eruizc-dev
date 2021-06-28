@@ -17,6 +17,7 @@ nnoremap <silent> <C-w><C-o>    :only<cr>
 
 """GIT"""
 nnoremap <silent> <leader>blame :GitMessenger<cr>
+nnoremap <silent> <leader>diff  :Gdiffsplit!<cr>
 
 """SEARCH FILES"""
 nnoremap <silent> <leader>p         :lua require("eruizc.telescope").find_files()<cr>
