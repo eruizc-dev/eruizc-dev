@@ -31,7 +31,17 @@ lspconfig.jdtls.setup{
   cmd = { "jdtls" },
   root_dir = function(f)
     return lspconfig.util.root_pattern('pom.xml', 'gradle.build', '.git')(f) or vim.fn.getcwd()
-  end
+  end,
+  settings = {
+    java = {
+      implementationsCodeLens = {
+        enabled = true
+      },
+      completion = {
+        importOrder = {}
+      }
+    }
+  }
 }
 lspconfig.jsonls.setup{}
 lspconfig.rust_analyzer.setup{}
