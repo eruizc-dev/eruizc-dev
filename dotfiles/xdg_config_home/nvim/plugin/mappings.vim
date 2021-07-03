@@ -12,9 +12,6 @@ nnoremap <silent> gi    :lua vim.lsp.buf.implementation()<cr>
 """BUFFER"""
 nnoremap          gf            gF
 nnoremap <silent> <C-o>         :ZoomWinTabToggle<cr>
-nnoremap <silent> <C-W>o        :only<cr>
-nnoremap <silent> <C-w_o>       :only<cr>
-nnoremap <silent> <C-w><C-o>    :only<cr>
 
 """GIT"""
 nnoremap <silent> <leader>blame :GitMessenger<cr>
@@ -71,5 +68,4 @@ nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
 """UNMAPS"""
 nnoremap U :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
 let g:zoomwintab_remap = v:false
-
 
