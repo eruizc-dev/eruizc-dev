@@ -7,17 +7,18 @@ local finders = {}
 telescope.setup({
   defaults = {
     prompt_prefix = " ",
-    width = 0.75,
-    height = 0.95,
     color_devicons = true,
-    layout_strategy = "horizontal",
-    layout_defaults = {
-      horizontal = {
-        preview_width = 0.5
-      },
+    layout_strategy = "vertical",
+    layout_config = {
+      width = 0.80,
+      height = 0.90,
+      preview_cutoff = 0.5,
       vertical = {
-        preview_height = 0.65
+        preview_height = 0.5,
       },
+      horizontal = {
+        preview_width = 0.5,
+      }
     },
     mappings = {
       i = {
