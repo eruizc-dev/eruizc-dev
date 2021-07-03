@@ -32,6 +32,10 @@ nnoremap <silent> ?         :lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> <leader>r :lua vim.lsp.buf.rename()<cr>
 nnoremap <silent> <leader>a :lua vim.lsp.buf.code_action()<cr>
 vnoremap <silent> <leader>a :lua vim.lsp.buf.range_code_action()<cr>
+nnoremap <silent> +         <C-a>
+nnoremap <silent> -         <C-x>
+vnoremap <silent> +         <C-a>
+vnoremap <silent> -         <C-x>
 
 """COMPLETION"""
 inoremap <silent> <C-j> <C-n>
