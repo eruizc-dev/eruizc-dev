@@ -42,6 +42,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+Plug 'ray-x/lsp_signature.nvim'
 
 " Utilities
 Plug 'eruizc-dev/rubberduck.nvim'

@@ -1,6 +1,18 @@
 local lspconfig = require("lspconfig")
 local utils = require("eruizc.utils")
 local lsputil = require("lsputil.codeAction")
+local lsp_signature = require("lsp_signature")
+
+lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+  on_attach = function(client)
+    lsp_signature.on_attach({
+      fix_pos = true,
+      hint_enable = false,
+      handler_opts = { border = "single" },
+      extra_trigger_chars = { "(", "{", ",", "\"", "'" }
+    })
+  end
+})
 
 local checkstyle = {
   lintCommand = "java -jar /usr/local/lib/checkstyle/checkstyle-8.39-all.jar -c checkstyle.xml ${INPUT}",
@@ -9,7 +21,8 @@ local checkstyle = {
 }
 
 lspconfig.bashls.setup{}
-lspconfig.clangd.setup{}
+lspconfig.clangd.setup{
+}
 lspconfig.cssls.setup{
   root_dir = function(f)
     return lspconfig.util.root_pattern("package.json", ".git")(f) or vim.fn.getcwd()
@@ -57,7 +70,7 @@ lspconfig.jsonls.setup{
 lspconfig.rust_analyzer.setup{}
 lspconfig.solargraph.setup{}
 lspconfig.sumneko_lua.setup{
-  cmd = { "lua-language-server" };
+  cmd = { "lua-language-server" },
   root_dir = function(fname)
     local nvim_dir = lspconfig.util.root_pattern('lua')(fname)
     if nvim_dir then return nvim_dir..'/lua' end
@@ -72,7 +85,7 @@ lspconfig.sumneko_lua.setup{
         globals = {
           -- Neovim
           "vim",
-          -- Awesome
+          -- Awesome WS
           "awesome", "client", "root", "screen",
           -- Busted
           "describe", "it", "before_each", "after_each", "teardown", "pending", "clear"
@@ -96,3 +109,4 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   signs = true,
   virtual_text = false,
 })
+
