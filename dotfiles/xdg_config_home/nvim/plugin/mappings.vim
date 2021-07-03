@@ -10,6 +10,7 @@ nnoremap <silent> gd    :Telescope lsp_definitions<cr>
 nnoremap <silent> gi    :lua vim.lsp.buf.implementation()<cr>
 
 """BUFFER"""
+nnoremap          gf            gF
 nnoremap <silent> <C-o>         :ZoomWinTabToggle<cr>
 nnoremap <silent> <C-W>o        :only<cr>
 nnoremap <silent> <C-w_o>       :only<cr>
