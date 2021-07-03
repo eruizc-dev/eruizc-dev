@@ -51,6 +51,7 @@ Plug 'nvim-telescope/telescope.nvim'    " God bles TJ
 Plug 'vim-test/vim-test'
 Plug 'voldikss/vim-floaterm'
 Plug 'sudormrfbin/cheatsheet.nvim'
+Plug 'kristijanhusak/orgmode.nvim'
 
 " Language specific
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }

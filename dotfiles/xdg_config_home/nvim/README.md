@@ -20,9 +20,6 @@
    it fullscreen pls?
  - Try dadbod async branch
    <https://github.com/kristijanhusak/vim-dadbod-ui/issues/46>
- - I need Git diff what's right now vs what was a couple commits back or
- currently in another branch
- - A way to handle `todo.md` files, I use them a lot
  - `TestNearest` doesn't work with gradle in nested classes
  - Telescope source files hides files I wanna search!
     - I wanna be able so see gitignored config files like .evn
@@ -50,8 +47,6 @@
    Same as navigator.lua, but I think I like it better
  - [**nvim-ts-context-commentstring**](https://github.com/JoosepAlviste/nvim-ts-context-commentstring):
    Name too long, but basically comment line(s) with treesitter
- - [**orgmode.nvim**](https://github.com/kristijanhusak/orgmode.nvim): I wanna
-   be organized
 
 #### Git
 

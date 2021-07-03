@@ -19,9 +19,10 @@ compe.setup({
     buffer = { menu = '' },
     nvim_lsp = { menu = '' },
     nvim_lua = { menu = '' },
-    path = { menu = '' }, -- THESE AIN'T WORKIIING, pls pr into compe
+    path = true, -- THESE AIN'T WORKIIING, pls pr into compe
     calc = { menu = '' },
     vim_dadbod_completion = { menu = '' },
+    orgmode = true,
     tabnine = {
       menu = '',
       max_line = 1000,
