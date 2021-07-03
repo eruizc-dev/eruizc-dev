@@ -21,5 +21,13 @@ compe.setup({
     nvim_lua = true,
     path = true,
     vim_dadbod_completion = true,
+    tabnine = {
+      max_line = 1000,
+      max_num_results = 6,
+      priority = 5000,
+      sort = false, -- setting to false means compe will leave tabnine to sort the completion items
+      show_prediction_strength = true,
+      ignore_pattern = ''
+    }
   }
 })
