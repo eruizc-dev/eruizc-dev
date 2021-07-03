@@ -10,6 +10,7 @@ set splitright splitbelow
 set noerrorbells
 set number relativenumber
 set nowrap
+set scrolloff=4
 set expandtab tabstop=4 softtabstop=0 shiftwidth=0 smartindent
 
 " Visuals
