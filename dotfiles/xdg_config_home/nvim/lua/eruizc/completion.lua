@@ -16,12 +16,14 @@ compe.setup({
   documentation = true,
 
   source = {
-    buffer = true,
-    nvim_lsp = true,
-    nvim_lua = true,
-    path = true,
-    vim_dadbod_completion = true,
+    buffer = { menu = '' },
+    nvim_lsp = { menu = '' },
+    nvim_lua = { menu = '' },
+    path = { menu = '' }, -- THESE AIN'T WORKIIING, pls pr into compe
+    calc = { menu = '' },
+    vim_dadbod_completion = { menu = '' },
     tabnine = {
+      menu = '',
       max_line = 1000,
       max_num_results = 6,
       priority = 5000,

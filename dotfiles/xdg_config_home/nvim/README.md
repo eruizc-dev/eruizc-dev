@@ -31,6 +31,7 @@
  - Preview images with telescope
  - Some projects have large json files, I don't want telescope ripgrep to look
    into them.
+ - Compe icons for paths are not working
 
 ### Features I should try
 
