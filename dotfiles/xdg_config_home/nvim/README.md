@@ -49,17 +49,15 @@
  - [**nvim-treesitter-textobjects**](https://github.com/nvim-treesitter/nvim-treesitter-textobjects):
    Same as navigator.lua, but I think I like it better
  - [**nvim-ts-context-commentstring**](https://github.com/JoosepAlviste/nvim-ts-context-commentstring):
-   Name too long, but basically comment line(s) with treesitter. Pretty cool
-   huh?
- - [**orgmode.nvim**](https://github.com/kristijanhusak/orgmode.nvim)
-   I wanna be organized
+   Name too long, but basically comment line(s) with treesitter
+ - [**orgmode.nvim**](https://github.com/kristijanhusak/orgmode.nvim): I wanna
+   be organized
 
 #### Git
 
  - [**git-worktree.nvim**](https://github.com/ThePrimeagen/git-worktree.nvim): <https://youtu.be/2uEqYw-N8uE>
  - [**diffview**](https://github.com/sindrets/diffview.nvim)
- - [**vgit.nvim**](https://github.com/tanvirtin/vgit.nvim): looks cooler than
-   fugitive
+ - [**vgit.nvim**](https://github.com/tanvirtin/vgit.nvim): fugitive but lua
 
 #### Debug
 
