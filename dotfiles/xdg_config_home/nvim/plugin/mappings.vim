@@ -10,7 +10,7 @@ nnoremap <silent> gd    :Telescope lsp_definitions<cr>
 nnoremap <silent> gi    :lua vim.lsp.buf.implementation()<cr>
 
 """BUFFER"""
-nnoremap          gf            gF
+nnoremap <silent> gf            gF
 nnoremap <silent> <C-o>         :ZoomWinTabToggle<cr>
 
 """GIT"""
@@ -32,10 +32,10 @@ nnoremap <silent> ?         :lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> <leader>r :lua vim.lsp.buf.rename()<cr>
 nnoremap <silent> <leader>a :lua vim.lsp.buf.code_action()<cr>
 vnoremap <silent> <leader>a :lua vim.lsp.buf.range_code_action()<cr>
-nnoremap <silent> +         <C-a>
-nnoremap <silent> -         <C-x>
-vnoremap <silent> +         <C-a>
-vnoremap <silent> -         <C-x>
+nmap     <silent> +         <C-a>
+nmap     <silent> -         <C-x>
+vmap     <silent> +         <C-a>
+vmap     <silent> -         <C-x>
 
 """COMPLETION"""
 inoremap <silent> <C-j> <C-n>
