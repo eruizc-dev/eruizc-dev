@@ -20,3 +20,10 @@ No place like... That's getting old
 ### Things I wanna look at
 
  - ls replacement: [exa](https://the.exa.website/)
+
+### TODO:
+
+ - Incluze `.zshrc` file
+ - Include my installation scripts
+ - Include oh-my-zsh plugins:
+    - <https://github.com/gradle/gradle-completion>
