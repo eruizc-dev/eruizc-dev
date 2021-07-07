@@ -29,6 +29,9 @@
  - Some projects have large json files, I don't want telescope ripgrep to look
    into them.
  - Compe icons for paths are not working
+ - I find myself compiling a lot of times and it failing... Would it be possible
+   for the LSP to catch these before I compile the whole thing? In files I never
+   opened ofc, and be visible somewhere in my statusbar.
 
 ### Features I should try
 
@@ -47,6 +50,7 @@
    Same as navigator.lua, but I think I like it better
  - [**nvim-ts-context-commentstring**](https://github.com/JoosepAlviste/nvim-ts-context-commentstring):
    Name too long, but basically comment line(s) with treesitter
+ - [**auto-session**](https://github.com/rmagatti/auto-session)
 
 #### Git
 
@@ -65,8 +69,6 @@
  - [**trouble-nvim**](https://github.com/folke/lsp-trouble.nvim): I already
    solved mostly of the thing this plugin wants to fix, but I like the location
    list folding. Can I have that??
- - [**lsp_extensions.nvim**](https://github.com/nvim-lua/lsp_extensions.nvim): I
-   like the workspace diagnostics, would be cool to have those in my statusbar
 
 #### Language specifig
 
