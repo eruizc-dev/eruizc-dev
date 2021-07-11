@@ -58,4 +58,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
 
 " Debugging
 Plug 'mfussenegger/nvim-dap'
+Plug 'theHamsta/nvim-dap-virtual-text'
+
 call plug#end()

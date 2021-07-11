@@ -1,5 +1,7 @@
 local dap = require("dap")
 
+vim.g.dap_virtual_text = true
+
 dap.adapters.lldb = {
   type = "executable",
   command = "lldb-vscode",
