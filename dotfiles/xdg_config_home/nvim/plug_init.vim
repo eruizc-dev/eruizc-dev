@@ -56,4 +56,6 @@ Plug 'kristijanhusak/orgmode.nvim'
 " Language specific
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
 
+" Debugging
+Plug 'mfussenegger/nvim-dap'
 call plug#end()
