@@ -5,12 +5,12 @@ nnoremap <silent> <C-h> <C-o>
 nnoremap <silent> <C-l> <C-i>
 
 """GOTOS"""
+nnoremap <silent> gf    gF
 nnoremap <silent> gr    :Telescope lsp_references<cr>
 nnoremap <silent> gd    :Telescope lsp_definitions<cr>
 nnoremap <silent> gi    :lua vim.lsp.buf.implementation()<cr>
 
-"""BUFFER"""
-nnoremap <silent> gf            gF
+"""SPLITS"""
 nnoremap <silent> <C-o>         :ZoomWinTabToggle<cr>
 
 """GIT"""
