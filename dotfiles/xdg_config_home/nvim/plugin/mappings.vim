@@ -1,6 +1,8 @@
-"""JUMPS"""
-nnoremap <silent> <C-j> :lnext<cr>
-nnoremap <silent> <C-k> :lprevious<cr>
+"""FILE NAVIGATION"""
+nnoremap <silent> J :lbelow<cr>
+nnoremap <silent> K :labove<cr>
+
+"""PROJECT NAVIGATION"""
 nnoremap <silent> <C-h> <C-o>
 nnoremap <silent> <C-l> <C-i>
 
@@ -11,18 +13,18 @@ nnoremap <silent> gd    :Telescope lsp_definitions<cr>
 nnoremap <silent> gi    :lua vim.lsp.buf.implementation()<cr>
 
 """SPLITS"""
-nnoremap <silent> <C-o>         :ZoomWinTabToggle<cr>
+nnoremap <silent> <C-o> :ZoomWinTabToggle<cr>
 
 """GIT"""
 nnoremap <silent> <leader>blame :GitMessenger<cr>
 nnoremap <silent> <leader>diff  :Gdiffsplit!<cr>
 
 """SEARCH FILES"""
-nnoremap <silent> <leader>p         :lua require("eruizc.telescope").find_files()<cr>
-nnoremap <silent> <leader>P         :lua require("eruizc.telescope").ripgrep()<cr>
-nnoremap <silent> <leader>s         :lua require("eruizc.telescope").find_sources()<cr>
-nnoremap <silent> <leader>t         :lua require("eruizc.telescope").find_tests()<cr>
-nnoremap <silent> <leader>config    :lua require("eruizc.telescope").vimrc()<cr>
+nnoremap <silent> <leader>p     :lua require("eruizc.telescope").find_files()<cr>
+nnoremap <silent> <leader>P     :lua require("eruizc.telescope").ripgrep()<cr>
+nnoremap <silent> <leader>s     :lua require("eruizc.telescope").find_sources()<cr>
+nnoremap <silent> <leader>t     :lua require("eruizc.telescope").find_tests()<cr>
+nnoremap <silent> <leader>con   :lua require("eruizc.telescope").vimrc()<cr>
 
 """HELPERS"""
 nnoremap <silent> <leader>cs    :Cheatsheet<cr>
@@ -69,7 +71,8 @@ nnoremap <silent> <leader>spt       :FloatermTui    spt<cr>
 """UNDOS"""
 nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
 
-"""UNMAPS"""
-nnoremap U :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
-let g:zoomwintab_remap = v:false
+"""UNMAP"""
+let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
+nnoremap U  :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
+nnoremap ZZ :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
 
