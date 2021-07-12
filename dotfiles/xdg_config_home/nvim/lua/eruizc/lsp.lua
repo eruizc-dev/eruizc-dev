@@ -21,13 +21,13 @@ local checkstyle = {
 }
 
 lspconfig.bashls.setup{}
-lspconfig.clangd.setup{
-}
+lspconfig.clangd.setup{}
 lspconfig.cssls.setup{
   root_dir = function(f)
     return lspconfig.util.root_pattern("package.json", ".git")(f) or vim.fn.getcwd()
   end
 }
+lspconfig.dockerls.setup{}
 lspconfig.efm.setup {
   filetypes = { "java" },
   on_attach = function(client)
@@ -42,7 +42,7 @@ lspconfig.efm.setup {
     languages = {
       java = { checkstyle },
     }
-  },
+  }
 }
 lspconfig.gopls.setup{}
 lspconfig.html.setup{
