@@ -1,5 +1,4 @@
-# ZSH
-# https://github.com/ohmyzsh/ohmyzsh/wiki
+# ZSH https://github.com/ohmyzsh/ohmyzsh/wiki
 export ZSH="$HOME/.oh-my-zsh"
 
 HISTFILE="$HOME/.local/historyfile"
@@ -10,7 +9,12 @@ ZSH_THEME="refined"
 HIST_STAMPS="yyyy-mm-dd"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git)
+plugins=(
+    git
+    node npm nvm yarn
+    gradle mvn sdk
+    docker docker-compose
+)
 [[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
 # Aliases
@@ -67,3 +71,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Lua
 alias luamake="$HOME/scripts/lua-language-server/3rd/luamake/luamake"
 export PATH=$PATH:"$HOME/.luarocks/bin"
+
+# Java
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
