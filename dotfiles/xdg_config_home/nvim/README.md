@@ -33,6 +33,13 @@
    for the LSP to catch these before I compile the whole thing? In files I never
    opened ofc, and be visible somewhere in my statusbar.
 
+### Thins I'd like to work on
+
+ - Implement [make-lsp](https://github.com/alexclewontin/make-lsp-vscode) into
+   lspconfig
+ - Better [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls) defaults.
+   Maybe change nvim/nvim-lspconfig default to better support Java
+
 ### Features I should try
 
  - Nvim-compe's snippets
