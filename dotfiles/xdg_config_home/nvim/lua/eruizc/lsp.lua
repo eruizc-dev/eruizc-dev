@@ -2,6 +2,7 @@ local lspconfig = require("lspconfig")
 local utils = require("eruizc.utils")
 local lsputil = require("lsputil.codeAction")
 local lsp_signature = require("lsp_signature")
+local lsp = {}
 
 lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
   on_attach = function(client)
@@ -48,22 +49,6 @@ lspconfig.gopls.setup{}
 lspconfig.html.setup{
   root_dir = function() return vim.fn.getcwd() end
 }
-lspconfig.jdtls.setup{
-  cmd = { "jdtls" },
-  root_dir = function(f)
-    return lspconfig.util.root_pattern('pom.xml', 'gradle.build', '.git')(f) or vim.fn.getcwd()
-  end,
-  settings = {
-    java = {
-      implementationsCodeLens = {
-        enabled = true
-      },
-      completion = {
-        importOrder = {}
-      }
-    }
-  }
-}
 lspconfig.jsonls.setup{
   root_dir = function() return vim.fn.getcwd() end
 }
@@ -103,6 +88,23 @@ lspconfig.tsserver.setup{}
 lspconfig.vimls.setup{}
 lspconfig.yamlls.setup{}
 
+function lsp.get_jdtls_config()
+  return {
+    cmd = { 'jdtls' },
+    root_dir = require('jdtls.setup').find_root({ '*.gradle', 'pom.xml' }),
+    settings = {
+      java = {
+        implementationsCodeLens = {
+          enabled = true
+        },
+        completion = {
+          importOrder = {}
+        }
+      }
+    }
+  }
+end
+
 vim.lsp.handlers["textDocument/codeAction"] = lsputil.code_action_handler
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
@@ -110,3 +112,4 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   virtual_text = false,
 })
 
+return lsp
