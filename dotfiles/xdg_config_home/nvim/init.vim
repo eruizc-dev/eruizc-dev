@@ -30,9 +30,6 @@ hi EndOfBuffer ctermbg=none guibg=none
 set showcmd
 set confirm
 
-" Workaroud for this https://github.com/hrsh7th/nvim-compe/issues/286
-let g:omni_sql_default_compl_type = 'syntax'
-
 augroup auto_mkdir_new_file
   autocmd!
   autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
