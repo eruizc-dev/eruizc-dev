@@ -4,14 +4,18 @@ local lsputil = require("lsputil.codeAction")
 local lsp_signature = require("lsp_signature")
 local lsp = {}
 
-lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
-  on_attach = function(client)
+local function attach_lsp_signature()
     lsp_signature.on_attach({
       fix_pos = true,
       hint_enable = false,
       handler_opts = { border = "single" },
       extra_trigger_chars = { "(", "{", ",", "\"", "'" }
     })
+end
+
+lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+  on_attach = function(client)
+    attach_lsp_signature()
   end
 })
 
@@ -101,7 +105,10 @@ function lsp.get_jdtls_config()
           importOrder = {}
         }
       }
-    }
+    },
+    on_attach = function(client)
+      attach_lsp_signature()
+    end
   }
 end
 
