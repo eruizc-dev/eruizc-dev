@@ -92,25 +92,7 @@ lspconfig.tsserver.setup{}
 lspconfig.vimls.setup{}
 lspconfig.yamlls.setup{}
 
-function lsp.get_jdtls_config()
-  return {
-    cmd = { 'jdtls' },
-    root_dir = require('jdtls.setup').find_root({ '*.gradle', 'pom.xml' }),
-    settings = {
-      java = {
-        implementationsCodeLens = {
-          enabled = true
-        },
-        completion = {
-          importOrder = {}
-        }
-      }
-    },
-    on_attach = function(client)
-      attach_lsp_signature()
-    end
-  }
-end
+lspconfig.jdtls.setup{}
 
 vim.lsp.handlers["textDocument/codeAction"] = lsputil.code_action_handler
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

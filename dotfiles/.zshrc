@@ -75,3 +75,7 @@ export PATH=$PATH:"$HOME/.luarocks/bin"
 # Java
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export JDTLS_HOME="$HOME/.local/opt/jdtls-launcher/jdtls"
+#export WORKSPACE="$HOME/workspace"
+#export JAVA_HOME=''
