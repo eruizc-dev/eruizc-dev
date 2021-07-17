@@ -38,11 +38,11 @@ nmap     <silent> +         <C-a>
 nmap     <silent> -         <C-x>
 vmap     <silent> +         <C-a>
 vmap     <silent> -         <C-x>
-augroup jdtls
-    au!
-    au FileType java noremap <buffer> <silent> <leader>a :lua require'jdtls'.code_action()<cr>
-    au FileType java noremap <buffer> <silent> <leader>a :lua require'jdtls'.code_action(true)<cr>
-augroup end
+"augroup jdtls
+"    au!
+"    au FileType java noremap <buffer> <silent> <leader>a :lua require'jdtls'.code_action()<cr>
+"    au FileType java noremap <buffer> <silent> <leader>a :lua require'jdtls'.code_action(true)<cr>
+"augroup end
 
 """COMPLETION"""
 inoremap <silent> <C-j> <C-n>
