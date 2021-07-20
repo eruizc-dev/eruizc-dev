@@ -41,11 +41,11 @@ augroup jdtls
 augroup end
 
 """COMPLETION"""
-inoremap <silent> <C-j> <C-n>
-inoremap <silent> <C-k> <C-p>
-inoremap <silent><expr> <CR> compe#confirm('<CR>')
-inoremap <silent><expr> <C-h> compe#scroll({ 'delta': +3 })
-inoremap <silent><expr> <C-l> compe#scroll({ 'delta': -3 })
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : compe#complete()
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : compe#complete()
+inoremap <expr> <CR> compe#confirm('<CR>')
+inoremap <expr> <C-h> compe#scroll({ 'delta': +3 })
+inoremap <expr> <C-l> compe#scroll({ 'delta': -3 })
 
 """TERMINALS"""
 tnoremap <silent> <C-o>     <C-\><C-n>
