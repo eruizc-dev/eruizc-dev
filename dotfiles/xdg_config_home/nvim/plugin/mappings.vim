@@ -22,8 +22,6 @@ nnoremap <silent> <leader>diff  :Gdiffsplit!<cr>
 """SEARCH FILES"""
 nnoremap <silent> <leader>p     :lua require("eruizc.telescope").find_files()<cr>
 nnoremap <silent> <leader>P     :lua require("eruizc.telescope").ripgrep()<cr>
-nnoremap <silent> <leader>s     :lua require("eruizc.telescope").find_sources()<cr>
-nnoremap <silent> <leader>t     :lua require("eruizc.telescope").find_tests()<cr>
 nnoremap <silent> <leader>con   :lua require("eruizc.telescope").vimrc()<cr>
 
 """HELPERS"""
