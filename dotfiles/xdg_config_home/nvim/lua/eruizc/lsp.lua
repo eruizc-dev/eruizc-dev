@@ -25,6 +25,20 @@ local checkstyle = {
   lintIgnoreExitCode = true,
 }
 
+local stylua = {
+  lintCommand = "stylua --check --color never -",
+  lintFormats = {
+    "    %l |+%m",
+    "    %l  |+%m",
+    "    %l   |+%m",
+    "    %l    |+%m",
+  },
+  lintStdin = true,
+  formatCommand = "stylua -",
+  formatStdin = true,
+  lintIgnoreExitCode = true,
+}
+
 lspconfig.bashls.setup{}
 lspconfig.clangd.setup{}
 lspconfig.cssls.setup{
@@ -34,18 +48,28 @@ lspconfig.cssls.setup{
 }
 lspconfig.dockerls.setup{}
 lspconfig.efm.setup {
-  filetypes = { "java" },
+  filetypes = { "java", "lua" },
   on_attach = function(client)
+    client.resolved_capabilities.document_formatting = true
     client.resolved_capabilities.rename = false
     client.resolved_capabilities.hover = false
-    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.goto_definition = false
     client.resolved_capabilities.completion = false
   end,
-  root_dir = function() return vim.fn.getcwd() end,
+  root_dir = function(fname)
+    if fname:match(".java") then
+      return lspconfig.util.root_pattern("checkstyle.xml")(fname)
+    end
+    if fname:match(".lua") then
+      return lspconfig.util.root_pattern(".stylua.toml")(fname)
+    end
+    return nil
+  end,
   settings = {
-    rootMarkers = { "checkstyle.xml" },
+    rootMarkers = { "checkstyle.xml", ".stylua.toml", ".git" },
     languages = {
       java = { checkstyle },
+      lua = { stylua },
     }
   }
 }
@@ -64,6 +88,10 @@ lspconfig.sumneko_lua.setup{
     local nvim_dir = lspconfig.util.root_pattern('lua')(fname)
     if nvim_dir then return nvim_dir..'/lua' end
     return lspconfig.util.root_pattern('rc.lua', 'init.lua', 'init.vim', '.git')(fname) or vim.fn.getcwd()
+  end,
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+    attach_lsp_signature()
   end,
   settings = {
     Lua = {
