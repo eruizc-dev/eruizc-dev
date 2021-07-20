@@ -18,6 +18,7 @@ plugins=(
 [[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
 # Aliases
+alias cd='z'
 alias flex='neofetch'
 alias btw='neofetch'
 alias cls='clear'
@@ -75,3 +76,6 @@ export PATH=$PATH:"$HOME/.luarocks/bin"
 # Java
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Zoxide
+eval "$(zoxide init zsh)"
