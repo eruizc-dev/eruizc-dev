@@ -75,6 +75,13 @@ nnoremap <silent> <leader>spt       :FloatermTui    spt<cr>
 nnoremap <silent> U <C-r>
 nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
 
+"""COMMAND MODE"""
+set wildcharm=<Tab>
+cnoremap <C-j> <Tab>
+cnoremap <C-k> <S-Tab>
+cnoremap <C-h> <up>
+cnoremap <C-l> <down>
+
 """UNMAP"""
 let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
 nnoremap ZZ :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
