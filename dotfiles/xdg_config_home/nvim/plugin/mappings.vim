@@ -1,6 +1,6 @@
 """FILE NAVIGATION"""
-nnoremap <silent> J :lbelow<cr>
-nnoremap <silent> K :labove<cr>
+nnoremap <silent> K :lua vim.lsp.diagnostic.goto_prev()<cr>
+nnoremap <silent> J :lua vim.lsp.diagnostic.goto_next()<cr>
 
 """PROJECT NAVIGATION"""
 nnoremap <silent> <C-h> <C-o>
@@ -72,10 +72,10 @@ nnoremap <silent> <leader>node      :FloatermTui    node<cr>
 nnoremap <silent> <leader>spt       :FloatermTui    spt<cr>
 
 """UNDOS"""
+nnoremap <silent> U <C-r>
 nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
 
 """UNMAP"""
 let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
-nnoremap U  :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
 nnoremap ZZ :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
 
