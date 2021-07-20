@@ -1,8 +1,6 @@
-"""FILE NAVIGATION"""
-nnoremap <silent> K :lua vim.lsp.diagnostic.goto_prev()<cr>
-nnoremap <silent> J :lua vim.lsp.diagnostic.goto_next()<cr>
-
-"""PROJECT NAVIGATION"""
+"""NAVIGATION"""
+nnoremap <silent> <C-K> :lua vim.lsp.diagnostic.goto_prev()<cr>
+nnoremap <silent> <C-J> :lua vim.lsp.diagnostic.goto_next()<cr>
 nnoremap <silent> <C-h> <C-o>
 nnoremap <silent> <C-l> <C-i>
 
