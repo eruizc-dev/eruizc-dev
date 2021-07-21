@@ -13,19 +13,6 @@ set nowrap
 set scrolloff=4
 set expandtab tabstop=4 softtabstop=0 shiftwidth=0 smartindent
 
-" Visuals
-syntax on
-set t_Co=256
-set termguicolors
-colorscheme minimalist
-set showmatch
-set cursorline
-set guicursor=
-hi CursorLine cterm=bold
-hi Normal ctermbg=none guibg=none
-hi NonText ctermbg=none guibg=none
-hi EndOfBuffer ctermbg=none guibg=none
-
 " Menu
 set showcmd
 set confirm
