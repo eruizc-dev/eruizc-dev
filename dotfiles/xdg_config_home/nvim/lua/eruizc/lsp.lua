@@ -98,7 +98,7 @@ lspconfig.sumneko_lua.setup{
       runtime = { version = "LuaJIT", },
       diagnostics = {
         enable = true,
-        disable = { "trailing-space", },
+        disable = { "unused-local" }, -- No hints for params i'm not using
         globals = {
           -- Neovim
           "vim",
