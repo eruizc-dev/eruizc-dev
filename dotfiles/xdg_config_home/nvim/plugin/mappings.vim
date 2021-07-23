@@ -49,19 +49,24 @@ inoremap <expr> <C-l> compe#scroll({ 'delta': -3 })
 
 """TERMINALS"""
 tnoremap <silent> <C-o>     <C-\><C-n>
-tnoremap <silent> <A-esc>   <C-\><C-n>:FloatermHide!<cr>
-nnoremap <silent> <A-esc>   :FloatermHide!<cr>
 
-nnoremap <silent> <A-1> :FloatermToggle    --title=terminal term1<cr>
-nnoremap <silent> <A-2> :FloatermToggle    --title=terminal term2<cr>
-nnoremap <silent> <A-3> :FloatermToggle    --title=terminal term3<cr>
-nnoremap <silent> <A-4> :FloatermToggle    --title=terminal term4<cr>
-nnoremap <silent> <A-5> :FloatermToggle    --title=terminal term5<cr>
-tnoremap <silent> <A-1> <C-\><C-n>:FloatermToggle    --title=terminal term1<cr>
-tnoremap <silent> <A-2> <C-\><C-n>:FloatermToggle    --title=terminal term2<cr>
-tnoremap <silent> <A-3> <C-\><C-n>:FloatermToggle    --title=terminal term3<cr>
-tnoremap <silent> <A-4> <C-\><C-n>:FloatermToggle    --title=terminal term4<cr>
-tnoremap <silent> <A-5> <C-\><C-n>:FloatermToggle    --title=terminal term5<cr>
+nnoremap <silent> <A-esc>   :FloatermHide!<cr>
+nnoremap <silent> <A-h> :FloatermNext<cr>
+nnoremap <silent> <A-l> :FloatermPrev<cr>
+tnoremap <silent> <A-esc>   <C-\><C-n>:FloatermHide!<cr>
+tnoremap <silent> <A-h> <C-\><C-n>:FloatermNext<cr>
+tnoremap <silent> <A-l> <C-\><C-n>:FloatermPrev<cr>
+
+nnoremap <silent> <A-1> :FloatermNewOrToggle    --title=Terminal\ 1<cr>
+nnoremap <silent> <A-2> :FloatermNewOrToggle    --title=Terminal\ 2<cr>
+nnoremap <silent> <A-3> :FloatermNewOrToggle    --title=Terminal\ 3<cr>
+nnoremap <silent> <A-4> :FloatermNewOrToggle    --title=Terminal\ 4<cr>
+nnoremap <silent> <A-5> :FloatermNewOrToggle    --title=Terminal\ 5<cr>
+tnoremap <silent> <A-1> <C-\><C-n>:FloatermNewOrToggle  --title=Terminal\ 1<cr>
+tnoremap <silent> <A-2> <C-\><C-n>:FloatermNewOrToggle  --title=Terminal\ 2<cr>
+tnoremap <silent> <A-3> <C-\><C-n>:FloatermNewOrToggle  --title=Terminal\ 3<cr>
+tnoremap <silent> <A-4> <C-\><C-n>:FloatermNewOrToggle  --title=Terminal\ 4<cr>
+tnoremap <silent> <A-5> <C-\><C-n>:FloatermNewOrToggle  --title=Terminal\ 5<cr>
 
 """TUIS"""
 nnoremap <silent> <leader>lg        :FloatermTui    lazygit<cr>
