@@ -1,14 +1,31 @@
-"""NAVIGATION"""
-nnoremap <silent> <C-K> :lua vim.lsp.diagnostic.goto_prev()<cr>
-nnoremap <silent> <C-J> :lua vim.lsp.diagnostic.goto_next()<cr>
-nnoremap <silent> <C-h> <C-o>
-nnoremap <silent> <C-l> <C-i>
+"""FILE NAVIGATION"""
+nnoremap <silent>   J   :lua vim.lsp.diagnostic.goto_next()<cr>
+nnoremap <silent>   K   :lua vim.lsp.diagnostic.goto_prev()<cr>
+nnoremap            H   Hzz
+nnoremap            L   Lzz
+nnoremap            n   nzzzv
+nnoremap            N   Nzzzv
+
+"""PROJECT NAVIGATION"""
+nnoremap <silent>   <C-j>   :cabove<cr>
+nnoremap <silent>   <C-k>   :cbelow<cr>
+nnoremap            <C-h>   <C-o>
+nnoremap            <C-l>   <C-i>
+
+"""CODE EDIT"""
+vnoremap    J   :m '>+1<cr>gv=gv
+vnoremap    K   :m '<-2<cr>gv=gv
+vnoremap    <   <gv
+vnoremap    >   >gv
+nnoremap    Y   y$
+map         +   <C-a>
+map         -   <C-x>
 
 """GOTOS"""
-nnoremap <silent> gf    gF
-nnoremap <silent> gr    :Telescope lsp_references<cr>
-nnoremap <silent> gd    :Telescope lsp_definitions<cr>
-nnoremap <silent> gi    :lua vim.lsp.buf.implementation()<cr>
+nnoremap            gf  gF
+nnoremap <silent>   gr  :Telescope lsp_references<cr>
+nnoremap <silent>   gd  :Telescope lsp_definitions<cr>
+nnoremap <silent>   gi  :lua vim.lsp.buf.implementation()<cr>
 
 """SPLITS"""
 nnoremap <silent> <C-o> :ZoomWinTabToggle<cr>
@@ -25,15 +42,11 @@ nnoremap <silent> <leader>con   :lua require("eruizc.telescope").vimrc()<cr>
 """HELPERS"""
 nnoremap <silent> <leader>cs    :Cheatsheet<cr>
 
-"""CODE FAST"""
+"""LANGUAGE SMARTNESS"""
 nnoremap <silent> ?         :lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> <leader>r :lua vim.lsp.buf.rename()<cr>
 nnoremap <silent> <leader>a :lua vim.lsp.buf.code_action()<cr>
 vnoremap <silent> <leader>a :lua vim.lsp.buf.range_code_action()<cr>
-nmap     <silent> +         <C-a>
-nmap     <silent> -         <C-x>
-vmap     <silent> +         <C-a>
-vmap     <silent> -         <C-x>
 augroup jdtls
     au!
     au FileType java noremap <buffer> <silent> <leader>a :lua require'jdtls'.code_action()<cr>
@@ -75,8 +88,13 @@ nnoremap <silent> <leader>node      :FloatermTui    node<cr>
 nnoremap <silent> <leader>spt       :FloatermTui    spt<cr>
 
 """UNDOS"""
-nnoremap <silent> U <C-r>
-nnoremap <silent> <leader>u :UndotreeToggle<bar>:UndotreeFocus<cr>
+nnoremap <silent>   U           <C-r>
+nnoremap <silent>   <leader>u   :UndotreeToggle<bar>:UndotreeFocus<cr>
+
+"""UNDO BREAKPOINTS"""
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ; ;<c-g>u
 
 """COMMAND MODE"""
 set wildcharm=<Tab>
