@@ -18,7 +18,6 @@ plugins=(
 [[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
 # Aliases
-alias cd='z'
 alias flex='neofetch'
 alias btw='neofetch'
 alias cls='clear'
