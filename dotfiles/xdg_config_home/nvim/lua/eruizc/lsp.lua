@@ -45,7 +45,7 @@ lspconfig.bashls.setup{}
 lspconfig.clangd.setup{}
 lspconfig.cssls.setup{
   root_dir = function(f)
-    return lspconfig.util.root_pattern("package.json", ".git")(f) or vim.fn.getcwd()
+    return lspconfig.util.root_pattern("package.json", ".git")(f) or vim.loop.cwd()
   end
 }
 lspconfig.dockerls.setup{}
@@ -77,19 +77,33 @@ lspconfig.efm.setup {
 }
 lspconfig.gopls.setup{}
 lspconfig.html.setup{
-  root_dir = function() return vim.fn.getcwd() end
+  root_dir = function() return vim.loop.cwd() end
 }
 lspconfig.jsonls.setup{
-  root_dir = function() return vim.fn.getcwd() end
+  root_dir = function() return vim.loop.cwd() end
 }
 lspconfig.rust_analyzer.setup{}
-lspconfig.solargraph.setup{}
+lspconfig.solargraph.setup{
+  on_attach = function(client, bufnr)
+    -- TODO: Run `solargraph config` if `.solargraph.yml` doesn't exist
+    -- Maybe do this when detecting root, something like
+    -- if not utils.root_pattern(".solargraph.yml") then
+    --   -- Run with plenary maybe?
+    --   run({ 
+    --     cwd = utils.root_pattern("Gemfile", ".git") or vim.loop.cwd(),
+    --     cmd = "solargraph config"
+    --   })
+    -- return utils.root_pattern(".solargraph.yml")(fname)
+    -- end
+    --
+  end
+}
 lspconfig.sumneko_lua.setup{
   cmd = { "lua-language-server" },
   root_dir = function(fname)
     local nvim_dir = lspconfig.util.root_pattern('lua')(fname)
     if nvim_dir then return nvim_dir..'/lua' end
-    return lspconfig.util.root_pattern('rc.lua', 'init.lua', 'init.vim', '.git')(fname) or vim.fn.getcwd()
+    return lspconfig.util.root_pattern('rc.lua', 'init.lua', 'init.vim', '.git')(fname) or vim.loop.cwd()
   end,
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
