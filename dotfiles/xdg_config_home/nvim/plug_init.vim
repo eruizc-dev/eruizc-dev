@@ -48,6 +48,7 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'eruizc-dev/rubberduck.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim'    " God bles TJ
+Plug 'jvgrootveld/telescope-zoxide'
 Plug 'vim-test/vim-test'
 Plug 'voldikss/vim-floaterm'
 Plug 'sudormrfbin/cheatsheet.nvim'

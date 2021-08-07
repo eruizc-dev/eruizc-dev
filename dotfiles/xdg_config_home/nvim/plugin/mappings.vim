@@ -38,6 +38,7 @@ nnoremap <silent> <leader>diff  :Gdiffsplit!<cr>
 nnoremap <silent> <leader>p     :lua require("eruizc.telescope").find_files()<cr>
 nnoremap <silent> <leader>P     :lua require("eruizc.telescope").ripgrep()<cr>
 nnoremap <silent> <leader>con   :lua require("eruizc.telescope").vimrc()<cr>
+nnoremap <silent> <leader>z     :Telescope zoxide list<cr>
 
 """HELPERS"""
 nnoremap <silent> <leader>cs    :Cheatsheet<cr>
