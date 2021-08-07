@@ -7,6 +7,6 @@ ts_configs.setup {
   },
   indent = {
     enable = true,
-    disable = { "javascriptreact", "typescriptreact" }
+    disable = { "java", "javascriptreact", "typescriptreact" }
   },
 }
