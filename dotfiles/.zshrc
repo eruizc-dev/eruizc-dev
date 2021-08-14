@@ -78,3 +78,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Zoxide
 eval "$(zoxide init zsh)"
+
+# Make
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+autoload -U compinit && compinit
