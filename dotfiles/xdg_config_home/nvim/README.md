@@ -58,6 +58,7 @@
  - [**nvim-ts-context-commentstring**](https://github.com/JoosepAlviste/nvim-ts-context-commentstring):
    Name too long, but basically comment line(s) with treesitter
  - [**auto-session**](https://github.com/rmagatti/auto-session)
+ - [**context.vim**](https://github.com/wellle/context.vim)
 
 #### Git
 
