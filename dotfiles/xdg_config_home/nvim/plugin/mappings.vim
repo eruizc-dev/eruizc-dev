@@ -18,8 +18,8 @@ vnoremap    K   :m '<-2<cr>gv=gv
 vnoremap    <   <gv
 vnoremap    >   >gv
 nnoremap    Y   y$
-map         +   <C-a>
-map         -   <C-x>
+nnoremap    +   <C-a>
+nnoremap    -   <C-x>
 
 """GOTOS"""
 nnoremap    gf  gF
@@ -64,32 +64,23 @@ inoremap <expr> <C-l>   compe#scroll({ 'delta': -3 })
 """TERMINALS"""
 tnoremap <silent> <C-o>     <C-\><C-n>
 
-nnoremap <A-q>      <cmd>FloatermKill<cr>
-nnoremap <A-esc>    <cmd>FloatermHide!<cr>
-nnoremap <A-l>      <cmd>FloatermPrev<cr>
-nnoremap <A-h>      <cmd>FloatermNext<cr>
+nnoremap <C-q> <cmd>FloatermHide!<cr>
+tnoremap <C-q> <cmd>FloatermHide!<cr>
+tnoremap <C-l> <cmd>FloatermPrev<cr>
+tnoremap <C-h> <cmd>FloatermNext<cr>
 
-nnoremap <A-1>  <cmd>FloatermNewOrToggle --title=Terminal\ 1<cr>
-nnoremap <A-2>  <cmd>FloatermNewOrToggle --title=Terminal\ 2<cr>
-nnoremap <A-3>  <cmd>FloatermNewOrToggle --title=Terminal\ 3<cr>
-nnoremap <A-4>  <cmd>FloatermNewOrToggle --title=Terminal\ 4<cr>
-nnoremap <A-5>  <cmd>FloatermNewOrToggle --title=Terminal\ 5<cr>
-
-tnoremap <A-q>      <cmd>FloatermKill<cr>
-tnoremap <A-esc>    <cmd>FloatermHide!<cr>
-tnoremap <A-l>      <cmd>FloatermPrev<cr>
-tnoremap <A-h>      <cmd>FloatermNext<cr>
-
-tnoremap <A-1> <cmd>FloatermNewOrToggle --title=Terminal\ 1<cr>
-tnoremap <A-2> <cmd>FloatermNewOrToggle --title=Terminal\ 2<cr>
-tnoremap <A-3> <cmd>FloatermNewOrToggle --title=Terminal\ 3<cr>
-tnoremap <A-4> <cmd>FloatermNewOrToggle --title=Terminal\ 4<cr>
-tnoremap <A-5> <cmd>FloatermNewOrToggle --title=Terminal\ 5<cr>
+nnoremap <C-a> <cmd>FloatermNewOrToggle --title=Terminal\ 1<cr>
+nnoremap <C-s> <cmd>FloatermNewOrToggle --title=Terminal\ 2<cr>
+nnoremap <C-d> <cmd>FloatermNewOrToggle --title=Terminal\ 3<cr>
+nnoremap <C-f> <cmd>FloatermNewOrToggle --title=Terminal\ 4<cr>
+tnoremap <C-a> <cmd>FloatermNewOrToggle --title=Terminal\ 1<cr>
+tnoremap <C-s> <cmd>FloatermNewOrToggle --title=Terminal\ 2<cr>
+tnoremap <C-d> <cmd>FloatermNewOrToggle --title=Terminal\ 3<cr>
+tnoremap <C-f> <cmd>FloatermNewOrToggle --title=Terminal\ 4<cr>
 
 """TUIS"""
 nnoremap <leader>lg        <cmd>FloatermTui lazygit<cr>
 nnoremap <leader>ld        <cmd>FloatermTui lazydocker<cr>
-nnoremap <leader>node      <cmd>FloatermTui node<cr>
 nnoremap <leader>spt       <cmd>FloatermTui spt<cr>
 
 """UNDOS"""
