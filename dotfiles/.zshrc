@@ -82,3 +82,6 @@ eval "$(zoxide init zsh)"
 # Make
 zstyle ':completion:*:*:make:*' tag-order 'targets'
 autoload -U compinit && compinit
+
+# QMK Autocompletion
+source $HOME/qmk_firmware/util/qmk_tab_complete.sh
