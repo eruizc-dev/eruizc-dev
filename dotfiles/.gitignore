@@ -1,2 +1,3 @@
 .exrc
 .env
+.cache/clangd
