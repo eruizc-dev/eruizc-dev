@@ -55,11 +55,11 @@ augroup jdtls
 augroup end
 
 """COMPLETION"""
-inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : compe#complete()
-inoremap <expr> <C-k>   pumvisible() ? "\<C-p>" : compe#complete()
+inoremap <expr> <down>  pumvisible() ? "\<C-n>" : compe#complete()
+inoremap <expr> <up>    pumvisible() ? "\<C-p>" : compe#complete()
 inoremap <expr> <CR>    compe#confirm('<CR>')
-inoremap <expr> <C-h>   compe#scroll({ 'delta': +3 })
-inoremap <expr> <C-l>   compe#scroll({ 'delta': -3 })
+inoremap <expr> <right> compe#scroll({ 'delta': +3 })
+inoremap <expr> <left>  compe#scroll({ 'delta': -3 })
 
 """TERMINALS"""
 tnoremap <silent> <C-o>     <C-\><C-n>
@@ -94,10 +94,10 @@ inoremap ; ;<c-g>u
 
 """COMMAND MODE"""
 set wildcharm=<Tab>
-cnoremap <C-j> <Tab>
-cnoremap <C-k> <S-Tab>
-cnoremap <C-h> <up>
-cnoremap <C-l> <down>
+cnoremap <up> <Tab><S-Tab><S-Tab>
+cnoremap <down> <Tab>
+cnoremap <left> <up>
+cnoremap <right> <down>
 
 """UNMAP"""
 let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
