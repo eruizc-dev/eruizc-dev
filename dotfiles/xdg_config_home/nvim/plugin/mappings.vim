@@ -50,8 +50,8 @@ nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<cr>
 vnoremap <leader>a <cmd>lua vim.lsp.buf.range_code_action()<cr>
 augroup jdtls
     au!
-    au FileType java noremap <buffer> <leader>a <cmd>lua require'jdtls'.code_action()<cr>
-    au FileType java noremap <buffer> <leader>a :cmd>lua require'jdtls'.code_action(true)<cr>
+    au FileType java noremap <buffer> <leader>a <cmd>lua require'jdtls'.code_action(true)<cr>
+    au FileType java noremap <buffer> <leader>a <cmd>lua require'jdtls'.code_action(true)<cr>
 augroup end
 
 """COMPLETION"""
