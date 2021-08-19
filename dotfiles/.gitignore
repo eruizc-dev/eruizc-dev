@@ -1,3 +1,4 @@
 .exrc
+.classpath
 .env
 .cache/clangd
