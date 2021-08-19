@@ -2,6 +2,7 @@ local lspconfig = require("lspconfig")
 local utils = require("eruizc.utils")
 local lsputil = require("lsputil.codeAction")
 local lsp_signature = require("lsp_signature")
+
 local lsp = {}
 
 local function attach_lsp_signature()
@@ -89,7 +90,7 @@ lspconfig.solargraph.setup{
     -- Maybe do this when detecting root, something like
     -- if not utils.root_pattern(".solargraph.yml") then
     --   -- Run with plenary maybe?
-    --   run({ 
+    --   run({
     --     cwd = utils.root_pattern("Gemfile", ".git") or vim.loop.cwd(),
     --     cmd = "solargraph config"
     --   })
@@ -134,6 +135,7 @@ lspconfig.sumneko_lua.setup{
 }
 lspconfig.tsserver.setup{}
 lspconfig.vimls.setup{}
+lspconfig.vuels.setup{}
 lspconfig.yamlls.setup{}
 
 function lsp.get_jdtls_config()
