@@ -38,7 +38,7 @@ utils.autostart({
 })
 
 awful.util.terminal = config.terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "q", "w", "e", "r", "t" }
 awful.layout.layouts = {
   awful.layout.suit.spiral.dwindle,
   lain.layout.centerwork.horizontal,
@@ -140,10 +140,10 @@ awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) 
 local globalkeys = my_table.join(
   -- Hotkeys
   awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "show help", group="awesome" }),
-  awful.key({ modkey }, "w", function () awful.util.mymainmenu:show() end, { description = "Open menu", group = "awesome" }),
+  -- awful.key({ modkey }, "w", function () awful.util.mymainmenu:show() end, { description = "Open menu", group = "awesome" }),
   awful.key({ modkey }, "b", function () for s in screen do s.mywibox.visible = not s.mywibox.visible if s.mybottomwibox then s.mybottomwibox.visible = not s.mybottomwibox.visible end end end, { description = "Toggle wibox", group = "awesome" }),
   awful.key({ modkey, config.ctrl }, "r", awesome.restart, {description = "reload awesome", group = "awesome"}),
-  awful.key({ modkey, config.shift }, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
+  -- awful.key({ modkey, config.shift }, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
 
   -- Client focus
   awful.key({ modkey }, "j", function() awful.client.focus.global_bydirection("down") if client.focus then client.focus:raise() end end, { description = "Focus down", group = "client" }),
@@ -156,20 +156,20 @@ local globalkeys = my_table.join(
   -- Layout manipulation
   awful.key({ modkey, config.shift }, "j", function () awful.client.swap.byidx(1) end, { description = "Move down", group = "layout" }),
   awful.key({ modkey, config.shift }, "k", function () awful.client.swap.byidx(-1) end, { description = "Move up", group = "layout" }),
-  awful.key({ altkey, config.shift }, "l", function() awful.tag.incmwfact(0.05) end, { description = "Increase window size", group = "layout" }),
-  awful.key({ altkey, config.shift }, "h", function() awful.tag.incmwfact(-0.05) end, { description = "Decrease window size", group = "layout" }),
+  awful.key({ modkey, config.shift }, "l", function() awful.tag.incmwfact(0.05) end, { description = "Increase window size", group = "layout" }),
+  awful.key({ modkey, config.shift }, "h", function() awful.tag.incmwfact(-0.05) end, { description = "Decrease window size", group = "layout" }),
   awful.key({ modkey }, "space", function () awful.layout.inc(1) end, { description = "Select nex layout", group = "layout" }),
   awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(-1) end, { description = "Select previous layout", group = "layout" }),
 
   -- Standard program
-  awful.key({ modkey }, "Return", function() awful.spawn(config.terminal) end, {description = "Open terminal", group = "launcher"}),
-  awful.key({ modkey }, "q", function () awful.spawn(config.browser) end, {description = "Open browser", group = "launcher"}),
+  -- awful.key({ modkey }, "Return", function() awful.spawn(config.terminal) end, {description = "Open terminal", group = "launcher"}),
+  -- awful.key({ modkey }, "q", function () awful.spawn(config.browser) end, {description = "Open browser", group = "launcher"}),
   awful.key({ modkey }, "p", function () os.execute("rofi -show run") end, { description = "Open rofi", group = "launcher" })
 )
 
 local clientkeys = my_table.join(
   -- awful.key({ modkey,           }, "f", function (c) c.fullscreen = not c.fullscreen c:raise() end, {description = "toggle fullscreen", group = "client"}),
-  awful.key({ modkey, "Shift" }, "c", function(c) c:kill() end, { description = "Close window", group = "client" }),
+  awful.key({ modkey }, "q", function(c) c:kill() end, { description = "Close window", group = "client" }),
   awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle, { description = "Toggle floating", group = "client" }),
   awful.key({ modkey }, "o", function(c) c:move_to_screen() end, { description = "Change screen", group = "client" }),
   awful.key({ modkey }, "m", function(c) c.maximized = not c.maximized c:raise() end, { description = "maximize", group = "client" })
