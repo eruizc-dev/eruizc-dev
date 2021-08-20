@@ -2,6 +2,10 @@ local lspconfig = require("lspconfig")
 local utils = require("eruizc.utils")
 local lsputil = require("lsputil.codeAction")
 local lsp_signature = require("lsp_signature")
+local jdtls = require("jdtls")
+local jdtls_ui = require'jdtls.ui'
+local jdtls_setup = require("jdtls.setup")
+local lsputil_codeAction = require("lsputil.codeAction")
 
 local lsp = {}
 
@@ -139,9 +143,17 @@ lspconfig.vuels.setup{}
 lspconfig.yamlls.setup{}
 
 function lsp.get_jdtls_config()
+  local bundles = {
+    vim.fn.glob("/home/eruizc/repos/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"),
+  }
+  vim.list_extend(bundles, vim.split(vim.fn.glob("/home/eruizc/repos/microsoft/vscode-java-test/server/*.jar"), "\n"))
+
   return {
     cmd = { 'jdtls' },
-    root_dir = require('jdtls.setup').find_root({ '*.gradle', 'pom.xml' }),
+    root_dir = jdtls_setup.find_root({ '*.gradle', 'pom.xml' }),
+    init_options = {
+      bundles = bundles
+    },
     settings = {
       java = {
         implementationsCodeLens = {
@@ -154,6 +166,9 @@ function lsp.get_jdtls_config()
     },
     on_attach = function(client)
       attach_lsp_signature()
+      jdtls_setup.add_commands()
+      jdtls.setup_dap({ hotcodereplace = 'auto' })
+      jdtls.update_project_config()
     end
   }
 end
@@ -168,9 +183,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 -- LSP UTIL
 vim.lsp.handlers["textDocument/codeAction"] = lsputil.code_action_handler
 
-local jdtls_ui = require'jdtls.ui'
 function jdtls_ui.pick_one_async(items, _, _, cb)
-  require("lsputil.codeAction").code_action_handler(nil, nil, items, nil, nil, nil, cb)
+  lsputil_codeAction.code_action_handler(nil, nil, items, nil, nil, nil, cb)
 end
 
 return lsp
