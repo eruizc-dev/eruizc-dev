@@ -98,3 +98,11 @@ cnoremap <C-l> <down>
 let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
 nnoremap ZZ :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
 
+"""DEBUG COMMANDS"""
+command! DebugToggleBreakpoint lua require'dap'.toggle_breakpoint()
+command! DebugContinue lua require'dap'.continue()
+command! DebugStepOver lua require'dap'.step_over()
+command! DebugStepInto lua require'dap'.step_into()
+command! DebugInspect lua require'dap'.repl.open()
+command! DebugRestart lua require'dap'.restart()
+command! DebugClose lua require'dap'.close()
