@@ -34,14 +34,12 @@ Plug 'tpope/vim-fugitive'
 " Database
 Plug 'tpope/vim-dadbod'         			" God bless tpope
 Plug 'kristijanhusak/vim-dadbod-ui'     	" God bless kristijanhusak
-Plug 'kristijanhusak/vim-dadbod-completion'
 
 " LSP and completion
 Plug 'RishabhRD/nvim-lsputils'
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/nvim-cmp'
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/symbols-outline.nvim'
-Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'ray-x/lsp_signature.nvim'
 
 " Utilities

@@ -50,11 +50,11 @@ nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<cr>
 vnoremap <leader>a <cmd>lua vim.lsp.buf.range_code_action()<cr>
 
 """COMPLETION"""
-inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : compe#complete()
-inoremap <expr> <C-k>   pumvisible() ? "\<C-p>" : compe#complete()
-inoremap <expr> <CR>    compe#confirm('<CR>')
-inoremap <expr> <C-l>   compe#scroll({ 'delta': +3 })
-inoremap <expr> <C-h>   compe#scroll({ 'delta': -3 })
+"inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : compe#complete()
+"inoremap <expr> <C-k>   pumvisible() ? "\<C-p>" : compe#complete()
+"inoremap <expr> <CR>    compe#confirm('<CR>')
+"inoremap <expr> <C-l>   compe#scroll({ 'delta': +3 })
+"inoremap <expr> <C-h>   compe#scroll({ 'delta': -3 })
 
 """TERMINALS"""
 tnoremap <silent> <C-o>     <C-\><C-n>
