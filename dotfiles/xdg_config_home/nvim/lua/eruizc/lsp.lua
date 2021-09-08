@@ -25,7 +25,9 @@ lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_c
 })
 
 local checkstyle = {
-  lintCommand = "java -jar /usr/local/lib/checkstyle/checkstyle-8.39-all.jar -c checkstyle.xml ${INPUT}",
+  lintCommand = "java -jar "
+    .. vim.fn.expand("/usr/local/lib/checkstyle/checkstyle-*.jar")
+    .. " -c checkstyle.xml ${INPUT}",
   lintFormats = { "[ERROR] %f:%l:%c: %m" },
   lintIgnoreExitCode = true,
   lintSeverity = 2,
@@ -144,9 +146,9 @@ lspconfig.yamlls.setup{}
 
 function lsp.get_jdtls_config()
   local bundles = {
-    vim.fn.glob("/home/eruizc/repos/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"),
+    vim.fn.glob("$HOME/repos/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"),
   }
-  vim.list_extend(bundles, vim.split(vim.fn.glob("/home/eruizc/repos/microsoft/vscode-java-test/server/*.jar"), "\n"))
+  vim.list_extend(bundles, vim.split(vim.fn.glob("$HOME/repos/microsoft/vscode-java-test/server/*.jar"), "\n"))
 
   return {
     cmd = { 'jdtls' },
