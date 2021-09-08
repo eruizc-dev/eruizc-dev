@@ -38,6 +38,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'     	" God bless kristijanhusak
 " LSP and completion
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'ray-x/lsp_signature.nvim'
