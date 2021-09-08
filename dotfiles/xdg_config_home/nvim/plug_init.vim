@@ -39,6 +39,7 @@ Plug 'kristijanhusak/vim-dadbod-ui'     	" God bless kristijanhusak
 Plug 'RishabhRD/nvim-lsputils'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'ray-x/lsp_signature.nvim'
