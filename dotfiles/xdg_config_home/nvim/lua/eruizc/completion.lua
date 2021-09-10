@@ -15,6 +15,14 @@ cmp.setup({
     { name = 'nvim_lua' },
     { name = 'vim-dadbod-completion' },
     { name = 'buffer' },
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        cmp_tabnine = '',
+      })[entry.source.name]
+      return vim_item
+    end
   }
 })
 
