@@ -14,7 +14,8 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'vim-dadbod-completion' },
-    { name = 'buffer' },
+    { name = 'path' },
+    { name = 'buffer' }
   },
   formatting = {
     format = function(entry, vim_item)
