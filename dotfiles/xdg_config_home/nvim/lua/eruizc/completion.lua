@@ -10,11 +10,11 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.complete() and cmp.mapping.close()
   },
   sources = {
-    { name = 'buffer' },
+    { name = 'cmp_tabnine' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'vim-dadbod-completion' },
-    { name = 'cmp_tabnine' },
+    { name = 'buffer' },
   }
 })
 
