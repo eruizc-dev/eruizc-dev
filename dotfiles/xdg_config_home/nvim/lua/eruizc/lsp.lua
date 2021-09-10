@@ -1,7 +1,6 @@
 local lspconfig = require("lspconfig")
 local utils = require("eruizc.utils")
 local lsputil = require("lsputil.codeAction")
-local lsp_signature = require("lsp_signature")
 local jdtls = require("jdtls")
 local jdtls_ui = require'jdtls.ui'
 local jdtls_setup = require("jdtls.setup")
@@ -9,23 +8,11 @@ local lsputil_codeAction = require("lsputil.codeAction")
 
 local lsp = {}
 
-local function attach_lsp_signature()
-    lsp_signature.on_attach({
-      fix_pos = true,
-      hint_enable = false,
-      handler_opts = { border = "single" },
-      extra_trigger_chars = { "(", "{", ",", "\"", "'" }
-    })
-end
-
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local existing_capabilities = vim.lsp.protocol.make_client_capabilities()
 
 lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
   capabilities =require('cmp_nvim_lsp').update_capabilities(existing_capabilities),
-  on_attach = function(client)
-    attach_lsp_signature()
-  end
 })
 
 local checkstyle = {
@@ -118,7 +105,6 @@ lspconfig.sumneko_lua.setup{
   end,
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
-    attach_lsp_signature()
   end,
   settings = {
     Lua = {
@@ -171,7 +157,6 @@ function lsp.get_jdtls_config()
       }
     },
     on_attach = function(client)
-      attach_lsp_signature()
       jdtls_setup.add_commands()
       jdtls.setup_dap({ hotcodereplace = 'auto' })
       jdtls.update_project_config()
