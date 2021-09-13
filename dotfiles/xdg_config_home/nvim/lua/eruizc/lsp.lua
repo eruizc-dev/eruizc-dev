@@ -12,7 +12,7 @@ local lsp = {}
 local existing_capabilities = vim.lsp.protocol.make_client_capabilities()
 
 lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
-  capabilities =require('cmp_nvim_lsp').update_capabilities(existing_capabilities),
+  capabilities = require('cmp_nvim_lsp').update_capabilities(existing_capabilities),
 })
 
 local checkstyle = {
@@ -156,6 +156,7 @@ function lsp.get_jdtls_config()
         }
       }
     },
+    capabilities = lspconfig.util.default_config.capabilities,
     on_attach = function(client)
       jdtls_setup.add_commands()
       jdtls.setup_dap({ hotcodereplace = 'auto' })
