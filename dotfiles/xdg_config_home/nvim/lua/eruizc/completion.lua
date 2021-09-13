@@ -9,7 +9,7 @@ cmp.setup({
     ['<C-j>'] = cmp.mapping.select_next_item(),
     ['<C-h>'] = cmp.mapping.scroll_docs(-4),
     ['<C-l>'] = cmp.mapping.scroll_docs(4),
-    ['<CR>'] = cmp.mapping.confirm()
+    ['<CR>'] = cmp.mapping.complete() and cmp.mapping.close()
   },
   sources = {
     { name = 'cmp_tabnine' },
