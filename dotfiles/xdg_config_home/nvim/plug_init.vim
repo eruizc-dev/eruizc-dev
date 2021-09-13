@@ -46,6 +46,7 @@ Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/symbols-outline.nvim'
+Plug 'onsails/lspkind-nvim'
 
 " Utilities
 Plug 'eruizc-dev/rubberduck.nvim'
