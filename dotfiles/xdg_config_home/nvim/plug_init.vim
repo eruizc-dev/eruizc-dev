@@ -47,6 +47,7 @@ Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'onsails/lspkind-nvim'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 " Utilities
 Plug 'eruizc-dev/rubberduck.nvim'
@@ -57,6 +58,7 @@ Plug 'vim-test/vim-test'
 Plug 'voldikss/vim-floaterm'
 Plug 'sudormrfbin/cheatsheet.nvim'
 Plug 'kristijanhusak/orgmode.nvim'
+Plug 'L3MON4D3/LuaSnip'
 
 " Language specific
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
