@@ -40,7 +40,6 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
-telescope.load_extension("rubberduck")
 telescope.load_extension("zoxide")
 
 function finders.vimrc()
