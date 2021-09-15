@@ -4,7 +4,9 @@ local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 
 cmp.setup({
-  preselect = cmp.PreselectMode.None,
+  completion = {
+    completeopt = 'menuone,noinsert'
+  },
   mapping = {
     ['<CR>'] = cmp.mapping.confirm(),
     ['<C-k>'] = cmp.mapping.select_prev_item(),
