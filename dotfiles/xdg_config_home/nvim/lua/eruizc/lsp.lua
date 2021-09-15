@@ -153,6 +153,12 @@ function lsp.get_jdtls_config()
         },
         completion = {
           importOrder = {}
+        },
+        sources = {
+          organizeImports = {
+             starThreshold = 2,
+             staticStarThreshold = 2
+          }
         }
       }
     },
