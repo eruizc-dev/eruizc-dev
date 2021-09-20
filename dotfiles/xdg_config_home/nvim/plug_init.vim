@@ -28,6 +28,7 @@ Plug 'dikiaap/minimalist'
 Plug 'eruizc-dev/galaxyline.nvim', { 'branch': 'merge-all' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'onsails/lspkind-nvim'
+Plug 'eruizc-dev/metropolis-vim'
 
 " Git
 Plug 'rhysd/git-messenger.vim'
@@ -71,5 +72,7 @@ Plug 'shuntaka9576/preview-swagger.nvim'
 " Debugging
 Plug 'mfussenegger/nvim-dap'
 Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'nvim-treesitter/playground'
+
 
 call plug#end()
