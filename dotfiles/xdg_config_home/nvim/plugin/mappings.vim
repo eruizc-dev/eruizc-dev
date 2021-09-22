@@ -1,14 +1,12 @@
 """FILE NAVIGATION"""
-nnoremap    J   <cmd>lua vim.lsp.diagnostic.goto_next()<cr>
-nnoremap    K   <cmd>lua vim.lsp.diagnostic.goto_prev()<cr>
-nnoremap    H   Hzz
-nnoremap    L   Lzz
-nnoremap    n   nzzzv
-nnoremap    N   Nzzzv
+nnoremap    <C-j>   <cmd>lua vim.lsp.diagnostic.goto_next()<cr>
+nnoremap    <C-k>   <cmd>lua vim.lsp.diagnostic.goto_prev()<cr>
+nnoremap    H       Hzz
+nnoremap    L       Lzz
+nnoremap    n       nzzzv
+nnoremap    N       Nzzzv
 
 """PROJECT NAVIGATION"""
-nnoremap    <C-j>   <cmd>cabove<cr>
-nnoremap    <C-k>   <cmd>cbelow<cr>
 nnoremap    <C-h>   <C-o>
 nnoremap    <C-l>   <C-i>
 
