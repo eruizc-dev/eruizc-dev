@@ -74,6 +74,7 @@ Plug 'shuntaka9576/preview-swagger.nvim'
 " Debugging
 Plug 'mfussenegger/nvim-dap'
 Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'rcarriga/nvim-dap-ui'
 Plug 'nvim-treesitter/playground'
 
 call plug#end()

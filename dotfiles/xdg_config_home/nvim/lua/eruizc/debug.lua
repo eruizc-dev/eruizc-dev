@@ -1,7 +1,10 @@
 local dap = require("dap")
 local util = require("jdtls.util")
+local dapui = require("dapui")
 
 vim.g.dap_virtual_text = true
+
+dapui.setup()
 
 dap.adapters.java = function(callback)
   util.execute_command({command = 'vscode.java.startDebugSession'}, function(err0, port)
