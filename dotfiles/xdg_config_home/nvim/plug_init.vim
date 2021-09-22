@@ -3,7 +3,7 @@
 if !filereadable(expand('~/.config/nvim/autoload/plug.vim'))
   echo "Downloading plugin manager..."
   silent !mkdir -p ~/.config/nvim/autoload/
-  silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
+  silent !curl 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' > ~/.config/nvim/autoload/plug.vim
   autocmd VimEnter * PlugInstall
 endif
 
