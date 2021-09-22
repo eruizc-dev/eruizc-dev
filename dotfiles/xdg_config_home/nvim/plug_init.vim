@@ -16,6 +16,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'tpope/vim-sensible'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'MunifTanjim/nui.nvim'
 
 " QOL
 Plug 'editorconfig/editorconfig-vim'
@@ -48,6 +49,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'kristijanhusak/vim-dadbod-completion'
+Plug 'jameshiew/nvim-magic'
 
 " LSP extensions
 Plug 'RishabhRD/nvim-lsputils'
@@ -73,6 +75,5 @@ Plug 'shuntaka9576/preview-swagger.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'nvim-treesitter/playground'
-
 
 call plug#end()
