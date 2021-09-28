@@ -49,7 +49,8 @@ local function mode_color(severity)
 end
 
 local function get_line_main_diagnostic()
-    local diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
+    local cursor = vim.api.nvim_win_get_cursor(0)
+    local diagnostics = vim.diagnostic.get(0, { lnum = cursor.row })
     if (#diagnostics == 0) then return nil end
     return diagnostics[1]
 end
@@ -97,7 +98,7 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticError = {
-        provider = function() return vim.lsp.diagnostic.get_count(0, 'Error') end,
+        provider = function() return #vim.diagnostic.get(nil, { severity = 'Error' }) end,
         icon = icons.lsp_error,
         highlight = { colors.red, colors.bg },
         separator = " ",
@@ -105,7 +106,7 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticWarn = {
-        provider = function() return vim.lsp.diagnostic.get_count(0, 'Warning') end,
+        provider = function() return #vim.diagnostic.get(nil, { severity = 'Warning' }) end,
         icon = icons.lsp_warn,
         highlight = { colors.yellow, colors.bg},
         separator = " ",
@@ -113,7 +114,7 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticInfo = {
-        provider = function() return vim.lsp.diagnostic.get_count(0, 'Information') end,
+        provider = function() return #vim.diagnostic.get(nil, { severity = 'Information' }) end,
         icon = icons.lsp_info,
         highlight = { colors.cyan, colors.bg },
         separator = " ",
@@ -121,10 +122,15 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticHint = {
-        provider = function() return vim.lsp.diagnostic.get_count(0, 'Hint')..' ' end,
+        provider = function() return #vim.diagnostic.get(nil, { severity = 'Hint' }) end,
         icon = icons.lsp_hint,
         highlight = { colors.fg, colors.bg },
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
+    }
+}, {
+     FinalSeparator = {
+        provider = function() return ' ' end,
+        highlight = { colors.section_bg, colors.bg }
     }
 }}
