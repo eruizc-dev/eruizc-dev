@@ -4,14 +4,14 @@ local condition = require('galaxyline.condition')
 
 local colors = {
     bg = '#585858',
-    fg = '#eeeeee',
+    fg = '#EFF6FA',
     section_bg = '#38393f',
-    yellow = '#f1fa8c',
-    cyan = '#87d7ff',
-    green = '#afd787',
+    yellow = '#F4BC47',
+    cyan = '#55C3B7',
+    green = '#8CAE5B',
     orange = '#d7875f',
     magenta = '#8467a0',
-    blue = '#5fafd7',
+    blue = '#55C3B7',
     red = '#d75f5f'
 }
 
