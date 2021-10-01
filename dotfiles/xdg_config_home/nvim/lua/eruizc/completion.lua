@@ -6,7 +6,7 @@ local nvim_magic = require('nvim-magic')
 
 cmp.setup({
   completion = {
-    completeopt = 'menuone,noinsert'
+    completeopt = 'menuone,noselect'
   },
   mapping = {
     ['<CR>'] = cmp.mapping.confirm(),
