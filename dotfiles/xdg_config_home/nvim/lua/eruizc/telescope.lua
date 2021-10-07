@@ -14,10 +14,12 @@ telescope.setup({
       height = 0.90,
       preview_cutoff = 0.5,
       vertical = {
-        preview_height = 0.68,
+        preview_height = 0.33,
+        prompt_position = "bottom",
       },
       horizontal = {
         preview_width = 0.5,
+        prompt_position = "bottom",
       }
     },
     mappings = {
@@ -52,6 +54,9 @@ end
 function finders.find_files()
   builtin.find_files({
     layout_strategy = "vertical",
+    layout_config = {
+      preview_height = 0.6
+    },
     find_command = {
       "rg",
       "-g", "!.git",
