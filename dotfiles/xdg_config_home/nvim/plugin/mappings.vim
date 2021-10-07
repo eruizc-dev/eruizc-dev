@@ -18,6 +18,10 @@ vnoremap    >   >gv
 nnoremap    Y   y$
 nnoremap    +   <C-a>
 nnoremap    -   <C-x>
+vnoremap    +   <C-a>
+vnoremap    -   <C-x>
+vnoremap    g+   g<C-a>
+vnoremap    g-   g<C-x>
 
 """GOTOS"""
 nnoremap    gf  gF
