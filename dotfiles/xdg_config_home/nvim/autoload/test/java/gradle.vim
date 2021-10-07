@@ -68,7 +68,7 @@ function! s:GetBuildFile(pwd)
 endfunction
 
 function! test#java#gradle#executable() abort
-    return 'gradle test'
+    return 'gradle test --parallel'
 endfunction
 
 function! s:nearest_test(position) abort
