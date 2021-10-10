@@ -92,21 +92,39 @@ galaxyline.section.left = {{
 }}
 
 galaxyline.section.right = {{
+    WorkspaceError = {
+        provider = function() return #vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.ERROR }) end,
+        icon = icons.lsp_error,
+        highlight = { colors.red, colors.section_bg },
+        separator = " ",
+        separator_highlight = { colors.bg, colors.section_bg },
+    }
+}, {
+    WorkspaceWarn = {
+        provider = function() return #vim.diagnostic.get(nil, { severity = vim.diagnostic.severity.WARN }) end,
+        icon = icons.lsp_error,
+        highlight = { colors.yellow, colors.section_bg },
+        separator = " ",
+        separator_highlight = { colors.bg, colors.section_bg },
+    }
+}, {
      RightSeparator = {
         provider = function() return '' end,
-        highlight = { colors.section_bg, colors.bg }
+        highlight = { colors.section_bg, colors.bg },
+        separator = " ",
+        separator_highlight = { colors.bg, colors.section_bg }
     }
 }, {
     DiagnosticError = {
-        provider = function() return #vim.diagnostic.get(nil, { severity = 'Error' }) end,
+        provider = function() return #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN }) end,
         icon = icons.lsp_error,
-        highlight = { colors.red, colors.bg },
+        highlight = { colors.red, colors.bg},
         separator = " ",
         separator_highlight = { colors.section_bg, colors.bg },
     }
 }, {
     DiagnosticWarn = {
-        provider = function() return #vim.diagnostic.get(nil, { severity = 'Warning' }) end,
+        provider = function() return #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN }) end,
         icon = icons.lsp_warn,
         highlight = { colors.yellow, colors.bg},
         separator = " ",
@@ -114,7 +132,7 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticInfo = {
-        provider = function() return #vim.diagnostic.get(nil, { severity = 'Information' }) end,
+        provider = function() return #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO }) end,
         icon = icons.lsp_info,
         highlight = { colors.cyan, colors.bg },
         separator = " ",
@@ -122,7 +140,7 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticHint = {
-        provider = function() return #vim.diagnostic.get(nil, { severity = 'Hint' }) end,
+        provider = function() return #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT }) end,
         icon = icons.lsp_hint,
         highlight = { colors.fg, colors.bg },
         separator = " ",
