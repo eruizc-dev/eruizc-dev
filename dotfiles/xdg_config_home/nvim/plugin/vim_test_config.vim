@@ -3,3 +3,4 @@ let test#custom_runners = {
 \   "java": ["Gradle"],
 \}
 
+let test#strategy = "dispatch"

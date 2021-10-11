@@ -64,6 +64,7 @@ Plug 'jvgrootveld/telescope-zoxide'
 Plug 'vim-test/vim-test'
 
 " Terminal
+Plug 'tpope/vim-dispatch'
 Plug 'voldikss/vim-floaterm'
 
 " Language specific
