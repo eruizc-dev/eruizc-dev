@@ -50,6 +50,7 @@ Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'jameshiew/nvim-magic'
+Plug 'ray-x/lsp_signature.nvim'
 
 " LSP extensions
 Plug 'RishabhRD/nvim-lsputils'
