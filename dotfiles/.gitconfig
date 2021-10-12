@@ -1,7 +1,7 @@
 [core]
     editor = nvim
     autocrlf = input
-	excludesfile = /home/eruizc/.gitignore
+	excludesfile = ~/.gitignore
 [init]
     defaultBranch = master
 [pull]
