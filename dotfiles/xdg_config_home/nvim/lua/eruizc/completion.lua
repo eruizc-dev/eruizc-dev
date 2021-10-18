@@ -1,5 +1,4 @@
 local cmp = require('cmp')
-local tabnine = require('cmp_tabnine.config')
 local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 local nvim_magic = require('nvim-magic')
@@ -34,7 +33,6 @@ cmp.setup({
   },
   sources = {
     { name = 'luasnip' },
-    { name = 'cmp_tabnine' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'vim-dadbod-completion' },
@@ -51,12 +49,6 @@ cmp.setup({
       return vim_item
     end
   }
-})
-
-tabnine:setup({
-  max_lines = 1000;
-  max_num_results = 20;
-  sort = true;
 })
 
 lspkind.init({})

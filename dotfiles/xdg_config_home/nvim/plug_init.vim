@@ -46,7 +46,6 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-path'
-Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'jameshiew/nvim-magic'
