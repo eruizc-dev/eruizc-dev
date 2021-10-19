@@ -15,30 +15,6 @@ lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_c
   capabilities = require('cmp_nvim_lsp').update_capabilities(existing_capabilities),
 })
 
-local checkstyle = {
-  lintCommand = "java -jar "
-    .. vim.fn.expand("/usr/local/lib/checkstyle/checkstyle-*.jar")
-    .. " -c checkstyle.xml ${INPUT}",
-  lintFormats = { "[ERROR] %f:%l:%c: %m" },
-  lintIgnoreExitCode = true,
-  lintSeverity = 2,
-}
-
-local stylua = {
-  lintCommand = "stylua --check --color never -",
-  lintFormats = {
-    "    %l |+%m",
-    "    %l  |+%m",
-    "    %l   |+%m",
-    "    %l    |+%m",
-  },
-  lintStdin = true,
-  formatCommand = "stylua -",
-  formatStdin = true,
-  lintIgnoreExitCode = true,
-  lintSeverity = 3,
-}
-
 lspconfig.bashls.setup{}
 lspconfig.clangd.setup{}
 lspconfig.cssls.setup{
@@ -47,32 +23,7 @@ lspconfig.cssls.setup{
   end
 }
 lspconfig.dockerls.setup{}
-lspconfig.efm.setup {
-  filetypes = { "java", "lua" },
-  on_attach = function(client)
-    client.resolved_capabilities.document_formatting = true
-    client.resolved_capabilities.rename = false
-    client.resolved_capabilities.hover = false
-    client.resolved_capabilities.goto_definition = false
-    client.resolved_capabilities.completion = false
-  end,
-  root_dir = function(fname)
-    if fname:match(".java") then
-      return lspconfig.util.root_pattern("checkstyle.xml")(fname)
-    end
-    if fname:match(".lua") then
-      return lspconfig.util.root_pattern(".stylua.toml")(fname)
-    end
-    return nil
-  end,
-  settings = {
-    rootMarkers = { "checkstyle.xml", ".stylua.toml", ".git" },
-    languages = {
-      java = { checkstyle },
-      lua = { stylua },
-    }
-  }
-}
+lspconfig.efm.setup(require('nvim-efm-setup').get_default_config())
 lspconfig.gopls.setup{}
 lspconfig.html.setup{
   root_dir = function() return vim.loop.cwd() end
