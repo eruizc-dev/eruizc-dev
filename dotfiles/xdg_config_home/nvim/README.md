@@ -9,7 +9,6 @@
     - Golang runs with vim-go `:GoRun`
     - Java doesn't run (with maven) and the intellij command is super long to
     put into a makefile. It also needs env variables that are not passed down.
- - Debbug
  - LSP save buffers on rename
     - Currently doing `:bufdo w`, which saves buffers I may not wanna save (like
       sql ones triggering dadbod.
@@ -29,9 +28,6 @@
  - Some projects have large json files, I don't want telescope ripgrep to look
    into them.
  - Compe icons for paths are not working
- - I find myself compiling a lot of times and it failing... Would it be possible
-   for the LSP to catch these before I compile the whole thing? In files I never
-   opened ofc, and be visible somewhere in my statusbar.
 
 ### Thins I'd like to work on
 
@@ -59,6 +55,7 @@
    Name too long, but basically comment line(s) with treesitter
  - [**auto-session**](https://github.com/rmagatti/auto-session)
  - [**context.vim**](https://github.com/wellle/context.vim)
+ - [**vim-hexokinase**](https://github.com/RRethy/vim-hexokinase)
 
 #### Git
 
@@ -107,4 +104,3 @@
  - [mnabila](https://github.com/mnabila/nvimrc): Cool galaxyline
  - [elianiva](https://github.com/elianiva/dotfiles): Thanks for the efm configuration <3
  - [siduck76](https://github.com/siduck76/NvChad): Cool dragon
-
