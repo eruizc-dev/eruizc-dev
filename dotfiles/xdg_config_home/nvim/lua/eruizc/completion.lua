@@ -41,11 +41,7 @@ cmp.setup({
   },
   formatting = {
     format = function(entry, vim_item)
-      if entry.source.name == 'cmp_tabnine' then
-        vim_item.kind = ' Guess'
-      else
-        vim_item.kind = lspkind.presets.default[vim_item.kind] .. ' ' .. vim_item.kind
-      end
+      vim_item.kind = lspkind.presets.default[vim_item.kind] .. ' ' .. vim_item.kind
       return vim_item
     end
   }
