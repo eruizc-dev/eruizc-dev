@@ -56,6 +56,9 @@ function finders.find_files()
     find_command = {
       "rg",
       "-g", "!.git",
+      "-g", "!node_modules",
+      "-g", "!package-lock.json",
+      "-g", "!yarn.lock",
       "--files",
       "--hidden",
       "--no-ignore-global"
@@ -68,6 +71,9 @@ function finders.ripgrep()
     find_command = {
       "rg",
       "-g", "!.git",
+      "-g", "!node_modules",
+      "-g", "!package-lock.json",
+      "-g", "!yarn.lock",
       "--hidden",
       "--no-ignore-global",
       "--color=never",
