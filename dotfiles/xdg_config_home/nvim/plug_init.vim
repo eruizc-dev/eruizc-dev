@@ -51,6 +51,7 @@ Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'jameshiew/nvim-magic'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'eruizc-dev/nvim-efm-setup'
+Plug 'github/copilot.vim'
 
 " LSP extensions
 Plug 'RishabhRD/nvim-lsputils'
