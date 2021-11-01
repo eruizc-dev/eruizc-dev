@@ -80,7 +80,11 @@ lspconfig.sumneko_lua.setup{
     },
   },
 }
-lspconfig.tsserver.setup{}
+lspconfig.tsserver.setup{
+  root_dir = function(f)
+    return lspconfig.util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git')(f) or vim.loop.cwd()
+  end
+}
 lspconfig.vimls.setup{}
 lspconfig.vuels.setup{}
 lspconfig.yamlls.setup{}
