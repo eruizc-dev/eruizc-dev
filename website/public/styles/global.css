@@ -1,3 +1,19 @@
+@font-face {
+  font-family: CostaRica;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/CostaRica/CostaRica-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Montserrat/Montserrat-Regular.woff") format("woff");
+}
+
 html {
   width: 100vw;
   height: 100vh;
@@ -14,6 +30,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: CostaRica;
   color: #35BF5C;
   padding: 0;
   margin: 0;
