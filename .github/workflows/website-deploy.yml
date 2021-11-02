@@ -5,40 +5,12 @@ on:
     paths: [ website/** ]
 
 jobs:
-  build:
-    name: Build Site
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@master
-    - name: Setup Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
-    - name: Install dependencies
-      working-directory: ./website
-      run: npm ci
-    - name: Build Site
-      working-directory: ./website
-      run: npm run build
-    - name: Archive Artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: out
-        path: ./website/out
-
   deploy:
     name: Deploy Production Site
-    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
       uses: actions/checkout@master
-    - name: Download Artifact
-      uses: actions/download-artifact@master
-      with:
-        name: out
-        path: ./website/out
     - name: Deploy to Firebase
       uses: w9jds/firebase-action@master
       with:
