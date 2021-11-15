@@ -7,6 +7,8 @@ nnoremap    n       nzzzv
 nnoremap    N       Nzzzv
 
 """PROJECT NAVIGATION"""
+nnoremap    <C-n>   <cmd>cnext<cr>
+nnoremap    <C-p>   <cmd>cprev<cr>
 nnoremap    <C-h>   <C-o>
 nnoremap    <C-l>   <C-i>
 
