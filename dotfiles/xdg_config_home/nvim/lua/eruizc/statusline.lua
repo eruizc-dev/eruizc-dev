@@ -86,7 +86,7 @@ galaxyline.section.left = {{
     }
 }, {
     Diagnostics = {
-        provider = get_formated_line_main_diagnostic,
+        provider = function() end, --get_formated_line_main_diagnostic,
         highlight = { colors.red, colors.section_bg },
     }
 }}
