@@ -24,6 +24,7 @@ Plug 'mbbill/undotree'
 Plug 'troydm/zoomwintab.vim'
 Plug 'sudormrfbin/cheatsheet.nvim'
 Plug 'eruizc-dev/vim-flex'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Visuals
 Plug 'dikiaap/minimalist'
