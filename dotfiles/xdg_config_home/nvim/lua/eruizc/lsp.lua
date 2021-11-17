@@ -33,6 +33,16 @@ lspconfig.jsonls.setup{
 }
 lspconfig.rust_analyzer.setup{}
 lspconfig.solargraph.setup{
+  cmd = {
+    "docker",
+    "container",
+    "run",
+    "--rm",
+    "--interactive",
+    "--workdir=" .. vim.loop.cwd(),
+    "--volume=" .. vim.loop.cwd(),
+    "solargraph:latest"
+  },
   on_attach = function(client, bufnr)
     -- TODO: Run `solargraph config` if `.solargraph.yml` doesn't exist
     -- Maybe do this when detecting root, something like
@@ -44,7 +54,6 @@ lspconfig.solargraph.setup{
     --   })
     -- return utils.root_pattern(".solargraph.yml")(fname)
     -- end
-    --
   end
 }
 lspconfig.sumneko_lua.setup{
