@@ -88,3 +88,4 @@ source $HOME/qmk_firmware/util/qmk_tab_complete.sh
 
 # Environment variables
 source $HOME/.env
+export GPG_TTY=$(tty)
