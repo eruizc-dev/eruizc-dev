@@ -33,17 +33,11 @@ lspconfig.jsonls.setup{
 }
 lspconfig.rust_analyzer.setup{}
 lspconfig.solargraph.setup{
-  cmd = {
-    "docker",
-    "container",
-    "run",
-    "--rm",
-    "--interactive",
-    "--workdir=" .. vim.loop.cwd(),
-    "--volume=" .. vim.loop.cwd(),
-    "solargraph:latest"
-  },
   on_attach = function(client, bufnr)
+    -- 1. Run `solargraph config` if no `.solargraph.yml` in workspace dir
+    -- 2. Run `bundle install` for installing dependencies
+    -- 3. Run `solargraph download-core` for ruby documentaiton
+    -- 4. Run `yard gems` to install gem documentation
     -- TODO: Run `solargraph config` if `.solargraph.yml` doesn't exist
     -- Maybe do this when detecting root, something like
     -- if not utils.root_pattern(".solargraph.yml") then
