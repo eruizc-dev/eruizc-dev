@@ -16,7 +16,9 @@
 	name = Emiliano Ruiz Carletti
 	email = contact@eruizc.dev
     signinkey = BC37183F1F791F18
-[includeIf "gitdir/i:~/repos/mercadolibre/"]
-   path = ~/repos/mercadolibre/.gitconfig
 [gpg]
 	program = /usr/bin/gpg
+[commit]
+	gpgsign = true
+[includeIf "gitdir/i:~/repos/mercadolibre/"]
+    path = ~/repos/mercadolibre/.gitconfig
