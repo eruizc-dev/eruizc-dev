@@ -11,6 +11,8 @@ nnoremap    <C-n>   <cmd>cnext<cr>
 nnoremap    <C-p>   <cmd>cprev<cr>
 nnoremap    <C-h>   <C-o>
 nnoremap    <C-l>   <C-i>
+nnoremap    <leader>m   <cmd>lua require("harpoon.mark").add_file()<cr>
+nnoremap    <leader>'   <cmd>:lua require("harpoon.ui").toggle_quick_menu()<cr>
 
 """CODE EDIT"""
 vnoremap    J   :m '>+1<cr>gv=gv
