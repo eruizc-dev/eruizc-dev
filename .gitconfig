@@ -17,7 +17,7 @@
 	email = contact@eruizc.dev
     signinkey = BC37183F1F791F18
 [gpg]
-	program = /usr/bin/gpg
+	program = gpg
 [commit]
 	gpgsign = true
 [includeIf "gitdir/i:~/repos/mercadolibre/"]
