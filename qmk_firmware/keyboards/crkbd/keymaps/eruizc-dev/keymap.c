@@ -1,32 +1,8 @@
-#include "keyboard.h"
-#include "keycode.h"
-#include "oled_driver.h"
-#include "progmem.h"
-#include QMK_KEYBOARD_H
-#include "process_combo.h"
-#include "custom.h"
+#include "keymap.h"
 
-enum LAYERS {
-    DEFAULT,
-    NUMBER,
-    SYMBOL,
-    SPECIAL,
+data_t session_data = {
+    .system = LINUX
 };
-
-enum CUSTOM_MACROS {
-    LOAD_VIMRC = SAFE_RANGE,
-    CODE,
-    CHANGE_SYSTEM_LEFT,
-    CHANGE_SYSTEM_RIGHT,
-};
-
-enum SYSTEMS {
-    MAC,
-    WINDOWS,
-    LINUX,
-    ANDROID,
-};
-int active_system = LINUX;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEFAULT] = LAYOUT_split_3x6_3(
@@ -50,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [SPECIAL] = LAYOUT_split_3x6_3(
         RESET, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,               KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, CODE,
         LOAD_VIMRC, KC_F11, KC_F12, KC_F13, KC_F14, KC_F15,     KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN1, KC_TRNS,
-        CHANGE_SYSTEM_LEFT, KC_UNDO, KC_CUT, KC_COPY, KC_PSTE, KC_TRNS,    KC_PSCR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CHANGE_SYSTEM_RIGHT,
+        CHANGE_SYSTEM_PREV, KC_UNDO, KC_CUT, KC_COPY, KC_PSTE, KC_TRNS,    KC_PSCR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CHANGE_SYSTEM_NEXT,
         KC_TRNS, KC_TRNS, KC_TRNS,                              KC_TRNS, KC_TRNS, KC_TRNS
     ),
     //[TRNS] = LAYOUT_split_3x6_3(
@@ -71,9 +47,7 @@ combo_t key_combos[COMBO_COUNT] = {
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-    return is_keyboard_master()
-        ? OLED_ROTATION_270
-        : OLED_ROTATION_0;
+    return OLED_ROTATION_270;
 }
 
 void render_left(void) {
@@ -86,19 +60,19 @@ void render_left(void) {
     static const char PROGMEM android_upper[] = { 0x9b, 0x9c, 0 };
     static const char PROGMEM android_lower[] = { 0xbb, 0xbc, 0 };
 
-    oled_write_P(mac_upper, active_system == MAC);
+    oled_write_P(mac_upper,  == MAC);
     oled_write_P(PSTR(" "), false);
-    oled_write_P(windows_upper, active_system == WINDOWS);
-    oled_write_P(mac_lower, active_system == MAC);
+    oled_write_P(windows_upper, session_data.system == WINDOWS);
+    oled_write_P(mac_lower, session_data.system == MAC);
     oled_write_P(PSTR(" "), false);
-    oled_write_P(windows_lower, active_system == WINDOWS);
+    oled_write_P(windows_lower, session_data.system == WINDOWS);
     oled_write_P(PSTR("     "), false);
-    oled_write_P(linux_upper, active_system == LINUX);
+    oled_write_P(linux_upper, session_data.system == LINUX);
     oled_write_P(PSTR(" "), false);
-    oled_write_P(android_upper, active_system == ANDROID);
-    oled_write_P(linux_lower, active_system == LINUX);
+    oled_write_P(android_upper, session_data.system == ANDROID);
+    oled_write_P(linux_lower, session_data.system == LINUX);
     oled_write_P(PSTR(" "), false);
-    oled_write_P(android_lower, active_system == ANDROID);
+    oled_write_P(android_lower, session_data.system == ANDROID);
 }
 
 void render_right(void) {
@@ -121,11 +95,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (keycode == CODE && record->event.pressed) {
         SEND_STRING("e7I(i1N(r7I!c1R(e5T*");
     }
-    if (keycode == CHANGE_SYSTEM_LEFT && record->event.pressed) {
-        active_system = active_system > 0 ? active_system - 1 : 3;
+    if (keycode == CHANGE_SYSTEM_PREV && record->event.pressed) {
+        session_data.system = session_data.system > 0 ? session_data.system - 1 : 3;
     }
-    if (keycode == CHANGE_SYSTEM_RIGHT && record->event.pressed) {
-        active_system = active_system < 3 ? active_system + 1 : 0;
+    if (keycode == CHANGE_SYSTEM_NEXT && record->event.pressed) {
+        session_data.system = session_data.system < 3 ? session_data.system + 1 : 0;
     }
     return true;
 };
