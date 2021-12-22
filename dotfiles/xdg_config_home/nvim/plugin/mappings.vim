@@ -110,6 +110,13 @@ cnoremap <C-l> <down>
 let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
 nnoremap ZZ :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
 
+
+"""TESTING"""
+nnoremap tt <cmd>TestLast<cr>
+nnoremap ts <cmd>TestSuite<cr>
+nnoremap tf <cmd>TestFile<cr>
+nnoremap tn <cmd>TestNearest<cr>
+
 """DEBUG COMMANDS"""
 command! DebugToggleBreakpoint lua require'dap'.toggle_breakpoint()
 command! DebugContinue lua require'dap'.continue()
