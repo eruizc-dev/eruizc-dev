@@ -67,7 +67,7 @@ Plug 'jvgrootveld/telescope-zoxide'
 
 " Testing
 Plug 'vim-test/vim-test'
-Plug 'eruizc-dev/test.nvim'
+"Plug 'eruizc-dev/test.nvim'
 
 " Terminal
 Plug 'tpope/vim-dispatch'
