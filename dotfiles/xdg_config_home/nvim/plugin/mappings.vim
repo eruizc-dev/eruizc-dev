@@ -18,7 +18,6 @@ nnoremap    's   <cmd>lua require("harpoon.ui").nav_file(2)<cr>
 nnoremap    'd   <cmd>lua require("harpoon.ui").nav_file(3)<cr>
 nnoremap    'f   <cmd>lua require("harpoon.ui").nav_file(4)<cr>
 
-
 """CODE EDIT"""
 vnoremap    J   :m '>+1<cr>gv=gv
 vnoremap    K   :m '<-2<cr>gv=gv
@@ -110,7 +109,6 @@ cnoremap <C-l> <down>
 let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
 nnoremap ZZ :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
 
-
 """TESTING"""
 nnoremap tt <cmd>TestLast<cr>
 nnoremap ts <cmd>TestSuite<cr>
@@ -125,3 +123,5 @@ command! DebugStepInto lua require'dap'.step_into()
 command! DebugInspect lua require'dap'.repl.open()
 command! DebugRestart lua require'dap'.restart()
 command! DebugClose lua require'dap'.close()
+command! DebugEval lua require'dapui'.eval()
+command! DebugToggle lua require'dapui'.toggle()
