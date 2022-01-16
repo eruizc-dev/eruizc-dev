@@ -23,7 +23,7 @@ lspconfig.cssls.setup{
   end
 }
 lspconfig.dockerls.setup{}
-lspconfig.efm.setup(require('efm_setup').get_opts())
+--lspconfig.efm.setup(require('efm_setup').get_opts())
 lspconfig.gopls.setup{}
 lspconfig.html.setup{
   root_dir = function() return vim.loop.cwd() end
