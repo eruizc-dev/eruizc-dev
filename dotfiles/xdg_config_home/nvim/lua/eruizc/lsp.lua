@@ -139,10 +139,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 -- LSP UTIL
 vim.lsp.handlers["textDocument/codeAction"] = lsputil.code_action_handler
 
-function jdtls_ui.pick_one_async(items, prompt, label_fn, cb)
-  lsputil_codeAction.code_action_handler(nil, items, nil, nil, cb)
-end
-
 require("lsp_signature").setup()
 
 return lsp
