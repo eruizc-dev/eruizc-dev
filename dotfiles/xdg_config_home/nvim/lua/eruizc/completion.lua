@@ -1,7 +1,6 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 local luasnip = require('luasnip')
-local nvim_magic = require('nvim-magic')
 
 cmp.setup({
   completion = {
@@ -48,12 +47,3 @@ cmp.setup({
 })
 
 lspkind.init({})
-
-nvim_magic.setup({
-	use_default_keymap = true,
-	backends = {
-		default = require('nvim-magic-openai').new({
-      api_endpoint = 'https://api.openai.com/v1/engines/cushman-codex/completions'
-    })
-	}
-})
