@@ -52,7 +52,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'jameshiew/nvim-magic'
-Plug 'ray-x/lsp_signature.nvim'
+"Plug 'ray-x/lsp_signature.nvim'
 Plug 'eruizc-dev/nvim-efm-setup'
 Plug 'github/copilot.vim'
 

@@ -139,6 +139,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 -- LSP UTIL
 vim.lsp.handlers["textDocument/codeAction"] = lsputil.code_action_handler
 
-require("lsp_signature").setup()
+--require("lsp_signature").setup()
 
 return lsp
