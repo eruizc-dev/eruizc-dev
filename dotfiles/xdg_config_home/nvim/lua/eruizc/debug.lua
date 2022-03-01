@@ -59,16 +59,3 @@ dap.configurations.java = {
   },
 }
 dap.configurations.rust = dap.configurations.cpp
-
-local util = require('jdtls.util')
-
-dap.configurations.java = {
-  {
-    type = 'java',
-    request = 'attach',
-    name = "Java attach",
-    hostName = "127.0.0.1",
-    port = 5005
-  },
-}
-
