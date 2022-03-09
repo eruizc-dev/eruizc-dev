@@ -53,10 +53,17 @@ h1, h2, h3, h4, h5, h6 {
   font-size: calc(10px + 1.5vw);
 }
 
+#button-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
 .button {
   margin: 25px;
   background-color: #35BF5C;
   border: none;
   font-size: 2.5em;
   padding: 15px;
+  width: 420px;
 }
