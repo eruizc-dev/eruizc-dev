@@ -2,6 +2,8 @@ local galaxyline = require('galaxyline')
 local fileinfo = require('galaxyline.provider_fileinfo')
 local condition = require('galaxyline.condition')
 
+vim.o.laststatus = 3
+
 local colors = {
     bg = '#585858',
     fg = '#EFF6FA',
