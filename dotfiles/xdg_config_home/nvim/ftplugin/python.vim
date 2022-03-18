@@ -1,2 +1,2 @@
-setlocal expandtab tabstop=4
-setlocal colorcolumn=100
+setlocal expandtab
+setlocal colorcolumn=101

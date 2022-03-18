@@ -1,4 +1,3 @@
-setlocal tabstop=4
 setlocal colorcolumn=121
 
 command! -buffer TestMethod lua require'jdtls'.test_nearest_method()

@@ -19,13 +19,13 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'MunifTanjim/nui.nvim'
 
 " QOL
-Plug 'editorconfig/editorconfig-vim'
 Plug 'mbbill/undotree'
 Plug 'troydm/zoomwintab.vim'
 Plug 'sudormrfbin/cheatsheet.nvim'
 Plug 'eruizc-dev/vim-flex'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ThePrimeagen/harpoon'
+Plug 'tpope/vim-sleuth'
 
 " Visuals
 Plug 'dikiaap/minimalist'
