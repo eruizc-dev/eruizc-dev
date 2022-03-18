@@ -152,3 +152,4 @@ galaxyline.section.right = {{
         highlight = { colors.section_bg, colors.bg }
     }
 }}
+
