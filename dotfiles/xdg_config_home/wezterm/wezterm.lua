@@ -5,6 +5,7 @@ return {
   font = wezterm.font('TerminessTTF Nerd Font Mono'),
   font_size = 17,
   window_background_opacity = 0.75,
+  check_for_updates = false,
   window_padding = {
     left = 0,
     right = 0,
