@@ -35,6 +35,7 @@ telescope.setup({
       "--with-filename",
       "--line-number",
       "--column",
+	  "--trim"
 	},
     mappings = {
       i = {
