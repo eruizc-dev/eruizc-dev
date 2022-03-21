@@ -59,19 +59,4 @@ telescope.setup({
 telescope.load_extension("fzf")
 telescope.load_extension("zoxide")
 
-function finders.find_files()
-  builtin.find_files({
-    find_command = {
-      "rg",
-      "-g", "!.git",
-      "-g", "!node_modules",
-      "-g", "!package-lock.json",
-      "-g", "!yarn.lock",
-      "--files",
-      "--hidden",
-      "--no-ignore-global"
-    }
-  })
-end
-
 return finders
