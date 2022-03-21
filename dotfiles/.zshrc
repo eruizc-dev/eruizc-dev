@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 HISTFILE="$HOME/.local/historyfile"
-HISTSIZE=1000
+HISTSIZE=5000
 SAVEHIST=1000
 
 ZSH_THEME="refined"
