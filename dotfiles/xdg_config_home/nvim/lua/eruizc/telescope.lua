@@ -59,13 +59,6 @@ telescope.setup({
 telescope.load_extension("fzf")
 telescope.load_extension("zoxide")
 
-function finders.vimrc()
-  builtin.find_files({
-    prompt_title = "Configuration",
-    cwd = "$HOME/.config/nvim",
-  })
-end
-
 function finders.find_files()
   builtin.find_files({
     find_command = {

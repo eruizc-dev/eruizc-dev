@@ -45,7 +45,7 @@ nnoremap    <leader>blame <cmd>GitMessenger<cr>
 nnoremap    <leader>diff  <cmd>Gdiffsplit!<cr>
 
 """SEARCH FILES"""
-nnoremap    <leader>p     <cmd>lua require("eruizc.telescope").find_files()<cr>
+nnoremap    <leader>p     <cmd>lua require("telescope.builtin").find_files({ promp_title = "Configuration", cwd = "$HOME/.config/nvim" })<cr>
 nnoremap    <leader>P     <cmd>lua require("telescope.builtin").grep_string({ search = "" })<cr>
 nnoremap    <leader>k     <cmd>Telescope help_tags<cr>
 nnoremap    <leader>con   <cmd>lua require("eruizc.telescope").vimrc()<cr>
