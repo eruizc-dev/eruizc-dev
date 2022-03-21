@@ -47,4 +47,3 @@ cmp.setup({
 })
 
 lspkind.init({})
-
