@@ -22,6 +22,20 @@ telescope.setup({
         prompt_position = "bottom",
       }
     },
+	vimgrep_arguments = {
+      "rg",
+      "-g", "!.git",
+      "-g", "!node_modules",
+      "-g", "!package-lock.json",
+      "-g", "!yarn.lock",
+      "--hidden",
+      "--no-ignore-global",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+	},
     mappings = {
       i = {
         ["<esc>"] = actions.close,
@@ -66,25 +80,4 @@ function finders.find_files()
   })
 end
 
-function finders.ripgrep()
-  builtin.grep_string({
-    find_command = {
-      "rg",
-      "-g", "!.git",
-      "-g", "!node_modules",
-      "-g", "!package-lock.json",
-      "-g", "!yarn.lock",
-      "--hidden",
-      "--no-ignore-global",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-    },
-    search = "",
-  })
-end
-
 return finders
-

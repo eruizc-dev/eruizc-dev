@@ -46,7 +46,7 @@ nnoremap    <leader>diff  <cmd>Gdiffsplit!<cr>
 
 """SEARCH FILES"""
 nnoremap    <leader>p     <cmd>lua require("eruizc.telescope").find_files()<cr>
-nnoremap    <leader>P     <cmd>lua require("eruizc.telescope").ripgrep()<cr>
+nnoremap    <leader>P     <cmd>lua require("telescope.builtin").grep_string({ search = "" })<cr>
 nnoremap    <leader>k     <cmd>Telescope help_tags<cr>
 nnoremap    <leader>con   <cmd>lua require("eruizc.telescope").vimrc()<cr>
 nnoremap    <leader>z     <cmd>Telescope zoxide list<cr>
