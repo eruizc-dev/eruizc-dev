@@ -56,7 +56,6 @@ Plug 'github/copilot.vim'
 
 " LSP extensions
 Plug 'RishabhRD/nvim-lsputils'
-"Plug 'simrat39/symbols-outline.nvim'
 
 " File navigation
 Plug 'nvim-telescope/telescope.nvim'    " God bles TJ
