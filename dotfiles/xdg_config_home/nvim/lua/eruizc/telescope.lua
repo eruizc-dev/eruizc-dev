@@ -2,8 +2,6 @@ local telescope = require("telescope")
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
 
-local finders = {}
-
 telescope.setup({
   defaults = {
     prompt_prefix = " ",
@@ -22,7 +20,7 @@ telescope.setup({
         prompt_position = "bottom",
       }
     },
-	vimgrep_arguments = {
+    vimgrep_arguments = {
       "rg",
       "-g", "!.git",
       "-g", "!node_modules",
@@ -35,8 +33,8 @@ telescope.setup({
       "--with-filename",
       "--line-number",
       "--column",
-	  "--trim"
-	},
+      "--trim"
+    },
     mappings = {
       i = {
         ["<esc>"] = actions.close,
@@ -58,5 +56,3 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 telescope.load_extension("zoxide")
-
-return finders
