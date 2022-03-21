@@ -7,6 +7,7 @@ SAVEHIST=1000
 
 ZSH_THEME="refined"
 HIST_STAMPS="yyyy-mm-dd"
+DISABLE_AUTO_UPDATE=true
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
