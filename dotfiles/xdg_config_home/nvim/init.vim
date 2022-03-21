@@ -18,6 +18,17 @@ set inccommand=nosplit
 set showcmd
 set confirm
 
+" Styling
+set termguicolors
+set cursorline
+set guicursor=
+try
+	colorscheme metropolis
+catch
+	echo "Using fallback colorscheme"
+	colorscheme desert
+endtry
+
 augroup auto_mkdir_new_file
   autocmd!
   autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
