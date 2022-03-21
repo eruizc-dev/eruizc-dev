@@ -3,7 +3,7 @@ source $HOME/.config/nvim/plug_init.vim
 
 " Quality of life
 let mapleader=' '
-set exrc
+set secure exrc
 set ignorecase smartcase
 set incsearch hlsearch
 set splitright splitbelow
