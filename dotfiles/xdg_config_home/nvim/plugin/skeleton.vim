@@ -11,6 +11,7 @@ function! skeleton#insert()
     let fileSkeleton = expand('~/.config/nvim/skeleton/'.filename)
     if len(fileSkeleton) > 0 && filereadable(fileSkeleton)
         execute '0r '.fileSkeleton
+        return
     endif
 
     let templateSkeleton = expand('~/.config/nvim/skeleton/template.'.filetype)
