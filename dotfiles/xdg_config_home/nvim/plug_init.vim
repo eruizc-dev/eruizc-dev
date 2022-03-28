@@ -26,6 +26,7 @@ Plug 'eruizc-dev/vim-flex'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'ThePrimeagen/harpoon'
 Plug 'tpope/vim-sleuth'
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " Visuals
 Plug 'dikiaap/minimalist'
