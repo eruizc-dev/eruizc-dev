@@ -72,7 +72,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'voldikss/vim-floaterm'
 
 " Language specific
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npm install' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'mfussenegger/nvim-jdtls'
 Plug 'shuntaka9576/preview-swagger.nvim'
 
