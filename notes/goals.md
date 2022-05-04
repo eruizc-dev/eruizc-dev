@@ -3,20 +3,51 @@
 ## 2019
 
  - [x] Get a job in programming
-    - 17 July
+   - 17 July
+
+### Highlights
+
+ - Learned new things:
+   - Programming languages: C#, JS, TS, CSS, HTML, CSHTML, SQL
+   - Frameworks/libraries: JQuery, ASP.NET, Razor
 
 ## 2020
 
  - [ ] Get a promotion
-    - It didn't happen after I got promised multiple times
+   - It didn't happen after I got promised multiple times
  - [x] Get a domain and build my webiste
-    - <https://eruizc.dev>
+   - <https://eruizc.dev>
  - [x] Contribute to an open source project I use
-    - November 27: <https://github.com/coc-extensions/coc-omnisharp/pull/41>
+   - November 27: <https://github.com/coc-extensions/coc-omnisharp/pull/41>
 
 ### Highlights
 
- - Learned about Docker and some Cloud Services
+ - Learned new things:
+   - Concepts:
+      - Distributed systems
+      - Cloud Services
+      - Continuous Integration
+   - Frameworks:
+      - React
+      - NextJS
+      - GatsbyJS
+      - EntityFramework
+   - Technologies:
+      - Client Side Rendering, Server Side Rendering, Static Site Generation
+      - Docker
+   - Services:
+      - CircleCI
+      - GithubActions
+   - Tools:
+      - Neovim became my favorite editor
+      - Linux (Manjaro specifically) is my new daily OS
+ - Projects:
+   - Leaded the development of an OEE system for Bayer
+   - Built a library on top of EntityFramework to provide audit of changes to
+     all databases, this library was then used in two projects.
+   - Ported (almost) our entire stack of applications from .NET Framework to
+     dotnet core so we could dockerize them (and because I wanted to stop using
+     Windows)
 
 ## 2021
 
@@ -37,24 +68,37 @@
 
 ### Highlights
 
- - Learned 3 new programming languages: Java, Ruby and Golang 
- - Learned about AWS Lambda: wrote 2 for my company and fixed an existing one
- - Started a second project with a couple stars: [nvim-efm-setup](https://github.com/eruizc-dev/nvim-efm-setup)
- - Merged a [PR into nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/pull/1082)
- - Contributed (just a little) to VimConf 2021
- - I'm now part of a BIG company (10000+ devs)
- - Managed to install Arch Linux, learning a lot about Linux in the process
- - Contributed to Arch Linux Wiki
+ - Learned new things:
+   - Languages:
+      - Java
+      - Ruby
+      - Golang
+   - Frameworks:
+      - Spring / SpringBoot
+      - Ruby on Rails
+   - Technologies:
+      - Docker Compose
+   - Services:
+      - AWS Lambda
+ - Cool stuff:
+   - I'm now part of a BIG company (10000+ devs)
+   - Managed to install Arch Linux, learning a lot in the process
+   - Contributed to Arch Linux Wiki
+ - Projects:
+   - I solved my first tasks in this new company by fixing an existing lambda
+     and writing 2 new ones
+    - Started a second open source project with a couple stars:
+    [nvim-efm-setup](https://github.com/eruizc-dev/nvim-efm-setup)
+    - Merged a [PR into nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/pull/1082)
+    - Contributed (just a little) to VimConf 2021
 
 ## 2022
 
- - [ ] Learn Rust
  - [-] Read 3 books on programming
     - May 1 2022: Finished Refactoring by Martin Fowler
  - [ ] Read 1 book on technology
  - [ ] Read 1 book on mathematics
  - [ ] Read 1 book on economy
- - [ ] Contribute to [java language server](https://github.com/georgewfraser/java-language-server)
  - [ ] Contribute to [java language server](https://github.com/georgewfraser/java-language-server)
  - [ ] Understand portuguesse subtitles
  - [ ] Promote to Ssr
