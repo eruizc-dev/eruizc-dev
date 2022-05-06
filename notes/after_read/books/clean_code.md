@@ -1,5 +1,16 @@
 # Clean Code - Robert C. Martin (Uncle Bob)
 
+It doesn't introduce any new concept but it summarizes a lot of concepts from
+other books. Some of them being:
+ - [[Refactoring]]
+ - [[Design Patterns]]
+ - [[Test Driven Development]]
+ - [[Extreme Programming]]
+
+I highly recommend it for people who have not read any or most of those books,
+if you have already checked some of them you may not find much value in this
+book.
+
 ### What I want to achieve by reading this
 
 - Pay Uncle Bob what I owe from [these YouTube series](https://youtu.be/7EmboKQH8lM).
