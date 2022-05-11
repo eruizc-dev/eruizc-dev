@@ -32,6 +32,7 @@ alias nvim='nvim'
 alias vim='nvim'
 alias vi='nvim'
 alias open='xdg-open'
+alias so='source'
 
 alias install='sudo pacman -S'
 alias update='sudo pacman -Syu'
@@ -87,6 +88,8 @@ autoload -U compinit && compinit
 # QMK Autocompletion
 source $HOME/qmk_firmware/util/qmk_tab_complete.sh
 
-# Environment variables
-source $HOME/.env
+# Docker
+export DOCKER_BUILDKIT=1
+
+# GPG
 export GPG_TTY=$(tty)
