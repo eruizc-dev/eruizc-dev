@@ -47,6 +47,18 @@ a {
   font-size: 1.2em;
 }
 
+.button > img {
+  /* #35bf5c in https://codepen.io/sosuke/pen/Pjoqqp */
+  filter: invert(54%) sepia(92%) saturate(339%) hue-rotate(84deg) brightness(95%) contrast(94%);
+  max-height: 32px;
+  max-width: 32;
+}
+
 .button:hover {
   background-color: #35bf5c;
+}
+
+.button:hover > img {
+  /* #212121 in https://codepen.io/sosuke/pen/Pjoqqp */
+  filter: invert(0%) sepia(17%) saturate(3753%) hue-rotate(341deg) brightness(79%) contrast(74%);
 }
