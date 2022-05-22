@@ -22,9 +22,17 @@ a {
 .container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 
-.container > * {
+.container > .row {
+  min-width: 50%;
+  flex-grow: 1;
+  display: flex;
+}
+
+.container > .row > * {
+  width: 50%;
   flex-grow: 1;
 }
 
