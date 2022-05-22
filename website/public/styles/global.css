@@ -11,10 +11,21 @@ h1, h2, h3 {
   line-height: 1.2
 }
 
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.container > * {
+  flex-grow: 1;
+}
+
 .button {
-  background-color: #199319;
+  text-align: center;
+  background-color: #444;
   color: white;
   padding: 15px 25px;
+  margin: 0px 10px;
   text-decoration: none;
 }
 
