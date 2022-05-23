@@ -1,18 +1,17 @@
 body {
   font-family: Open Sans, sans-serif;
-  margin: 40px auto;
+  font-size: 18px;
+  margin: auto;
+  padding: 40px;
   max-width: 650px;
   line-height: 1.6;
-  font-size: 15px;
   background-color: #212121;
   color: #eeeeee;
-  padding: 0 10px
 }
 
 h1, h2, h3 {
   color: #35bf5c;
   font-family: Courier, monospace;
-  line-height: 1;
 }
 
 a {
