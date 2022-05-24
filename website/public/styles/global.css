@@ -4,12 +4,21 @@ html {
 }
 
 body {
+  background-color: #212121;
+  color: #eeeeee;
+}
+
+header {
+  margin: 0;
+  height: 100vh;
+  text-align: center;
+}
+
+main {
   margin: auto;
   padding: 40px;
   max-width: 650px;
   line-height: 1.6;
-  background-color: #212121;
-  color: #eeeeee;
 }
 
 h1, h2, h3 {
@@ -51,7 +60,8 @@ a {
 
 .button > img {
   /* #35bf5c in https://codepen.io/sosuke/pen/Pjoqqp */
-  filter: invert(54%) sepia(92%) saturate(339%) hue-rotate(84deg) brightness(95%) contrast(94%);
+  filter: invert(100%) sepia(3%) saturate(715%) hue-rotate(218deg) brightness(116%) contrast(87%);
+  /*filter: invert(54%) sepia(92%) saturate(339%) hue-rotate(84deg) brightness(95%) contrast(94%);*/
   max-height: 32px;
   max-width: 32px;
 }
