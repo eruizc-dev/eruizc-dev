@@ -1,6 +1,9 @@
-body {
+html {
   font-family: Open Sans, sans-serif;
   font-size: 18px;
+}
+
+body {
   margin: auto;
   padding: 40px;
   max-width: 650px;
@@ -36,6 +39,7 @@ a {
 }
 
 .button {
+  font-size: 1.1em;
   text-align: center;
   background-color: #454545;
   color: white;
