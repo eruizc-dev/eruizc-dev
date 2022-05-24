@@ -1,8 +1,6 @@
 html {
   font-family: Open Sans, sans-serif;
   font-size: 18px;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -33,6 +31,7 @@ main {
 h1, h2, h3 {
   color: #35bf5c;
   font-family: Courier, monospace;
+  margin-bottom: 0;
 }
 
 hr {
@@ -85,14 +84,16 @@ a {
   filter: invert(0%) sepia(17%) saturate(3753%) hue-rotate(341deg) brightness(79%) contrast(74%);
 }
 
-.stretched-and-reversed {
-  transform: scaleY(-1) scaleX(1.8);
+#reverse-arrow {
+  font-family: Courier, monospace;
+  transform: scale(1.3, -1) translateY(69%);
+  color: #35bf5c;
+  font-size: 10em;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 0;
 }
 
-.giant {
-  color: #35bf5c;
-  font-size: 8em;
-  font-weight: bold;
-  line-height: 0;
-  margin: 2rem;
+#keep-scrolling {
+  max-height: 5em;
 }
