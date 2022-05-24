@@ -35,6 +35,10 @@ h1, h2, h3 {
   font-family: Courier, monospace;
 }
 
+hr {
+  color: #454545;
+}
+
 a {
   color: #35bf5c;
 }
