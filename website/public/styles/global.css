@@ -80,3 +80,15 @@ a {
   /* #212121 in https://codepen.io/sosuke/pen/Pjoqqp */
   filter: invert(0%) sepia(17%) saturate(3753%) hue-rotate(341deg) brightness(79%) contrast(74%);
 }
+
+.stretched-and-reversed {
+  transform: scaleY(-1) scaleX(1.8);
+}
+
+.giant {
+  color: #35bf5c;
+  font-size: 8em;
+  font-weight: bold;
+  line-height: 0;
+  margin: 2rem;
+}
