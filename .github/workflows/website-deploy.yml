@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@master
+    - name: Minify Files
+      uses: anthonyftwang/minify-action@v1.0.1
     - name: Deploy to Firebase
       uses: w9jds/firebase-action@master
       with:
