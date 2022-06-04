@@ -125,3 +125,8 @@ command! DebugRestart lua require'dap'.restart()
 command! DebugClose lua require'dap'.close()
 command! DebugEval lua require'dapui'.eval()
 command! DebugToggle lua require'dapui'.toggle()
+
+nnoremap <leader>db <cmd>DebugToggleBreakpoint<cr>
+nnoremap <leader>dc <cmd>DebugContinue<cr>
+nnoremap <leader>do <cmd>DebugStepOver<cr>
+nnoremap <leader>di <cmd>DebugStepInto<cr>
