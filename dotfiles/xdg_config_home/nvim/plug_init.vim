@@ -30,7 +30,7 @@ Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " Visuals
 Plug 'dikiaap/minimalist'
-Plug 'eruizc-dev/galaxyline.nvim', { 'branch': 'merge-all' }
+Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'onsails/lspkind-nvim'
 Plug 'eruizc-dev/metropolis-vim'
