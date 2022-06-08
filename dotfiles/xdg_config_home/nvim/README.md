@@ -2,6 +2,7 @@
 
 ### To improve:
 
+- <https://github.com/rcarriga/neotest>
  - Run tests inside floaterm
     - Currenlty opens a `:term1`, I'd like for it to have a dedicated floaterm I
       can toggle.
