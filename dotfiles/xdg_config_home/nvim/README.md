@@ -2,7 +2,8 @@
 
 ### To improve:
 
-- <https://github.com/rcarriga/neotest>
+ - <https://github.com/rcarriga/neotest>
+ - <https://github.com/SmiteshP/nvim-navic>
  - Run tests inside floaterm
     - Currenlty opens a `:term1`, I'd like for it to have a dedicated floaterm I
       can toggle.
