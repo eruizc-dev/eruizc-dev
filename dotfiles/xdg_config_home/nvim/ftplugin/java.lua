@@ -19,7 +19,7 @@ jdtls.start_or_attach({
         enabled = true
       },
       completion = {
-        importOrder = {}
+        importOrder = { }
       },
       sources = {
         organizeImports = {
@@ -32,26 +32,7 @@ jdtls.start_or_attach({
   capabilities = lspconfig.util.default_config.capabilities,
   on_attach = function(client)
     jdtls_setup.add_commands()
-    jdtls.setup_dap({ hotcodereplace = 'auto' })
     jdtls.update_project_config()
+    jdtls.setup_dap({ hotcodereplace = 'auto' })
   end
 })
-
-dap.adapters.java = function(callback)
-  util.execute_command({ command = 'vscode.java.startDebugSession' }, function(err0, port)
-  assert(not err0, vim.inspect(err0))
-  callback({
-    type = 'server',
-    host = '127.0.0.1',
-    port = port,
-  })
-  end)
-end
-dap.configurations.java = { {
-  type = 'java',
-  request = 'attach',
-  name = "Debug (Attach) - Remote",
-  hostName = "127.0.0.1",
-  port = 5005,
-} }
-
