@@ -53,7 +53,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'kristijanhusak/vim-dadbod-completion'
 Plug 'eruizc-dev/nvim-efm-setup'
-Plug 'github/copilot.vim'
 
 " LSP extensions
 Plug 'RishabhRD/nvim-lsputils'
