@@ -54,9 +54,6 @@ lspconfig.sumneko_lua.setup{
     if nvim_dir then return nvim_dir..'/lua' end
     return lspconfig.util.root_pattern('rc.lua', 'init.lua', 'init.vim', '.git')(fname) or vim.loop.cwd()
   end,
-  on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
-  end,
   settings = {
     Lua = {
       runtime = { version = "LuaJIT", },

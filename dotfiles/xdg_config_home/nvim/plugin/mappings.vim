@@ -1,6 +1,6 @@
 """FILE NAVIGATION"""
-nnoremap    <C-j>   <cmd>lua vim.lsp.diagnostic.goto_next()<cr>
-nnoremap    <C-k>   <cmd>lua vim.lsp.diagnostic.goto_prev()<cr>
+nnoremap    <C-j>   <cmd>lua vim.diagnostic.goto_next()<cr>
+nnoremap    <C-k>   <cmd>lua vim.diagnostic.goto_prev()<cr>
 nnoremap    H       Hzz
 nnoremap    L       Lzz
 nnoremap    n       nzzzv
