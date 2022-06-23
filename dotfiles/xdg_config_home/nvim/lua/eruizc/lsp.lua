@@ -1,7 +1,5 @@
 local lspconfig = require("lspconfig")
-local utils = require("eruizc.utils")
 local lsputil = require("lsputil.codeAction")
-local lsputil_codeAction = require("lsputil.codeAction")
 
 local lsp = {}
 
@@ -56,26 +54,22 @@ lspconfig.sumneko_lua.setup{
   end,
   settings = {
     Lua = {
-      runtime = { version = "LuaJIT", },
       diagnostics = {
-        enable = true,
-        disable = { "unused-local" }, -- No hints for params i'm not using
         globals = {
           -- Neovim
           "vim",
-          -- Awesome WS
+          -- Awesome WM
           "awesome", "client", "root", "screen",
           -- Busted
           "describe", "it", "before_each", "after_each", "teardown", "pending", "clear"
         },
       },
       workspace = {
-        library = utils.get_lua_runtime(),
-        maxPreload = 1024,
-        preloadFileSize = 1024,
-      },
-    },
-  },
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      }
+    }
+  }
 }
 lspconfig.tsserver.setup{
   root_dir = function(f)
