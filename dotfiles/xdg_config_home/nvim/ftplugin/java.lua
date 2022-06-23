@@ -26,6 +26,14 @@ jdtls.start_or_attach({
           starThreshold = 2,
           staticStarThreshold = 2
         }
+      },
+      configuration = {
+        -- Name is NOT arbitrary: must match one of the elements from `enum ExecutionEnvironment` in the link below
+        -- https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
+        runtimes = {
+          { name = "JavaSE-11", path = vim.fn.glob("$SDKMAN_DIR/candidates/java/11.*/") },
+          { name = "JavaSE-17", path = vim.fn.glob("$SDKMAN_DIR/candidates/java/17.*/") },
+        }
       }
     }
   },
