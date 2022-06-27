@@ -118,7 +118,7 @@ galaxyline.section.right = {{
     }
 }, {
     DiagnosticError = {
-        provider = function() return #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN }) end,
+        provider = function() return #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR }) end,
         icon = icons.lsp_error,
         highlight = { colors.red, colors.bg},
         separator = " ",
