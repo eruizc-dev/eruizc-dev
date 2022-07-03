@@ -16,3 +16,6 @@
     - Kent Beck
     - <https://www.goodreads.com/quotes/532211-i-m-not-a-great-programmer-i-m-just-a-good-programmer>
 
+- An idiot admires complexity, a genius admires simplicity
+    - Terry A. Davids
+    - <https://youtu.be/k0qmkQGqpM8>
