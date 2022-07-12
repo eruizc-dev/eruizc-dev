@@ -39,4 +39,7 @@ augroup auto_mkdir_new_file
   endfunction
 augroup END
 
+" Custom filetypes
+au! BufRead,BufNewFile *.conf setfiletype conf
+
 lua require("eruizc")
