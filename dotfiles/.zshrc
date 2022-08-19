@@ -41,7 +41,7 @@ alias uninstall='sudo pacman -Rcns'
 # System
 export LANG="en_US.UTF-8"
 export EDITOR='nvim'
-export BROWSER='brave'
+export BROWSER='firefox'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Golang
