@@ -10,9 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
-      uses: actions/checkout@master
-    - name: Minify Files
-      uses: anthonyftwang/minify-action@v1.0.1
+      uses: actions/checkout@v3
+    - name: Setup Node 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Install Dependencies
+      working-directory: ./website
+      run: npm ci
+    - name: Build Site
+      working-directory: ./website
+      run: npm run build
     - name: Deploy to Firebase
       uses: w9jds/firebase-action@master
       with:
