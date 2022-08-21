@@ -1,0 +1,11 @@
+{
+  "name": "eruizc-dev",
+  "version": "0.0.1",
+  "description": "My personal website",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "author": "Emiliano Ruiz Carletti"
+}
