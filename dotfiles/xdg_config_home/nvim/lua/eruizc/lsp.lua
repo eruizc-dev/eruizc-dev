@@ -58,8 +58,6 @@ lspconfig.sumneko_lua.setup{
         globals = {
           -- Neovim
           "vim",
-          -- Awesome WM
-          "awesome", "client", "root", "screen",
           -- Busted
           "describe", "it", "before_each", "after_each", "teardown", "pending", "clear"
         },

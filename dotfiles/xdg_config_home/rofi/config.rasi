@@ -1,6 +1,0 @@
-configuration {
-    modi: "window,drun,ssh,combi";
-    font: "TerminessTTF Nerd Font Mono 20";
-    combi-modi: "window,drun,ssh";
-}
-@theme "Arc-Dark"
