@@ -23,16 +23,8 @@ set termguicolors
 set cursorline
 set guicursor=
 try
-  let g:onedark_config = {
-  \ 'style': 'dark',
-  \ 'transparent': v:true,
-  \ 'ending_tildes': v:false,
-  \ 'diagnostics': {
-    \ 'darker': v:false,
-    \ 'background': v:false,
-  \ },
-  \ }
-colorscheme onedark
+  lua require('dracula').setup({ transparent_bg = true })
+  colorscheme dracula
 catch
   colorscheme default
 endtry
