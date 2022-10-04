@@ -17,11 +17,7 @@ COMPLETION_WAITING_DOTS='%F{white}...%f'
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(
-  git
-  brew
-  gradle sdk
-)
+plugins=(git)
 
 [[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
@@ -42,7 +38,7 @@ autoload -Uz compinit && compinit
 
 # Aliases
 alias cls='clear'
-alias la='ls -lha --color=always'
+alias la='ls -lhA --color=always'
 alias lg='lazygit'
 alias ld='lazydocker'
 alias so='source'
