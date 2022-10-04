@@ -31,7 +31,7 @@ Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Visuals
 Plug 'Mofiqul/dracula.nvim'
 Plug 'dikiaap/minimalist'
-Plug 'glepnir/galaxyline.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'onsails/lspkind-nvim'
 
