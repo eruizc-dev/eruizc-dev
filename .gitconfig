@@ -1,7 +1,7 @@
 [core]
     editor = nvim
     autocrlf = input
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 [init]
     defaultBranch = master
 [pull]
@@ -10,16 +10,16 @@
     nuke = "!f() { read -p 'You rly wanna nuke? (y/N): ' choice; case $choice in y|Y ) git reset --hard && git clean -fd;; * ) echo 'ABORTING';; esac }; f"
     purge = "clean -fX"
 [fetch]
-	prune = true
+    prune = true
 [diff]
-	colorMoved = zebra
+    colorMoved = zebra
 [user]
-	name = Emiliano Ruiz Carletti
-	email = contact@eruizc.dev
-    signinkey = BC37183F1F791F18
+    name = Emiliano Ruiz Carletti
+    email = contact@eruizc.dev
+    signinkey = 5E56C9712AA24818
 [gpg]
-	program = gpg
+    program = gpg
 [commit]
-	gpgsign = true
+    gpgsign = true
 [includeIf "gitdir/i:~/repos/mercadolibre/"]
     path = ~/repos/mercadolibre/.gitconfig
