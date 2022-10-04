@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # XDG Settings
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CACHE_HOME=$HOME/.cache
@@ -15,7 +17,11 @@ COMPLETION_WAITING_DOTS='%F{white}...%f'
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(git)
+plugins=(
+  git
+  brew
+  gradle sdk
+)
 
 [[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
@@ -30,9 +36,9 @@ unsetopt beep
 bindkey -e
 
 # Completion
-zstyle :compinstall filename '/home/eru/.zshrc'
-autoload -Uz compinit
-compinit
+zstyle :compinstall filename "$HOME/.zshrc"
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+autoload -Uz compinit && compinit
 
 # Aliases
 alias cls='clear'
@@ -40,6 +46,8 @@ alias la='ls -lha --color=always'
 alias lg='lazygit'
 alias ld='lazydocker'
 alias so='source'
+alias t='tree -L 2 -I .git -I node_modules'
+alias t3='tree -L 3 -I .git -I node_modules'
 
 # Fancy stuff
 export BAT_THEME='OneHalfDark'
