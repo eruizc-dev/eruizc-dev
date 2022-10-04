@@ -1,95 +1,93 @@
-# ZSH https://github.com/ohmyzsh/ohmyzsh/wiki
-export ZSH="$HOME/.oh-my-zsh"
+# XDG Settings
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
 
-HISTFILE="$HOME/.local/historyfile"
-HISTSIZE=5000
-SAVEHIST=1000
+# Basic Oh My Zsh
+export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 
-ZSH_THEME="refined"
-HIST_STAMPS="yyyy-mm-dd"
+ZSH_THEME='refined'
+HIST_STAMPS='yyyy-mm-dd'
+CASE_SENSITIVE=false
 DISABLE_AUTO_UPDATE=true
+ENABLE_CORRECTION=true
+COMPLETION_WAITING_DOTS='%F{white}...%f'
+
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=(
-    git
-    node npm nvm yarn
-    gradle mvn sdk
-    docker docker-compose
-)
+plugins=(git)
+
 [[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
+# History
+HISTFILE="$XDG_CACHE_HOME/histfile"
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Some options
+setopt autocd extendedglob nomatch notify
+unsetopt beep
+bindkey -e
+
+# Completion
+zstyle :compinstall filename '/home/eru/.zshrc'
+autoload -Uz compinit
+compinit
+
 # Aliases
-alias flex='neofetch'
-alias btw='neofetch'
 alias cls='clear'
-alias py='python'
-alias ni='touch'
 alias la='ls -lha --color=always'
 alias lg='lazygit'
 alias ld='lazydocker'
-alias log='tail -f `fzf`'
-alias nvim='nvim'
-alias vim='nvim'
-alias vi='nvim'
-alias open='xdg-open'
 alias so='source'
 
-alias install='sudo pacman -S'
-alias update='sudo pacman -Syu'
-alias uninstall='sudo pacman -Rcns'
-
-# System
-export LANG="en_US.UTF-8"
-export EDITOR='nvim'
-export BROWSER='firefox'
+# Fancy stuff
+export BAT_THEME='OneHalfDark'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_OPTS="--layout=reverse --info=inline --height=40% --preview='bat --color=always --style=numbers --line-range=:500 {}'"
 
-# Golang
-export GOPATH="$HOME/.local/go"
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$GOPATH/bin"
+compdef log=tail
+function log() {
+  tail -f $@ | bat --paging=never --file-name $@
+}
 
-# Dotnet
-export DOTNET_CLI_TELEMETRY_OPTOUT=true
-export PATH=$PATH:"$HOME/.dotnet/tools/"
-
-# Node
-[[ -s "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
-
-# Rust
-[[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
-export PATH=$PATH:"$HOME/.cargo/bin"
-
-# Python
-export PATH=$PATH:"$HOME/.local/bin"
-
-# Ruby
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Lua
-alias luamake="$HOME/scripts/lua-language-server/3rd/luamake/luamake"
-export PATH=$PATH:"$HOME/.luarocks/bin"
-
-# Java
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# Zoxide
-eval "$(zoxide init zsh)"
-
-# Make
-zstyle ':completion:*:*:make:*' tag-order 'targets'
-autoload -U compinit && compinit
-
-# QMK Autocompletion
-source $HOME/qmk_firmware/util/qmk_tab_complete.sh
-
-# Docker
-export DOCKER_BUILDKIT=1
-
-# GPG
-export GPG_TTY=$(tty)
+# Fix ctrl+arrows
+case "${TERM}" in
+  cons25*|linux) # plain BSD/Linux console
+    bindkey '\e[H'    beginning-of-line   # home
+    bindkey '\e[F'    end-of-line         # end
+    bindkey '\e[5~'   delete-char         # delete
+    bindkey '[D'      emacs-backward-word # esc left
+    bindkey '[C'      emacs-forward-word  # esc right
+    ;;
+  *rxvt*) # rxvt derivatives
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\eOc'    forward-word        # ctrl right
+    bindkey '\eOd'    backward-word       # ctrl left
+    # workaround for screen + urxvt
+    bindkey '\e[7~'   beginning-of-line   # home
+    bindkey '\e[8~'   end-of-line         # end
+    bindkey '^[[1~'   beginning-of-line   # home
+    bindkey '^[[4~'   end-of-line         # end
+    ;;
+  *xterm*) # xterm derivatives
+    bindkey '\e[H'    beginning-of-line   # home
+    bindkey '\e[F'    end-of-line         # end
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\e[1;5C' forward-word        # ctrl right
+    bindkey '\e[1;5D' backward-word       # ctrl left
+    # workaround for screen + xterm
+    bindkey '\e[1~'   beginning-of-line   # home
+    bindkey '\e[4~'   end-of-line         # end
+    ;;
+  screen)
+    bindkey '^[[1~'   beginning-of-line   # home
+    bindkey '^[[4~'   end-of-line         # end
+    bindkey '\e[3~'   delete-char         # delete
+    bindkey '\eOc'    forward-word        # ctrl right
+    bindkey '\eOd'    backward-word       # ctrl left
+    bindkey '^[[1;5C' forward-word        # ctrl right
+    bindkey '^[[1;5D' backward-word       # ctrl left
+    ;;
+esac
