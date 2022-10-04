@@ -23,8 +23,8 @@ jdtls.start_or_attach({
       },
       sources = {
         organizeImports = {
-          starThreshold = 2,
-          staticStarThreshold = 2
+          starThreshold = 3,
+          staticStarThreshold = 3
         }
       },
       configuration = {
