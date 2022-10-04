@@ -23,10 +23,18 @@ set termguicolors
 set cursorline
 set guicursor=
 try
-	colorscheme metropolis
+  let g:onedark_config = {
+  \ 'style': 'dark',
+  \ 'transparent': v:true,
+  \ 'ending_tildes': v:false,
+  \ 'diagnostics': {
+    \ 'darker': v:false,
+    \ 'background': v:false,
+  \ },
+  \ }
+colorscheme onedark
 catch
-	echo "Using fallback colorscheme"
-	colorscheme desert
+  colorscheme default
 endtry
 
 augroup auto_mkdir_new_file

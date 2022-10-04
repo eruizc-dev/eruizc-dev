@@ -29,11 +29,11 @@ Plug 'tpope/vim-sleuth'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " Visuals
+Plug 'Mofiqul/dracula.nvim'
 Plug 'dikiaap/minimalist'
 Plug 'glepnir/galaxyline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'onsails/lspkind-nvim'
-Plug 'eruizc-dev/metropolis-vim'
 
 " Git
 Plug 'rhysd/git-messenger.vim'
@@ -64,7 +64,6 @@ Plug 'jvgrootveld/telescope-zoxide'
 
 " Testing
 Plug 'vim-test/vim-test'
-"Plug 'eruizc-dev/test.nvim'
 
 " Terminal
 Plug 'tpope/vim-dispatch'
