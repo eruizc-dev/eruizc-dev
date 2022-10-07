@@ -49,7 +49,7 @@ alias t='tree -L 2 -I .git -I node_modules'
 alias t3='tree -L 3 -I .git -I node_modules'
 
 # Fancy stuff
-export BAT_THEME='OneHalfDark'
+export BAT_THEME='Dracula'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --info=inline --height=40% --preview='bat --color=always --style=numbers --line-range=:500 {}'"
