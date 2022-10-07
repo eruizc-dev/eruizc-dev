@@ -41,5 +41,6 @@ augroup END
 
 " Custom filetypes
 au! BufRead,BufNewFile *.conf setfiletype conf
+au! BufRead,BufNewFile *.njk setfiletype html
 
 lua require("eruizc")
