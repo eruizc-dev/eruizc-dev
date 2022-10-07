@@ -1,3 +1,4 @@
+vim.o.ch = 0;
 require('lualine').setup {
   options = {
     icons_enabled = true,
