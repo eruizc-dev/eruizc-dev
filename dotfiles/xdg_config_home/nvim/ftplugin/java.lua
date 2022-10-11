@@ -1,8 +1,5 @@
-local lsp_config = require('eruizc.lsp')
 local lspconfig = require("lspconfig")
 local jdtls = require('jdtls')
-local util = require('jdtls.util')
-local dap = require("dap")
 local jdtls_setup = require("jdtls.setup")
 
 local bundles = { vim.fn.glob("$HOME/repos/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar") }

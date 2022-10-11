@@ -4,7 +4,7 @@ require('lualine').setup {
     icons_enabled = true,
     theme = 'dracula',
     component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = ''},
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -25,15 +25,27 @@ require('lualine').setup {
       { 'filetype', icon_only = true },
       { 'filename', path = 1, symbols = { modified = '', readonly = '', unnamed = '', newfile = '' } }
     },
-    lualine_x = { { 'diagnostics', always_visible = true, symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' }, sources = { 'nvim_diagnostic' }, sections = { 'hint', 'info', 'warn', 'error' } } },
-    lualine_y = { { 'diagnostics', always_visible = true, symbols = { error = ' ', warn = ' ' }, sources = { 'nvim_workspace_diagnostic' }, sections = { 'warn', 'error' } } },
+    lualine_x = {{
+      'diagnostics',
+      always_visible = true,
+      symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+      sources = { 'nvim_diagnostic' },
+      sections = { 'hint', 'info', 'warn', 'error' }
+    }},
+    lualine_y = {{
+      'diagnostics',
+      always_visible = true,
+      symbols = { error = ' ', warn = ' ' },
+      sources = { 'nvim_workspace_diagnostic' },
+      sections = { 'warn', 'error' }
+    }},
     lualine_z = { 'encoding', 'fileformat' },
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
   },
