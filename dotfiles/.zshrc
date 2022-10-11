@@ -59,6 +59,8 @@ function log() {
   tail -f $@ | bat --paging=never --file-name $@
 }
 
+eval "$(zoxide init zsh)"
+
 # Fix ctrl+arrows
 case "${TERM}" in
   cons25*|linux) # plain BSD/Linux console
