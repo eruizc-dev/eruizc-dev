@@ -1,4 +1,14 @@
-.exrc
-.classpath
 .env
+
+# Vim
+.exrc
+
+# Nix
+**/shell.nix
+**/result/
+
+# Java
+.classpath
+
+# C
 .cache/clangd
