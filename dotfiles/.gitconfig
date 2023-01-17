@@ -1,7 +1,7 @@
 [core]
     editor = nvim
     autocrlf = input
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 [init]
     defaultBranch = master
 [pull]
@@ -9,6 +9,14 @@
 [alias]
     nuke = "!f() { read -p 'You rly wanna nuke? (y/N): ' choice; case $choice in y|Y ) git reset --hard && git clean -fd;; * ) echo 'ABORTING';; esac }; f"
 [fetch]
-	prune = true
+    prune = true
 [diff]
-	colorMoved = zebra
+    colorMoved = zebra
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg
+[user]
+	name = Emiliano Ruiz Carletti
+	email = contact@eruizc.dev
+    signinkey = BC37183F1F791F18
