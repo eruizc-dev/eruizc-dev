@@ -4,14 +4,16 @@ local lsputil = require("lsputil.codeAction")
 local lsp = {}
 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
-local existing_capabilities = vim.lsp.protocol.make_client_capabilities()
-
-lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
-  capabilities = require('cmp_nvim_lsp').update_capabilities(existing_capabilities),
-})
+-- local existing_capabilities = vim.lsp.protocol.make_client_capabilities()
+-- 
+-- lspconfig.util.default_config = vim.tbl_extend("force",
+-- lspconfig.util.default_config, {
+--   capabilities = require('cmp_nvim_lsp').update_capabilities(existing_capabilities),
+-- })
 
 lspconfig.bashls.setup{}
-lspconfig.clangd.setup{}
+--lspconfig.clangd.setup{}
+lspconfig.ccls.setup{}
 lspconfig.cssls.setup{
   root_dir = function(f)
     return lspconfig.util.root_pattern("package.json", ".git")(f) or vim.loop.cwd()
@@ -38,38 +40,37 @@ lspconfig.solargraph.setup{
     -- if not utils.root_pattern(".solargraph.yml") then
     --   -- Run with plenary maybe?
     --   run({
-    --     cwd = utils.root_pattern("Gemfile", ".git") or vim.loop.cwd(),
-    --     cmd = "solargraph config"
-    --   })
-    -- return utils.root_pattern(".solargraph.yml")(fname)
-    -- end
-  end
+      --     cwd = utils.root_pattern("Gemfile", ".git") or vim.loop.cwd(),
+      --     cmd = "solargraph config"
+      --   })
+      -- return utils.root_pattern(".solargraph.yml")(fname)
+      -- end
+    end
 }
 lspconfig.sumneko_lua.setup{
-  cmd = { "lua-language-server" },
-  root_dir = function(fname)
-    local nvim_dir = lspconfig.util.root_pattern('lua')(fname)
-    if nvim_dir then return nvim_dir..'/lua' end
-    return lspconfig.util.root_pattern('rc.lua', 'init.lua', 'init.vim', '.git')(fname) or vim.loop.cwd()
-  end,
   settings = {
     Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
       diagnostics = {
-        globals = {
-          -- Neovim
-          "vim",
-          -- Busted
-          "describe", "it", "before_each", "after_each", "teardown", "pending", "clear"
-        },
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
-      }
-    }
-  }
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
 }
 lspconfig.tsserver.setup{
+  cmd = { 'tsserver' },
   root_dir = function(f)
     return lspconfig.util.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git')(f) or vim.loop.cwd()
   end
@@ -77,6 +78,16 @@ lspconfig.tsserver.setup{
 lspconfig.vimls.setup{}
 lspconfig.vuels.setup{}
 lspconfig.yamlls.setup{}
+lspconfig.omnisharp.setup{
+  cmd = { 'omnisharp' },
+  enable_editorconfig_support = false,
+  enable_ms_build_load_projects_on_demand = false,
+  enable_roslyn_analyzers = false,
+  organize_imports_on_format = false,
+  enable_import_completion = true,
+  sdk_include_prereleases = true,
+  analyze_open_documents_only = false,
+}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   underline = true,
