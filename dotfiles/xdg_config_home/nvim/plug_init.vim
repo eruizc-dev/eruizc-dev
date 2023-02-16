@@ -34,6 +34,7 @@ Plug 'dikiaap/minimalist'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'onsails/lspkind-nvim'
+Plug 'rcarriga/nvim-notify'
 
 " Git
 Plug 'rhysd/git-messenger.vim'

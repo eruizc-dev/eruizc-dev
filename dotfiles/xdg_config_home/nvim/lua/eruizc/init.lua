@@ -3,3 +3,5 @@ require("eruizc.telescope")
 require("eruizc.treesitter")
 require("eruizc.debug")
 require("eruizc.indent")
+
+vim.notify = require("notify")
