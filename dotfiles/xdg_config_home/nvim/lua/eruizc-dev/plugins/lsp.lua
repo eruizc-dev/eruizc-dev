@@ -56,7 +56,19 @@ return {
 			-- Snippets
 			{
 				'saadparwaiz1/cmp_luasnip',
-				dependencies = { 'L3MON4D3/LuaSnip' }
+				dependencies = {
+					{
+						'L3MON4D3/LuaSnip',
+						dependencies = {
+							{
+								'rafamadriz/friendly-snippets',
+								config = function ()
+									require'luasnip.loaders.from_vscode'.lazy_load()
+								end
+							}
+						},
+					}
+				}
 			},
 			-- Copilot
 			{
@@ -96,8 +108,20 @@ return {
 					['<CR>'] = require'cmp'.mapping.confirm(),
 					['<C-j>'] = require'cmp'.mapping.select_next_item({ behavior = require'cmp'.SelectBehavior.Select }),
 					['<C-k>'] = require'cmp'.mapping.select_prev_item({ behavior = require'cmp'.SelectBehavior.Select }),
-					['<C-h>'] = require'cmp'.mapping.scroll_docs(-4),
-					['<C-l>'] = require'cmp'.mapping.scroll_docs(4),
+					['<C-h>'] = require'cmp'.mapping(function(fallback)
+						if require'luasnip'.jumpable(-1) then
+							require'luasnip'.jump(-1)
+						else
+							require'cmp'.mapping.scroll_docs(-4)
+						end
+					end, { 'i', 's' }),
+					['<C-l>'] = require'cmp'.mapping(function(fallback)
+						if require'luasnip'.expand_or_jumpable() then
+							require'luasnip'.expand_or_jump()
+						else
+							require'cmp'.mapping.scroll_docs(4)
+						end
+					end, { 'i', 's' }),
 				},
 				sources = {
 					{ name = 'nvim_lsp' },
