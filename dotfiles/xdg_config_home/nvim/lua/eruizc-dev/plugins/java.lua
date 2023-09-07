@@ -1,19 +1,25 @@
 return {
 	{
 		'mfussenegger/nvim-jdtls',
-		ft = { 'java' },
-		dependencies = { 'mfussenegger/nvim-dap' },
+		ft = 'java',
+		dependencies = {
+			'mfussenegger/nvim-dap',
+			{ 'williamboman/mason.nvim', opts = {} }
+		},
 		config = function ()
-			local jdtls = require('jdtls')
-			local jdtls_setup = require('jdtls.setup')
+			require'eruizc-dev.utils.mason'.ensure_installed({ 'jdtls', 'java-test', 'java-debug-adapter' })
 
-			--local bundles = { vim.fn.glob('$HOME/repos/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar') }
-			--vim.list_extend(bundles, vim.split(vim.fn.glob('$HOME/repos/microsoft/vscode-java-test/server/*.jar'), '\n'))
-			jdtls.start_or_attach({
-				cmd = { 'jdt-language-server', '-data', vim.fn.expand('$HOME/.cache/jdtls-workspace') },
-				root_dir = jdtls_setup.find_root({ '*.gradle', 'pom.xml' }),
+			require'jdtls'.start_or_attach({
+				cmd = {
+					vim.env.MASON .. '/packages/jdtls/jdtls',
+					'--data',
+					vim.fn.expand('$HOME/.cache/jdtls-workspace')
+				},
 				init_options = {
-					--bundles = bundles
+					bundles = require'eruizc-dev.utils.list'.join(
+						vim.fn.glob(vim.env.MASON .. '/packages/java-debug-adapter/extension/server/*.jar'),
+						vim.fn.glob(vim.env.MASON .. '/packages/java-test/extension/server/*.jar')
+					)
 				},
 				settings = {
 					java = {
@@ -33,9 +39,9 @@ return {
 				},
 				capabilities = require'lspconfig'.util.default_config.capabilities,
 				on_attach = function(client)
-					jdtls_setup.add_commands()
-					jdtls.update_project_config()
-					--jdtls.setup_dap({ hotcodereplace = 'auto' })
+					require'jdtls.setup'.add_commands()
+					require'jdtls'.update_project_config()
+					require'jdtls'.setup_dap({ hotcodereplace = 'auto' })
 				end
 			})
 		end
