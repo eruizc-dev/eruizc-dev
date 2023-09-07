@@ -17,6 +17,7 @@ return {
 			},
 			inlay_hints = { enabled = true },
 			servers = {
+				jsonls = {},
 				lua_ls = {
 					settings = {
 						Lua = {
