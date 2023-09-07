@@ -45,7 +45,6 @@ nnoremap    <leader>con   <cmd>Telescope find_files prompt_title=Configuration c
 nnoremap    <leader>z     <cmd>Telescope zoxide list<cr>
 
 """HELPERS"""
-nnoremap    <leader>cs    <cmd>Cheatsheet<cr>
 nnoremap    <leader>k     <cmd>Telescope help_tags<cr>
 
 """LANGUAGE SMARTNESS"""
@@ -53,13 +52,6 @@ nnoremap ?         <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<cr>
 nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<cr>
 vnoremap <leader>a <cmd>lua vim.lsp.buf.range_code_action()<cr>
-
-"""COMPLETION"""
-"inoremap <expr> <C-j>   pumvisible() ? "\<C-n>" : compe#complete()
-"inoremap <expr> <C-k>   pumvisible() ? "\<C-p>" : compe#complete()
-"inoremap <expr> <CR>    compe#confirm('<CR>')
-"inoremap <expr> <C-l>   compe#scroll({ 'delta': +3 })
-"inoremap <expr> <C-h>   compe#scroll({ 'delta': -3 })
 
 """TERMINALS"""
 tnoremap <silent> <C-o>     <C-\><C-n>
@@ -85,7 +77,6 @@ nnoremap <leader>spt       <cmd>FloatermTui spt<cr>
 
 """UNDOS"""
 nnoremap U           <C-r>
-nnoremap <leader>u   <cmd>UndotreeToggle<bar>UndotreeFocus<cr>
 
 """UNDO BREAKPOINTS"""
 inoremap , ,<c-g>u

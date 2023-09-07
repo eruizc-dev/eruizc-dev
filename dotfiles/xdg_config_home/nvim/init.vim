@@ -1,11 +1,5 @@
 let mapleader=' '
 
-try
-	lua require 'eruizc-dev'
-catch
-	echo 'Failed to load eruizc-dev'
-endtry
-
 " Quality of life
 set ignorecase smartcase
 set incsearch hlsearch
@@ -25,11 +19,6 @@ set confirm
 set termguicolors
 set cursorline
 set guicursor=
-try
-  colorscheme dracula
-catch
-  colorscheme slate
-endtry
 
 augroup auto_mkdir_new_file
   autocmd!
@@ -45,3 +34,10 @@ augroup END
 au! BufRead,BufNewFile *.conf setfiletype conf
 au! BufRead,BufNewFile *.njk setfiletype html
 au! BufRead,BufNewFile flake.lock setfiletype json
+
+try
+	lua require 'eruizc-dev'
+catch
+	echo 'Failed to load lua configs, using defaults'
+	colorscheme slate
+endtry
