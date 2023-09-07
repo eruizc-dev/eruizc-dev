@@ -12,21 +12,7 @@ nnoremap    <C-p>   <cmd>cprev<cr>
 nnoremap    <C-h>   <C-o>
 nnoremap    <C-l>   <C-i>
 
-"""CODE EDIT"""
-vnoremap    J   :m '>+1<cr>gv=gv
-vnoremap    K   :m '<-2<cr>gv=gv
-vnoremap    <   <gv
-vnoremap    >   >gv
-nnoremap    Y   y$
-nnoremap    +   <C-a>
-nnoremap    -   <C-x>
-vnoremap    +   <C-a>
-vnoremap    -   <C-x>
-vnoremap    g+   g<C-a>
-vnoremap    g-   g<C-x>
-
 """GOTOS"""
-nnoremap    gf  gF
 nnoremap    gr  <cmd>Telescope lsp_references<cr>
 nnoremap    gd  <cmd>Telescope lsp_definitions<cr>
 nnoremap    gi  <cmd>lua vim.lsp.buf.implementation()<cr>
@@ -75,24 +61,8 @@ nnoremap <leader>lg        <cmd>FloatermTui lazygit<cr>
 nnoremap <leader>ld        <cmd>FloatermTui lazydocker<cr>
 nnoremap <leader>spt       <cmd>FloatermTui spt<cr>
 
-"""UNDOS"""
-nnoremap U           <C-r>
-
-"""UNDO BREAKPOINTS"""
-inoremap , ,<c-g>u
-inoremap . .<c-g>u
-inoremap ; ;<c-g>u
-
-"""COMMAND MODE"""
-set wildcharm=<Tab>
-cnoremap <C-j> <Tab>
-cnoremap <C-k> <Tab><S-Tab><S-Tab>
-cnoremap <C-h> <up>
-cnoremap <C-l> <down>
-
 """UNMAP"""
 let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
-nnoremap ZZ :echo"<< ===== C H E C K   C A P S   L O C K ===== >>"<cr>
 
 """TESTING"""
 nnoremap tt <cmd>TestLast<cr>
