@@ -3,7 +3,8 @@ return {
 		'neovim/nvim-lspconfig',
 		event = { 'BufReadPre', 'BufNewFile' },
 		opts = {
-			diagnostics = { -- options for vim.diagnostic.config()
+			-- options for vim.diagnostic.config()
+			diagnostics = {
 				underline = true,
 				virtual_text = {
 					severity = vim.diagnostic.severity.WARN,
@@ -42,23 +43,53 @@ return {
 	{
 		'hrsh7th/nvim-cmp',
 		event = 'InsertEnter',
+		version = false, -- Last version is too old
 		dependencies = {
 			-- Sources
 			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-nvim-lua',
+			{ 'hrsh7th/cmp-nvim-lua', ft = 'lua' },
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
 			--'kristijanhusak/vim-dadbod-completion',
-			-- Snippets
-			-- 'L3MON4D3/LuaSnip'
-			--'saadparwaiz1/cmp_luasnip',
 			-- Style points
 			'onsails/lspkind-nvim',
+			-- Snippets
+			{
+				'saadparwaiz1/cmp_luasnip',
+				dependencies = { 'L3MON4D3/LuaSnip' }
+			},
+			-- Copilot
+			{
+				'zbirenbaum/copilot-cmp',
+				dependencies = {
+					{
+						'zbirenbaum/copilot.lua',
+						cmd = 'Copilot',
+						build = ':Copilot auth',
+						opts = {
+							suggestion = { enabled = false },
+							panel = { enabled = false },
+						},
+						config = function()
+							require('copilot').setup({})
+						end,
+					}
+				},
+				config = function ()
+					require('copilot_cmp').setup()
+				end
+			}
 		},
 		opts = function(_, opts)
+			vim.api.nvim_set_hl(0, 'CmpGhostText', { link = 'Comment', default = true })
 			return {
 				completion = {
 					completeopt = 'menu,menuone,noinsert',
+				},
+				snippet = {
+					expand = function(args)
+						require'luasnip'.lsp_expand(args.body)
+					end,
 				},
 				mapping = {
 					['<C-c>'] = require'cmp'.mapping.abort(),
@@ -69,20 +100,27 @@ return {
 					['<C-l>'] = require'cmp'.mapping.scroll_docs(4),
 				},
 				sources = {
-					--{ name = 'luasnip' },
 					{ name = 'nvim_lsp' },
 					{ name = 'nvim_lua' },
 					{ name = 'buffer' },
 					{ name = 'path' },
+					{ name = 'luasnip' },
+					{ name = 'copilot' },
 					--{ name = 'vim-dadbod-completion' },
 				},
 				formatting = {
 					format = require'lspkind'.cmp_format({
 						mode = 'symbol_text',
-						maxwidth = 50
+						maxwidth = 50,
+						symbol_map = { Copilot = '' }
 					})
+				},
+				experimental = {
+					ghost_text = {
+						hl_group = 'CmpGhostText',
+					},
 				},
 			}
 		end,
-	}
+	},
 }
