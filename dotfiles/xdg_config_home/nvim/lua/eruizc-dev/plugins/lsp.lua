@@ -38,5 +38,51 @@ return {
 			end
 			vim.diagnostic.config(opts) -- Must be after setup
 		end,
+	},
+	{
+		'hrsh7th/nvim-cmp',
+		event = 'InsertEnter',
+		dependencies = {
+			-- Sources
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-nvim-lua',
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			--'kristijanhusak/vim-dadbod-completion',
+			-- Snippets
+			-- 'L3MON4D3/LuaSnip'
+			--'saadparwaiz1/cmp_luasnip',
+			-- Style points
+			'onsails/lspkind-nvim',
+		},
+		opts = function(_, opts)
+			return {
+				completion = {
+					completeopt = 'menu,menuone,noinsert',
+				},
+				mapping = {
+					['<C-c>'] = require'cmp'.mapping.abort(),
+					['<CR>'] = require'cmp'.mapping.confirm(),
+					['<C-j>'] = require'cmp'.mapping.select_next_item({ behavior = require'cmp'.SelectBehavior.Select }),
+					['<C-k>'] = require'cmp'.mapping.select_prev_item({ behavior = require'cmp'.SelectBehavior.Select }),
+					['<C-h>'] = require'cmp'.mapping.scroll_docs(-4),
+					['<C-l>'] = require'cmp'.mapping.scroll_docs(4),
+				},
+				sources = {
+					--{ name = 'luasnip' },
+					{ name = 'nvim_lsp' },
+					{ name = 'nvim_lua' },
+					{ name = 'buffer' },
+					{ name = 'path' },
+					--{ name = 'vim-dadbod-completion' },
+				},
+				formatting = {
+					format = require'lspkind'.cmp_format({
+						mode = 'symbol_text',
+						maxwidth = 50
+					})
+				},
+			}
+		end,
 	}
 }
