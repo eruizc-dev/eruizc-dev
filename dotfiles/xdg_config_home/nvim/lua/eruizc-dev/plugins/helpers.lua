@@ -1,8 +1,10 @@
 return {
-	'sudormrfbin/cheatsheet.nvim',
-	cmd = 'Cheatsheet',
-	dependencies = 'nvim-telescope/telescope.nvim',
-	keys = {
-		{ '<leader>cs', '<CMD>Cheatsheet<CR>', desc = 'Open cheatsheet' }
-	}
+	{
+		'sudormrfbin/cheatsheet.nvim',
+		cmd = 'Cheatsheet',
+		dependencies = 'nvim-telescope/telescope.nvim',
+		keys = {
+			{ '<leader>cs', '<cmd>Cheatsheet<cr>', desc = 'Open cheatsheet' }
+		},
+	},
 }
