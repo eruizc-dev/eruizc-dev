@@ -45,9 +45,9 @@ nnoremap    <leader>blame <cmd>GitMessenger<cr>
 nnoremap    <leader>diff  <cmd>Gdiffsplit!<cr>
 
 """SEARCH FILES"""
-nnoremap    <leader>p     <cmd>lua require("eruizc.telescope").find_files()<cr>
-nnoremap    <leader>P     <cmd>lua require("eruizc.telescope").ripgrep()<cr>
-nnoremap    <leader>con   <cmd>lua require("eruizc.telescope").vimrc()<cr>
+nnoremap    <leader>p     <cmd>Telescope find_files find_command=rg,--files,--hidden,--no-ignore-global<CR>
+nnoremap    <leader>P     <cmd>Telescope grep_string prompt_title=Rip\ &\ Tear search=<CR>
+nnoremap    <leader>con   <cmd>Telescope find_files prompt_title=Configuration cwd=~/.config/nvim<cr>
 nnoremap    <leader>z     <cmd>Telescope zoxide list<cr>
 
 """HELPERS"""
