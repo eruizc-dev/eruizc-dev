@@ -11,6 +11,7 @@ return {
 		'jvgrootveld/telescope-zoxide'
 	},
 	cmd = 'Telescope',
+	version = false,
 	config = function(_, opts)
 		require'telescope'.setup {
 			defaults = {

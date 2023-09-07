@@ -2,6 +2,8 @@ let mapleader=' '
 
 try
 	lua require 'eruizc-dev'
+catch
+	echo 'Failed to load eruizc-dev'
 endtry
 
 " Quality of life

@@ -42,54 +42,12 @@ return {
 		end,
 	},
 	{
-		'mfussenegger/nvim-jdtls',
-		ft = { 'java' },
-		dependencies = {},
-		config = function ()
-			local jdtls = require('jdtls')
-			local jdtls_setup = require("jdtls.setup")
-
-			--local bundles = { vim.fn.glob("$HOME/repos/microsoft/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar") }
-			--vim.list_extend(bundles, vim.split(vim.fn.glob("$HOME/repos/microsoft/vscode-java-test/server/*.jar"), "\n"))
-			jdtls.start_or_attach({
-				cmd = { 'jdt-language-server', '-data', vim.fn.expand('$HOME/.cache/jdtls-workspace') },
-				root_dir = jdtls_setup.find_root({ '*.gradle', 'pom.xml' }),
-				init_options = {
-					--bundles = bundles
-				},
-				settings = {
-					java = {
-						implementationsCodeLens = {
-							enabled = true
-						},
-						completion = {
-							importOrder = { }
-						},
-						sources = {
-							organizeImports = {
-								starThreshold = 2,
-								staticStarThreshold = 2
-							}
-						},
-					}
-				},
-				capabilities = require'lspconfig'.util.default_config.capabilities,
-				on_attach = function(client)
-					jdtls_setup.add_commands()
-					jdtls.update_project_config()
-					--jdtls.setup_dap({ hotcodereplace = 'auto' })
-				end
-			})
-		end
-	},
-	{
 		'hrsh7th/nvim-cmp',
 		event = 'InsertEnter',
 		version = false, -- Last version is too old
 		dependencies = {
 			-- Sources
 			'hrsh7th/cmp-nvim-lsp',
-			{ 'hrsh7th/cmp-nvim-lua', ft = 'lua' },
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
 			--'kristijanhusak/vim-dadbod-completion',
@@ -115,20 +73,7 @@ return {
 			-- Copilot
 			{
 				'zbirenbaum/copilot-cmp',
-				dependencies = {
-					{
-						'zbirenbaum/copilot.lua',
-						cmd = 'Copilot',
-						build = ':Copilot auth',
-						opts = {
-							suggestion = { enabled = false },
-							panel = { enabled = false },
-						},
-						config = function()
-							require('copilot').setup({})
-						end,
-					}
-				},
+				dependencies = 'zbirenbaum/copilot.lua',
 				config = function ()
 					require('copilot_cmp').setup()
 				end
