@@ -1,5 +1,10 @@
-" Quality of life
 let mapleader=' '
+
+try
+	lua require 'eruizc-dev'
+endtry
+
+" Quality of life
 set ignorecase smartcase
 set incsearch hlsearch
 set splitright splitbelow
@@ -38,5 +43,3 @@ augroup END
 au! BufRead,BufNewFile *.conf setfiletype conf
 au! BufRead,BufNewFile *.njk setfiletype html
 au! BufRead,BufNewFile flake.lock setfiletype json
-
-lua require 'eruizc-dev'
