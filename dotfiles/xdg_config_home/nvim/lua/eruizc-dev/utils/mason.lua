@@ -13,6 +13,7 @@ local function install_package(package)
 end
 
 local function ensure_installed(packages)
+	registry.update()
 	for _, package_name in ipairs(packages) do
 		local exists, package = pcall(registry.get_package, package_name)
 		if not exists then
