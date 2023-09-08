@@ -4,7 +4,8 @@ return {
 		ft = 'java',
 		dependencies = {
 			'mfussenegger/nvim-dap',
-			{ 'williamboman/mason.nvim', opts = {} }
+			'hrsh7th/cmp-nvim-lsp',
+			{ 'williamboman/mason.nvim', opts = {} },
 		},
 		config = function ()
 			require'eruizc-dev.utils.mason'.ensure_installed({ 'jdtls', 'java-test', 'java-debug-adapter' })
@@ -37,7 +38,7 @@ return {
 						},
 					}
 				},
-				capabilities = require'lspconfig'.util.default_config.capabilities,
+				capabilities = require'cmp_nvim_lsp'.default_capabilities(),
 				on_attach = function(client)
 					require'jdtls.setup'.add_commands()
 					require'jdtls'.update_project_config()

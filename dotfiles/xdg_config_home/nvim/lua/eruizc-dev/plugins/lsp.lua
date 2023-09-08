@@ -2,6 +2,7 @@ return {
 	{
 		'neovim/nvim-lspconfig',
 		event = { 'BufReadPre', 'BufNewFile' },
+		dependencies = 'hrsh7th/cmp-nvim-lsp',
 		opts = {
 			-- options for vim.diagnostic.config()
 			diagnostics = {
@@ -17,6 +18,7 @@ return {
 			},
 			inlay_hints = { enabled = true },
 			servers = {
+				gopls = {},
 				jsonls = {},
 				lua_ls = {
 					settings = {
@@ -35,8 +37,10 @@ return {
 			},
 		},
 		config = function(_, opts)
+			local completion_capabilities = require'cmp_nvim_lsp'.default_capabilities()
 			for server, server_opts in pairs(opts.servers) do
-				require('lspconfig')[server].setup(server_opts)
+				local final_opts = vim.tbl_extend('force', { capabilities = completion_capabilities }, server_opts)
+				require('lspconfig')[server].setup(final_opts)
 			end
 			vim.diagnostic.config(opts) -- Must be after setup
 		end,
