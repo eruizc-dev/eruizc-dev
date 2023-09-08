@@ -7,10 +7,14 @@ return {
 			'antoinemadec/FixCursorHold.nvim',
 			-- Adapters
 			'nvim-neotest/neotest-go',
+			'olimorris/neotest-rspec',
 		},
 		opts = function()
 			return {
-				adapters = { require('neotest-go') },
+				adapters = {
+					require'neotest-go',
+					require'neotest-rspec',
+				},
 				status = { virtual_text = true },
 				output = { open_on_run = true },
 			}
