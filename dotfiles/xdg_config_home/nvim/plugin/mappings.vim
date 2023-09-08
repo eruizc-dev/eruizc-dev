@@ -39,28 +39,6 @@ nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<cr>
 nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<cr>
 vnoremap <leader>a <cmd>lua vim.lsp.buf.range_code_action()<cr>
 
-"""TERMINALS"""
-tnoremap <silent> <C-o>     <C-\><C-n>
-
-nnoremap <C-q> <cmd>FloatermHide!<cr>
-tnoremap <C-q> <cmd>FloatermHide!<cr>
-tnoremap <C-l> <cmd>FloatermPrev<cr>
-tnoremap <C-h> <cmd>FloatermNext<cr>
-
-nnoremap <C-a> <cmd>FloatermNewOrToggle --title=Terminal\ 1<cr>
-nnoremap <C-s> <cmd>FloatermNewOrToggle --title=Terminal\ 2<cr>
-nnoremap <C-d> <cmd>FloatermNewOrToggle --title=Terminal\ 3<cr>
-nnoremap <C-f> <cmd>FloatermNewOrToggle --title=Terminal\ 4<cr>
-tnoremap <C-a> <cmd>FloatermNewOrToggle --title=Terminal\ 1<cr>
-tnoremap <C-s> <cmd>FloatermNewOrToggle --title=Terminal\ 2<cr>
-tnoremap <C-d> <cmd>FloatermNewOrToggle --title=Terminal\ 3<cr>
-tnoremap <C-f> <cmd>FloatermNewOrToggle --title=Terminal\ 4<cr>
-
-"""TUIS"""
-nnoremap <leader>lg        <cmd>FloatermTui lazygit<cr>
-nnoremap <leader>ld        <cmd>FloatermTui lazydocker<cr>
-nnoremap <leader>spt       <cmd>FloatermTui spt<cr>
-
 """UNMAP"""
 let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
 
