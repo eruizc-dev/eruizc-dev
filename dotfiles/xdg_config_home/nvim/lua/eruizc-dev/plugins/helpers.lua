@@ -7,4 +7,9 @@ return {
 			{ '<leader>cs', '<cmd>Cheatsheet<cr>', desc = 'Open cheatsheet' }
 		},
 	},
+	{
+		'williamboman/mason.nvim',
+		cmd = 'Mason',
+		opts = {},
+	}
 }
