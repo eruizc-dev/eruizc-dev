@@ -64,6 +64,7 @@ return {
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-nvim-lua',
 			--'kristijanhusak/vim-dadbod-completion',
 			-- Style points
 			'onsails/lspkind-nvim',
@@ -126,6 +127,7 @@ return {
 				},
 				sources = {
 					{ name = 'nvim_lsp' },
+					{ name = 'nvim_lua' },
 					{ name = 'buffer' },
 					{ name = 'path' },
 					{ name = 'luasnip' },

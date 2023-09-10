@@ -1,17 +1,5 @@
 return {
 	{
-		'hrsh7th/cmp-nvim-lua',
-		ft = 'lua',
-		dependencies = 'hrsh7th/nvim-cmp',
-		config = function ()
-			require'cmp'.setup.filetype('lua', {
-				sources = require'cmp'.config.sources({
-					{ name = 'nvim_lua' },
-				})
-			})
-		end
-	},
-	{
 		'jbyuki/one-small-step-for-vimkind',
 		ft = 'lua',
 		dependencies = 'mfussenegger/nvim-dap',
