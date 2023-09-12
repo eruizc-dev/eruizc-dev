@@ -28,6 +28,7 @@ return {
 			},
 			inlay_hints = { enabled = true },
 			servers = {
+				clang = {},
 				gopls = {},
 				jsonls = {},
 				lua_ls = {
