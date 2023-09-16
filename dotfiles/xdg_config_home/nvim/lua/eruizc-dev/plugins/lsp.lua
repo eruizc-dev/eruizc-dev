@@ -51,7 +51,10 @@ return {
 								library = vim.api.nvim_get_runtime_file('', true), -- Make the server aware of Neovim runtime files
 								checkThirdParty = false,
 							},
-							diagnostics = { globals = { 'vim' } },
+							diagnostics = {
+								globals = { 'vim' },
+                unusedLocalExclude = { '_*' },
+							},
 							telemetry = { enable = false },
 						},
 					},

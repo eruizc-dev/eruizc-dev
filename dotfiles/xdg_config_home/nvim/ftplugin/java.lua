@@ -30,7 +30,7 @@ require'jdtls'.start_or_attach({
 		}
 	},
 	capabilities = require'cmp_nvim_lsp'.default_capabilities(),
-	on_attach = function(client)
+	on_attach = function(_client)
 		require'jdtls.setup'.add_commands()
 		require'jdtls'.update_project_config()
 		require'jdtls'.setup_dap({ hotcodereplace = 'auto' })

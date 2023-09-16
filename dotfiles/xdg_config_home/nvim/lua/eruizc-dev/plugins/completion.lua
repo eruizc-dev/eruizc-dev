@@ -4,15 +4,11 @@ return {
 		event = 'InsertEnter',
 		version = false, -- Last version is too old
 		dependencies = {
-			-- Sources
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-nvim-lua',
-			--'kristijanhusak/vim-dadbod-completion',
-			-- Style points
 			'onsails/lspkind-nvim',
-			-- Snippets
 			{
 				'saadparwaiz1/cmp_luasnip',
 				dependencies = {
@@ -29,7 +25,6 @@ return {
 					}
 				}
 			},
-			-- Copilot
 			{
 				'zbirenbaum/copilot-cmp',
 				dependencies = 'zbirenbaum/copilot.lua',
@@ -38,7 +33,7 @@ return {
 				end
 			}
 		},
-		opts = function(_, opts)
+		opts = function(_, _opts)
 			local cmp = require'cmp'
 			vim.api.nvim_set_hl(0, 'CmpGhostText', { link = 'Comment', default = true })
 			return {
@@ -56,14 +51,14 @@ return {
 					['<CR>'] = require'cmp'.mapping.confirm(),
 					['<C-j>'] = require'cmp'.mapping.select_next_item({ behavior = require'cmp'.SelectBehavior.Select }),
 					['<C-k>'] = require'cmp'.mapping.select_prev_item({ behavior = require'cmp'.SelectBehavior.Select }),
-					['<C-h>'] = require'cmp'.mapping(function(fallback)
+					['<C-h>'] = require'cmp'.mapping(function(_fallback)
 						if require'luasnip'.jumpable(-1) then
 							require'luasnip'.jump(-1)
 						else
 							require'cmp'.mapping.scroll_docs(-4)
 						end
 					end, { 'i', 's' }),
-					['<C-l>'] = require'cmp'.mapping(function(fallback)
+					['<C-l>'] = require'cmp'.mapping(function(_fallback)
 						if require'luasnip'.expand_or_jumpable() then
 							require'luasnip'.expand_or_jump()
 						else
