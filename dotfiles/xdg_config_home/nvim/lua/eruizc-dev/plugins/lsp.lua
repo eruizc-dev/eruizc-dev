@@ -96,10 +96,12 @@ return {
 			}
 		},
 		opts = function(_, opts)
+			local cmp = require'cmp'
 			vim.api.nvim_set_hl(0, 'CmpGhostText', { link = 'Comment', default = true })
 			return {
+				preselect = cmp.PreselectMode.None,
 				completion = {
-					completeopt = 'menu,menuone,noinsert',
+					completeopt = 'menu,menuone,noinsert,noselect',
 				},
 				snippet = {
 					expand = function(args)
