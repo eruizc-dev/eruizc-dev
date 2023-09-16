@@ -129,7 +129,21 @@ return {
 					end, { 'i', 's' }),
 				},
 				sources = {
-					{ name = 'nvim_lsp' },
+					{
+						name = 'nvim_lsp',
+						entry_filter = function(entry, context)
+							local Kind = require'cmp.types.lsp'.CompletionItemKind
+							local kind = entry:get_kind()
+							local char_before_cursor = string.sub(context.cursor_line, context.cursor.col - 1, context.cursor.col - 1)
+							if char_before_cursor == '.' then
+								return kind == Kind.Method or kind == Kind.Field
+							elseif string.match(context.cursor_line, '^%s*%w*$') then
+								return kind == Kind.Function or kind == Kind.Variable
+							else
+								return true
+							end
+						end
+					},
 					{ name = 'nvim_lua' },
 					{ name = 'buffer' },
 					{ name = 'path' },
