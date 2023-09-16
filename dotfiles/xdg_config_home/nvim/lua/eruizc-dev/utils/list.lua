@@ -10,7 +10,6 @@ local function join(...)
 		vim.list_extend(result, arg)
 	end
 	return result
-
 end
 
 return { join = join }

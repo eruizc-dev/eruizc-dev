@@ -1,16 +1,19 @@
-local root = require'mason-registry'.get_package'jdtls':get_install_path()
+local function path(package)
+	return require'mason-registry'.get_package(package):get_install_path()
+end
 
+local root = path'jdtls'
 require'jdtls'.start_or_attach({
 	cmd = {
-		root .. '/jdtls',
+		'jdtls',
 		'--data',
 		vim.fn.expand('$HOME/.cache/jdtls-workspace'),
 		('--jvm-arg=-javaagent:%s'):format(root .. '/lombok.jar'),
 	},
 	init_options = {
 		bundles = require'eruizc-dev.utils.list'.join(
-		vim.fn.glob(require'mason-registry'.get_package'java-debug-adapter':get_install_path() .. '/extension/server/*.jar'),
-		vim.fn.glob(require'mason-registry'.get_package'java-test':get_install_path() .. '/extension/server/*.jar')
+			vim.fn.glob(path'java-debug-adapter' .. '/extension/server/com.microsoft.java.debug.plugin-*.jar', 1) ,
+			vim.split(vim.fn.glob(path'java-test' .. '/extension/server/*.jar', 1), "\n")
 		)
 	},
 	settings = {
@@ -23,8 +26,8 @@ require'jdtls'.start_or_attach({
 			},
 			sources = {
 				organizeImports = {
-					starThreshold = 2,
-					staticStarThreshold = 2
+					starThreshold = 3,
+					staticStarThreshold = 3
 				}
 			},
 		}
