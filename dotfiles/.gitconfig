@@ -1,25 +1,27 @@
 [core]
-	editor = nvim
-	autocrlf = input
-	excludesfile = ~/.gitignore
+    editor = nvim
+    autocrlf = input
+    excludesfile = ~/.gitignore
 [init]
-	defaultBranch = master
+    defaultBranch = master
 [pull]
-	rebase = true
+    rebase = true
 [alias]
-	nuke = "!f() { read -p 'You rly wanna nuke? (y/N): ' choice; case $choice in y|Y ) git reset --hard && git clean -fd;; * ) echo 'ABORTING';; esac }; f"
-	purge = "clean -fX"
+    nuke = "!f() { read -p 'You rly wanna nuke? (y/N): ' choice; case $choice in y|Y ) git reset --hard && git clean -fd;; * ) echo 'ABORTING';; esac }; f"
+    purge = "clean -fX"
 [fetch]
-	prune = true
+    prune = true
 [diff]
-	colorMoved = zebra
+    colorMoved = zebra
 [user]
-	name = Emiliano Ruiz Carletti
-	email = contact@eruizc.dev
-	signinkey = 5E56C9712AA24818
+    name = Emiliano Ruiz Carletti
+    email = contact@eruizc.dev
+    signinkey = 5E56C9712AA24818
 [gpg]
-	program = gpg
+    program = gpg
 [commit]
-	gpgsign = true
+    gpgsign = true
+[includeIf "gitdir/i:~/repos/melisource/"]
+    path = ~/repos/melisource/.gitconfig
 [includeIf "gitdir/i:~/repos/mercadolibre/"]
-	path = ~/repos/mercadolibre/.gitconfig
+    path = ~/repos/mercadolibre/.gitconfig
