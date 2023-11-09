@@ -61,6 +61,7 @@ return {
 				},
 				vimls = {},
 				bufls = {},
+				yamlls = {},
 			},
 		},
 		config = function(_, opts)
