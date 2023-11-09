@@ -18,6 +18,7 @@ return {
 		{ '<C-f>', '<cmd>FloatermToggle F<CR>', mode = 't', desc = 'Open terminal 4' },
 		-- Tui
 		{ '<leader>lg', '<cmd>FloatermNew --title=lazygit --autoclose=2 lazygit<CR>', desc = 'Open lazygit' },
+		{ '<leader>ld', '<cmd>FloatermNew --title=lazydocker --autoclose=2 lazydocker<CR>', desc = 'Open lazydocker' },
 	},
 	init = function()
 		vim.g.floaterm_width = 0.9
