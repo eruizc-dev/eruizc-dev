@@ -19,7 +19,7 @@ return {
 	},
 	{
 		'williamboman/mason.nvim',
-		cmd = 'Mason',
+		cmd = { 'Mason', 'MasonLog' },
 		opts = {},
 	}
 }
