@@ -60,6 +60,7 @@ return {
 					},
 				},
 				vimls = {},
+				bufls = {},
 			},
 		},
 		config = function(_, opts)
