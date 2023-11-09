@@ -1,5 +1,26 @@
 return {
 	{
+		'kristijanhusak/vim-dadbod-ui',
+		dependencies = {
+			'tpope/vim-dadbod',
+			{ 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' } }
+		},
+		cmd = {
+			'DBUI',
+			'DBUIToggle',
+			'DBUIAddConnection',
+			'DBUIFindBuffer',
+		},
+		init = function()
+			vim.g.db_ui_use_nerd_fonts = 1
+			vim.g.db_ui_table_helpers = {
+				sqlite = {
+					Describe = "PRAGMA table_info('{table}');"
+				}
+			}
+		end,
+	},
+	{
 		'nvim-lualine/lualine.nvim',
 		event = 'VeryLazy',
 		dependencies = { 'nvim-tree/nvim-web-devicons', },

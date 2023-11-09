@@ -7,7 +7,7 @@ return {
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-nvim-lua',
+			{ 'hrsh7th/cmp-nvim-lua', ft = 'lua' },
 			'onsails/lspkind-nvim',
 			{
 				'saadparwaiz1/cmp_luasnip',
@@ -31,7 +31,11 @@ return {
 				config = function ()
 					require('copilot_cmp').setup()
 				end
-			}
+			},
+			{
+				'kristijanhusak/vim-dadbod-completion',
+				ft = { 'sql', 'mysql', 'plsql' }
+			},
 		},
 		opts = function(_, _opts)
 			local cmp = require'cmp'
@@ -87,7 +91,7 @@ return {
 					{ name = 'path' },
 					{ name = 'luasnip' },
 					{ name = 'copilot' },
-					--{ name = 'vim-dadbod-completion' },
+					{ name = 'vim-dadbod-completion' },
 				},
 				formatting = {
 					format = require'lspkind'.cmp_format({
