@@ -53,7 +53,7 @@ return {
 							},
 							diagnostics = {
 								globals = { 'vim' },
-                unusedLocalExclude = { '_*' },
+								unusedLocalExclude = { '_*' },
 							},
 							telemetry = { enable = false },
 						},
@@ -62,6 +62,7 @@ return {
 				vimls = {},
 				bufls = {},
 				yamlls = {},
+				solargraph = {},
 			},
 		},
 		config = function(_, opts)
