@@ -8,12 +8,14 @@ return {
 			-- Adapters
 			'nvim-neotest/neotest-go',
 			'olimorris/neotest-rspec',
+			'andy-bell101/neotest-java',
 		},
 		opts = function()
 			return {
 				adapters = {
 					require'neotest-go',
 					require'neotest-rspec',
+					require'neotest-java',
 				},
 				status = { virtual_text = true },
 				output = { open_on_run = true },
