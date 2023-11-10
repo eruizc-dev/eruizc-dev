@@ -8,7 +8,7 @@ return {
 			-- Adapters
 			'nvim-neotest/neotest-go',
 			'olimorris/neotest-rspec',
-			'andy-bell101/neotest-java',
+			'rcasia/neotest-java',
 		},
 		opts = function()
 			return {
