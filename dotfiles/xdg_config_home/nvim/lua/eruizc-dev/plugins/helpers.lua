@@ -19,6 +19,10 @@ return {
 		},
 	},
 	{
+		'nvim-lua/plenary.nvim',
+		cmd = 'PlenaryBustedDirectory',
+	},
+	{
 		'williamboman/mason.nvim',
 		cmd = { 'Mason', 'MasonLog' },
 		opts = {},

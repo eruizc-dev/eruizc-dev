@@ -7,15 +7,20 @@ return {
 			'antoinemadec/FixCursorHold.nvim',
 			-- Adapters
 			'nvim-neotest/neotest-go',
+			{
+				'rcasia/neotest-java',
+				dir = '~/Repositories/eruizc-dev/neotest-java/'
+			},
+			'nvim-neotest/neotest-plenary',
 			'olimorris/neotest-rspec',
-			'rcasia/neotest-java',
 		},
 		opts = function()
 			return {
 				adapters = {
 					require'neotest-go',
-					require'neotest-rspec',
 					require'neotest-java',
+					require'neotest-plenary',
+					require'neotest-rspec',
 				},
 				status = { virtual_text = true },
 				output = { open_on_run = true },
