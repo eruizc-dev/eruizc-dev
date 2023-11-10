@@ -52,7 +52,10 @@ return {
 								checkThirdParty = false,
 							},
 							diagnostics = {
-								globals = { 'vim' },
+								globals = {
+									'vim', -- Neovim
+									'it', 'describe', -- Busted
+								},
 								unusedLocalExclude = { '_*' },
 							},
 							telemetry = { enable = false },

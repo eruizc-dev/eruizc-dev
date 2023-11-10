@@ -1,4 +1,9 @@
 return {
+			{
+				'rcasia/neotest-java',
+				lazy = false,
+				dir = '~/Repositories/eruizc-dev/neotest-java/'
+			},
 	{
 		'nvim-neotest/neotest',
 		dependencies = {
@@ -16,7 +21,7 @@ return {
 				adapters = {
 					require'neotest-go',
 					require'neotest-java',
-					require'neotest-plenary',
+					require'neotest-plenary'.setup{ min_init = "/home/eru/Repositories/eruizc-dev/neotest-java/tests/minimal_init.vim" },
 					require'neotest-rspec',
 				},
 				status = { virtual_text = true },
