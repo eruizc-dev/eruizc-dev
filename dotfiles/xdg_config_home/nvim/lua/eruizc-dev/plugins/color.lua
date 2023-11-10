@@ -17,6 +17,7 @@ return {
 		cmd = { 'TSUpdateSync' },
 		dependencies = 'williamboman/mason.nvim',
 		opts = {
+			ensure_installed = {'lua', 'java', 'ruby', 'go' },
 			highlight = { enable = true },
 			indent = { enable = true },
 			auto_install = true,
