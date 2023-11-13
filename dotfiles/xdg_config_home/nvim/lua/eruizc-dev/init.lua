@@ -12,3 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require'lazy'.setup'eruizc-dev.plugins'
+
+require'lazy'.setup{
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
+  spec = {
+    import = 'eruizc-dev.plugins'
+  }
+}
