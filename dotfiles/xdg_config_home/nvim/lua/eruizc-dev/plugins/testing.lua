@@ -7,10 +7,7 @@ return {
 			'antoinemadec/FixCursorHold.nvim',
 			-- Adapters
 			'nvim-neotest/neotest-go',
-			{
-				'rcasia/neotest-java',
-				dir = '~/Repositories/eruizc-dev/neotest-java/'
-			},
+			'rcasia/neotest-java',
 			'nvim-neotest/neotest-plenary',
 			'olimorris/neotest-rspec',
 		},
