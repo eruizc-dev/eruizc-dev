@@ -1,5 +1,7 @@
 local registry = require'mason-registry'
 
+local M = {}
+
 local function install_package(package)
 	vim.notify(("[eruizc.utils.mason] installing `%s`"):format(package.name))
 	return package:install():once('closed', vim.schedule_wrap(function()
@@ -12,8 +14,13 @@ local function install_package(package)
 	)
 end
 
+M.registry_updated = false
 local function ensure_installed(packages)
-	registry.update()
+	if not M.registry_updated then
+		registry.update()
+		M.registry_updated = true
+	end
+
 	for _, package_name in ipairs(packages) do
 		local exists, package = pcall(registry.get_package, package_name)
 		if not exists then
