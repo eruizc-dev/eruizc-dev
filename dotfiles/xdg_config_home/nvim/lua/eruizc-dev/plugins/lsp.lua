@@ -66,6 +66,9 @@ return {
 				bufls = {},
 				yamlls = {},
 				solargraph = {},
+				html = {},
+				cssls = {},
+				tsserver = {},
 			},
 		},
 		config = function(_, opts)
