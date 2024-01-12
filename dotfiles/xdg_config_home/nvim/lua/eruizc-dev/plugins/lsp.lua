@@ -65,6 +65,7 @@ return {
 				},
 				vimls = {},
 				bufls = {},
+				bashls = {},
 				yamlls = {},
 				solargraph = {},
 				html = {},
