@@ -2,6 +2,8 @@ local function path(package)
 	return require'mason-registry'.get_package(package):get_install_path()
 end
 
+vim.cmd[[set tabstop=4]]
+
 local root = path'jdtls'
 require'jdtls'.start_or_attach({
 	cmd = {
