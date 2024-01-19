@@ -65,6 +65,7 @@ return {
 				},
 				vimls = {},
 				bufls = {},
+				rust_analyzer = {},
 				bashls = {},
 				yamlls = {},
 				solargraph = {},
