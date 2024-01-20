@@ -1,4 +1,0 @@
-# Deploy to Kubernetes
-
-
-
