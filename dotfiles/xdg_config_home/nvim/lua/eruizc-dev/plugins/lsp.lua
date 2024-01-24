@@ -12,6 +12,14 @@ return {
 		end,
 	},
 	{
+		'mfussenegger/nvim-lint',
+		config = function()
+			require('lint').linters_by_ft = {
+			  java = { 'checkstyle' }
+			}
+		end,
+	},
+	{
 		'neovim/nvim-lspconfig',
 		cmd = 'LspInfo',
 		event = { 'BufReadPre', 'BufNewFile' },
