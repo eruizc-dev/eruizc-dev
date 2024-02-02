@@ -1,16 +1,15 @@
-local function path(package)
-	return require'mason-registry'.get_package(package):get_install_path()
+local function path(package_name)
+	return require'mason-registry'.get_package(package_name):get_install_path()
 end
 
 vim.cmd[[set tabstop=4]]
 
-local root = path'jdtls'
 require'jdtls'.start_or_attach({
 	cmd = {
 		'jdtls',
-		'--data',
-		vim.fn.expand('$HOME/.cache/jdtls-workspace'),
-		('--jvm-arg=-javaagent:%s'):format(root .. '/lombok.jar'),
+		'-data',
+		vim.fn.expand('$HOME') .. '/.cache/jdtls-workspace',
+		'--jvm-arg=-javaagent:' .. path'jdtls' .. '/lombok.jar',
 	},
 	init_options = {
 		bundles = require'eruizc-dev.utils.list'.join(
@@ -20,6 +19,14 @@ require'jdtls'.start_or_attach({
 	},
 	settings = {
 		java = {
+			-- Maybe uncomment this later, when lombok 1.31.1 is released? It seems that this overries the -javaagent in the script
+			--jdt = {
+			--	ls = {
+			--		lombokSupport = {
+			--			enabled = true
+			--		}
+			--	}
+			--},
 			implementationsCodeLens = {
 				enabled = true
 			},
