@@ -15,7 +15,7 @@ nnoremap    <C-l>   <C-i>
 """GOTOS"""
 nnoremap    gr  <cmd>Telescope lsp_references<cr>
 nnoremap    gd  <cmd>Telescope lsp_definitions<cr>
-nnoremap    gi  <cmd>lua vim.lsp.buf.implementation()<cr>
+nnoremap    gi  <cmd>Telescope lsp_implementations<cr>
 
 """SPLITS"""
 nnoremap    <C-o> <cmd>ZoomWinTabToggle<cr>
