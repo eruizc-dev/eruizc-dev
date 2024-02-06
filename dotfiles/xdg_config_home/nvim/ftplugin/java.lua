@@ -4,11 +4,11 @@ end
 
 vim.cmd[[set tabstop=4]]
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    require'lint'.try_lint()
-  end,
-})
+--vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+--  callback = function()
+--    require'lint'.try_lint()
+--  end,
+--})
 
 require'jdtls'.start_or_attach({
 	cmd = {
