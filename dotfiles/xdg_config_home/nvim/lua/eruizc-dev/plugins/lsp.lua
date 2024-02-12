@@ -11,15 +11,6 @@ return {
 			require('copilot').setup({})
 		end,
 	},
-	--{
-	--	'mfussenegger/nvim-lint',
-	--	config = function()
-	--		require'eruizc-dev.utils.mason'.ensure_installed({ 'checkstyle' })
-	--		require('lint').linters_by_ft = {
-	--		  java = { 'checkstyle' }
-	--		}
-	--	end,
-	--},
 	{
 		'mfussenegger/nvim-jdtls',
 		ft = 'java',
