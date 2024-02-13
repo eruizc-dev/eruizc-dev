@@ -9,6 +9,7 @@
     "build": "eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
   }
 }

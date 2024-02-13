@@ -1,3 +1,5 @@
+const prismjs = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 function setupStaticFile(dir, cfg) {
   cfg.addPassthroughCopy(dir);
 }
@@ -12,6 +14,8 @@ module.exports = function(config) {
   setupStaticDirectory('./src/styles', config);
   setupStaticFile('./src/favicon.png', config);
   setupStaticFile('./src/humans.txt', config);
+
+  config.addPlugin(prismjs);
 
   return {
     dir: {

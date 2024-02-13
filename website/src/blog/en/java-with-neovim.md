@@ -92,7 +92,7 @@ that is done by adding `-javaagent` flag pointing to the location of
 `lombok.jar`. If you used Mason.nvim, it already came with your JDTLS
 instalation. Update nvim-jdtls configuration to look like this:
 
-```patch
+```diff-lua
  -- ftplugin/java.lua
  require'jdtls'.start_or_attach({
      cmd = {
@@ -125,7 +125,7 @@ We will start by installing all the necessary plugins and its dependencies:
 }
 ```
 
-```patch
+```diff-lua
  -- Plugin manager, we add a cmp-nvim-lsp as a dependency to nvim-jdtls
  {
      'mfussenegger/nvim-jdtls',
@@ -160,7 +160,7 @@ require'cmp'.setup({
 And finally we connect nvim-jdtls with nvim-cmp by adding completion
 capabilities.
 
-```patch
+```diff-lua
  -- ftplugin/java.lua
  require'jdtls'.start_or_attach{
      cmd = {
@@ -244,15 +244,15 @@ Now we invoke `:MasonInstall java-debug-adapter` to download the debug server,
 and we bundle the jar together with nvim-jdtls adding it to the `bundles` property.
 This property takes a list of paths to jar files.
 
-```patch
-require'jdtls'.start_or_attach({
-    cmd = {
-        vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls',
-        ('--jvm-arg=-javaagent:%s'):format(vim.fn.expand'$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar'),
-    },
-    capabilities = require'cmp_nvim_lsp'.default_capabilities(),
-+   bundles = { vim.fn.expand'$HOME/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar' },
-})
+```diff-lua
+ require'jdtls'.start_or_attach({
+     cmd = {
+         vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls',
+         ('--jvm-arg=-javaagent:%s'):format(vim.fn.expand'$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar'),
+     },
+     capabilities = require'cmp_nvim_lsp'.default_capabilities(),
++    bundles = { vim.fn.expand'$HOME/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar' },
+ })
 ```
 
 For debugging we will be using a combination of nvim-dap and nvim-jdtls
@@ -293,16 +293,16 @@ paths. We will use `vim.fn.glob` to get a string containing all jar files, and
 split them into a list with `vim.split` as the previous function returns a newline
 separated string.
 
-```patch
-require'jdtls'.start_or_attach({
-    cmd = {
-        vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls',
-        ('--jvm-arg=-javaagent:%s'):format(vim.fn.expand'$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar'),
-    },
-    capabilities = require'cmp_nvim_lsp'.default_capabilities(),
--   bundles = { vim.fn.expand'$HOME/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar' },
-+   bundles = vim.split(vim.fn.glob('$HOME/.local/share/nvim/mason/packages/java-*/extension/server/*.jar', 1), '\n'),
-})
+ ```diff-lua
+ require'jdtls'.start_or_attach({
+     cmd = {
+         vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls',
+         ('--jvm-arg=-javaagent:%s'):format(vim.fn.expand'$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar'),
+     },
+     capabilities = require'cmp_nvim_lsp'.default_capabilities(),
+-    bundles = { vim.fn.expand'$HOME/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar' },
++    bundles = vim.split(vim.fn.glob('$HOME/.local/share/nvim/mason/packages/java-*/extension/server/*.jar', 1), '\n'),
+ })
 ```
 
 Plugins used:
