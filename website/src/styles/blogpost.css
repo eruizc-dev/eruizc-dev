@@ -1,0 +1,26 @@
+body {
+  margin: 40px auto;
+  padding: 0px 15px;
+  max-width: 800px;
+
+  font-family: Open Sans, sans-serif;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.4;
+
+  background-color: #212121;
+  color: #eeeeee;
+}
+
+h1, h2, h3 {
+  color: #35bf5c;
+  font-family: Courier, monospace;
+}
+
+hr {
+  color: #454545;
+}
+
+a {
+  color: #35bf5c;
+}

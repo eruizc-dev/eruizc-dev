@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/blogpost.css">
     <link href="https://unpkg.com/prismjs@1.29.0/themes/prism-okaidia.css" rel="stylesheet">
   </head>
   <body>
     <h1>{{ title }}</h1>
-    {{ page.date.toString() }}
+    <p>Last Update: {{ page.date.toLocaleDateString() }}</p>
     {{ content | safe }}
   </body>
 </html>
