@@ -6,7 +6,9 @@ date: Last Modified
 
 A **step by step guide to set up Neovim for Java development**, capable
 of fully replacing IntelliJ. This is not a copy-paste solution but
-rather a series of instructions that you can adapt to your existing configuration.
+rather a series of instructions that you can adapt to your existing
+configuration. I have confirmed that it works for Linux and MacOS, and it may
+work for Windows too (with some minor tweaks).
 
 You can find the [minimal setup in this GitHub repository](https://github.com/eruizc-dev/minimal-java-nvim/),
 I'll try to keep it up to date, but feel free to [open an issue](https://github.com/eruizc-dev/minimal-java-nvim/issues/new)
@@ -22,8 +24,9 @@ if I miss something.
 
 <h2 id="install-the-package-manager">1. Install the package manager</h2>
 
-I highly recommend [Mason.nvim](https://github.com/williamboman/mason.nvim) to manage
-third party dependencies such as Language Servers, linters, and other binaries. Follow the
+[Mason.nvim](https://github.com/williamboman/mason.nvim) allows you to manage
+third party dependencies such as Language Servers, linters, and other binaries
+that you will require through this guide. Follow the
 [installation instructions](https://github.com/williamboman/mason.nvim?tab=readme-ov-file#installation)
 and call the `setup()` function.
 
@@ -39,22 +42,27 @@ require'mason'.setup()
 
 <h2 id="setup-the-language-server">2. Setup the Language Server</h2>
 
-Start by installing [Eclipse's JDT Language Server](https://github.com/eclipse-jdtls/eclipse.jdt.ls)
-with `:MasonInstall jdtls`, and install [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls) plugin. 
+[Eclipse's JDT Language Server](https://github.com/eclipse-jdtls/eclipse.jdt.ls)
+provides the language comprehension required to be notified of syntax errors,
+navigate through the code, autocompletion (fully set up in
+[step 3](#get-code-completion)), and code actions such as add missing imports.
+You can install the language server with Mason by running `:MasonInstall jdtls`,
+you will also need the [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
+plugin that is the Neovim client for that server.
 
 ```lua
 -- Plugin manager: add nvim-jdtls
 { 'mfussenegger/nvim-jdtls' }
 ```
 
-To set it up we need to call `start_or_attach` when a java file is open,
-this can be achieved with an autocmd or a file `java.lua` inside `ftplugin/`
-directory. We need to populate the cmd property with the jdtls executable.
-If you've installed it using Mason, an executable file should be located in
+To set it up you need to call `start_or_attach` when a Java file is open,
+this can be achieved with an autocmd or `java.lua` file inside `ftplugin/`
+directory. You need to populate the *cmd* property with the jdtls executable.
+If you've installed it using Mason, an executable script should be located in
 `$HOME/.local/share/nvim/mason/bin/jdtls`.
 
 ```lua
--- ftplugin/java.lua: call start_or_attach when a java file is loaded
+-- ftplugin/java.lua: call start_or_attach when a Java file is loaded
 require'jdtls'.start_or_attach({
     cmd = {
         vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls',
@@ -62,21 +70,21 @@ require'jdtls'.start_or_attach({
 })
 ```
 
-You should be able to open any java file or project and see the Language
-Server loading, it may take a while but you should be able to see information
-about unused variables and syntax errors. There are also new commands available
-inside a java file, you can type `:Jdt` and autocomplete the options.
+You should have a working client and server, open any Java project to see the
+Language Server loading. It may take a while but you should be able to see
+information about unused variables and syntax errors. There are also new
+commands available inside a Java file, you can type `:Jdt` and autocomplete the
+options.
 
 **Note**: Python3 and Java 17+ is required for jdtls to work. If you run
 into any issues try executing the binary directly from the command line
-(I already told you the path). You can also call `:JdtShowLogs` to get
-information from nvim-jdtls.
+(I already gave you the path) or call `:JdtShowLogs` to get client logs.
 
 <h3 id="add-lombok-support">2b. Add Lombok Support</h3>
 
-Add the javaagent to JDTLS with the flag `-javaagent` pointing to the location
+Add the Java agent to JDTLS with the flag `-javaagent` pointing to the location
 of `lombok.jar`. If you used Mason.nvim, it already came with your JDTLS
-instalation. Update nvim-jdtls configuration to look like this:
+instalation. Update nvim-jdtls setup like this:
 
 ```diff-lua
  -- ftplugin/java.lua: add arguments to jdtls script
@@ -91,8 +99,8 @@ instalation. Update nvim-jdtls configuration to look like this:
 <h2 id="get-code-completion">3. Get code completion</h2>
 
 The most popular completion plugin is [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-which has a couple dependencies, make sure to install them all including the source
-for LSP completion.
+which has a couple dependencies, make sure to install them all including the
+source for LSP completion.
 
 ```lua
 -- Plugin manager: install nvim-cmp, LuaSnip, cmp_luasnip, and cmp-nvim-lsp
@@ -100,9 +108,9 @@ for LSP completion.
     'hrsh7th/nvim-cmp',
     version = false, -- Ignore tags because nvim-cmp has a very old tag
     dependencies = {
-        'L3MON4D3/LuaSnip', -- Snippet engine
+        'L3MON4D3/LuaSnip',         -- Snippet engine
         'saadparwaiz1/cmp_luasnip', -- Snippet engine adapter
-        'hrsh7th/cmp-nvim-lsp', -- Source for LSP completion
+        'hrsh7th/cmp-nvim-lsp',     -- Source for LSP completion
     },
 }
 ```
@@ -153,7 +161,7 @@ Finally, connect nvim-jdtls with nvim-cmp by adding completion capabilities.
  }
 ```
 
-You should have completion working, open a java file and start typing. You can
+You should have completion working, open a Java file and start typing. You can
 cycle through the results with `<C-n>` and `<C-P>`, and select them with `<CR>`.
 
 <h2 id="run-tests">4. Run tests</h2>
@@ -184,9 +192,9 @@ require'neotest'.setup({
 })
 ```
 
-After installing neotest and its dependencies you are going to need the java
+After installing neotest and its dependencies you are going to need the Java
 parser, install it by calling `:TSInstall java` (note: a C compiler is
-required to build the parser, you can use GCC or CLANG).
+required to build the parser, you can use GCC or Clang).
 
 You should be able to invoke the following commands to view and run tests.
 If you run into any trouble you can check neotest logs in `~/.local/state/nvim/neotest.log`
@@ -236,7 +244,7 @@ property. This property takes a list of paths to jar files.
  })
 ```
 
-You should be able to open any java project, run `:JdtUpdateDebugConfigs`,
+You should be able to open any Java project, run `:JdtUpdateDebugConfigs`,
 and access the following commands:
 
 ```lua
@@ -277,7 +285,7 @@ we can use `vim.fn.glob` to get a newline separated string containing al jars,
  })
 ```
 
-You should have access to two new functions that whill allow you to debug tests,
+You should have access to two new functions that will help you debug tests,
 together with the [previously mentioned](#run-and-debug-code) commands you should
 be able to set breakpoints and debug normally.
 
@@ -288,9 +296,9 @@ require'jdtls'.test_nearest_method()    -- Run test closest to cursor
 
 # That's it!
 
-Hope this helped you set up your environment. I've made this guide to celebrate
+I hope this helps you set up your environment. I have made this guide to celebrate
 my javaniversary as today (February 17, 2024) is my third year developing Java
-on a daily basis, and I've been using Neovim for Java development since
+on a daily basis, and I have been using Neovim for Java development since
 aproximately that much minus 2 months that took me to figure out how to set it up.
 
 Additional resources:
@@ -316,6 +324,3 @@ Packages used:
  - [Java Debug](https://github.com/microsoft/java-debug): Java Debug Server
  - [Java Test](https://github.com/microsoft/vscode-java-test): Test runner for Java
  - [Lombok](https://projectlombok.org/): Adds Lombok suport to your language server
-
-Have any feedback? Contact me!:
- - [Twitter](https://twitter.com/eruizc_dev)
