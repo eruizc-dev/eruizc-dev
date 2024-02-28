@@ -55,7 +55,11 @@ return {
 				clangd = {},
 				gopls = {},
 				jsonls = {},
-				bashls = {},
+				omnisharp = {
+					cmd = {
+						vim.fn.expand'$HOME/.local/share/nvim/mason/bin/omnisharp'
+					},
+				},
 				lua_ls = {
 					settings = {
 						Lua = {
