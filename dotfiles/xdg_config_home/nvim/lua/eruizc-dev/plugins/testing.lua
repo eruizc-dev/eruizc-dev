@@ -2,7 +2,9 @@ return {
 	{
 		'nvim-neotest/neotest',
 		dependencies = {
+			'antoinemadec/FixCursorHold.nvim',
 			'nvim-lua/plenary.nvim',
+			'nvim-neotest/nvim-nio',
 			'nvim-treesitter/nvim-treesitter',
 			-- Adapters
 			'nvim-neotest/neotest-go',
