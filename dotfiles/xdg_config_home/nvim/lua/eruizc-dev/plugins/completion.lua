@@ -83,14 +83,12 @@ return {
 					{ name = 'buffer' },
 					{ name = 'path' },
 					{ name = 'luasnip' },
-					{ name = 'copilot' },
 					{ name = 'vim-dadbod-completion' },
 				},
 				formatting = {
 					format = require'lspkind'.cmp_format({
 						mode = 'symbol_text',
 						maxwidth = 50,
-						symbol_map = { Copilot = '' }
 					})
 				},
 				experimental = {
