@@ -1,23 +1,19 @@
 vim.cmd[[set tabstop=4]]
 
 require'jdtls'.start_or_attach({
-	cmd = {
-		vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls',
-		('--jvm-arg=-javaagent:%s'):format(vim.fn.expand'$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar')
-	},
+	cmd = { vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls' },
 	init_options = {
-		bundles = vim.split(vim.fn.glob('$HOME/.local/share/nvim/mason/packages/java-*/extension/server/*.jar', 1), '\n'),
+		bundles = vim.split(vim.fn.glob('$HOME/.local/share/nvim/mason/packages/java-*/extension/server/*.jar', true), '\n'),
 	},
 	settings = {
 		java = {
-			-- Maybe uncomment this later, when lombok 1.31.1 is released? It seems that this overries the -javaagent in the script
-			--jdt = {
-			--	ls = {
-			--		lombokSupport = {
-			--			enabled = true
-			--		}
-			--	}
-			--},
+			jdt = {
+				ls = {
+					lombokSupport = {
+						enabled = true
+					}
+				}
+			},
 			implementationsCodeLens = {
 				enabled = true
 			},
