@@ -74,6 +74,7 @@ return {
 				yamlls = {},
 				solargraph = {},
 				html = {},
+				htmx = {},
 				cssls = {},
 				tsserver = {},
 			},
