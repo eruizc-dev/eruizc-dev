@@ -26,6 +26,9 @@ return {
 		'williamboman/mason.nvim',
 		cmd = { 'Mason', 'MasonLog' },
 		opts = {
+			ensure_installed = {
+				'goimports', 'gofumpt', 'gomodifytags', 'impl', 'delve', -- Golang
+			},
 			registries = {
 				'github:mason-org/mason-registry',
 			},
