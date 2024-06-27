@@ -28,6 +28,7 @@ return {
 		opts = {
 			ensure_installed = {
 				'goimports', 'gofumpt', 'gomodifytags', 'impl', 'delve', -- Golang
+				'jdtls', 'java-test', 'java-debug-adapter'  -- Java
 			},
 			registries = {
 				'github:mason-org/mason-registry',
