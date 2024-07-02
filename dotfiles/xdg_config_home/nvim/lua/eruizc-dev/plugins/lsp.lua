@@ -12,16 +12,7 @@ return {
 		'neovim/nvim-lspconfig',
 		cmd = 'LspInfo',
 		event = { 'BufReadPre', 'BufNewFile' },
-		dependencies = {
-			'hrsh7th/cmp-nvim-lsp',
-			{
-				'williamboman/mason-lspconfig.nvim',
-				dependencies = 'williamboman/mason.nvim',
-				opts = {
-					automatic_installation = true,
-				}
-			},
-		},
+		dependencies = { 'hrsh7th/cmp-nvim-lsp', },
 		opts = {
 			-- options for vim.diagnostic.config()
 			diagnostics = {
