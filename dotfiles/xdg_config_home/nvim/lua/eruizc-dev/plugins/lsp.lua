@@ -30,6 +30,7 @@ return {
 			servers = {
 				clangd = {},
 				gopls = {},
+				templ = {},
 				jsonls = {},
 				omnisharp = {
 					cmd = {
