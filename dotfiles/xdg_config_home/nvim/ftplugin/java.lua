@@ -1,5 +1,11 @@
 vim.cmd[[set tabstop=4]]
 
+require'eruizc-dev.utils.mason'.ensure_installed({
+	'jdtls',
+    'java-test',
+    'java-debug-adapter',
+})
+
 require'jdtls'.start_or_attach({
 	cmd = {
 		vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls',
