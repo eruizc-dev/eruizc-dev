@@ -65,6 +65,7 @@ augroup END
 au! BufRead,BufNewFile *.conf setfiletype conf
 au! BufRead,BufNewFile *.njk setfiletype html
 au! BufRead,BufNewFile flake.lock setfiletype json
+"au! BufRead,BufNewFile *.d2 setfiletype d2
 
 try
 	lua require 'eruizc-dev'

@@ -1,5 +1,9 @@
 return {
 	{
+		'terrastruct/d2-vim',
+		ft = 'd2'
+	},
+	{
 		'tpope/vim-sleuth',
 		event = { 'BufReadPre', 'BufNewFile' },
 	},
