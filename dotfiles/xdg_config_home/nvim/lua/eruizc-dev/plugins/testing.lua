@@ -8,7 +8,6 @@ return {
 			'nvim-treesitter/nvim-treesitter',
 			-- Adapters
 			'nvim-neotest/neotest-go',
-			'rcasia/neotest-java',
 			'nvim-neotest/neotest-plenary',
 			'olimorris/neotest-rspec',
 			'rcasia/neotest-java',
@@ -18,9 +17,7 @@ return {
 				adapters = {
 					require'neotest-go',
 					require'neotest-java',
-					require'neotest-plenary'.setup{
-						min_init = '/home/eru/Repositories/eruizc-dev/neotest-java/tests/minimal_init.vim'
-					},
+					require'neotest-plenary',
 					require'neotest-rspec',
 				},
 				status = { virtual_text = true },
