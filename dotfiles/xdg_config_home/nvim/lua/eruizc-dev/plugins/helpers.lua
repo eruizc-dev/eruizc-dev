@@ -1,5 +1,9 @@
 return {
 	{
+		'rhysd/git-messenger.vim',
+		cmd = 'GitMessenger'
+	},
+	{
 		'terrastruct/d2-vim',
 		ft = 'd2'
 	},
