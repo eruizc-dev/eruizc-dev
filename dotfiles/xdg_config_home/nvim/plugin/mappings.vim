@@ -21,7 +21,6 @@ nnoremap    gi  <cmd>Telescope lsp_implementations<cr>
 nnoremap    <C-o> <cmd>ZoomWinTabToggle<cr>
 
 """GIT"""
-nnoremap    <leader>blame <cmd>GitMessenger<cr>
 nnoremap    <leader>diff  <cmd>Gdiffsplit!<cr>
 
 """SEARCH FILES"""
