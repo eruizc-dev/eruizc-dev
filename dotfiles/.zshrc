@@ -61,10 +61,6 @@ if type zoxide > /dev/null 2>&1; then
     eval "$(zoxide init zsh)"
 fi
 
-if type trash > /dev/null 2>&1; then
-    alias rm='echo "You have trash installed, please use it..."'
-fi
-
 if [[ -s /usr/share/nvm/init-nvm.sh ]] ; then
     source /usr/share/nvm/init-nvm.sh
 fi
