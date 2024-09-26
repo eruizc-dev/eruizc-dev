@@ -65,7 +65,7 @@ return {
 				html = {},
 				htmx = {},
 				cssls = {},
-				tsserver = {},
+				ts_ls = {},
 			},
 		},
 		config = function(_, opts)
