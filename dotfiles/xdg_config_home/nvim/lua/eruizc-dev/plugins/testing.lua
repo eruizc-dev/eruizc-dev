@@ -11,6 +11,7 @@ return {
 			'nvim-neotest/neotest-plenary',
 			'olimorris/neotest-rspec',
 			'rcasia/neotest-java',
+			'nvim-neotest/neotest-jest',
 		},
 		opts = function()
 			return {
@@ -19,6 +20,7 @@ return {
 					require'neotest-java',
 					require'neotest-plenary',
 					require'neotest-rspec',
+					require'neotest-jest',
 				},
 				status = { virtual_text = true },
 				output = { open_on_run = true },
