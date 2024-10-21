@@ -17,7 +17,9 @@ return {
 			return {
 				adapters = {
 					require'neotest-go',
-					require'neotest-java',
+					require'neotest-java'{
+						ignore_wrapper = false
+					},
 					require'neotest-plenary',
 					require'neotest-rspec',
 					require'neotest-jest',

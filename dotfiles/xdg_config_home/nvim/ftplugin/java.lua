@@ -35,6 +35,22 @@ require'jdtls'.start_or_attach({
 					staticStarThreshold = 3
 				}
 			},
+			configuration = {
+				runtimes = {
+					{
+						name = "JavaSE-17",
+						path = vim.fn.expand'$HOME/.sdkman/candidates/java/17.0.10-tem/'
+					},
+					{
+						name = "JavaSE-21",
+						path = vim.fn.expand'$HOME/.sdkman/candidates/java/21.0.4-tem/'
+					},
+					{
+						name = "JavaSE-23",
+						path = vim.fn.expand'$HOME/.sdkman/candidates/java/23-tem/'
+					},
+				}
+			},
 		}
 	},
 	capabilities = require'cmp_nvim_lsp'.default_capabilities(),
