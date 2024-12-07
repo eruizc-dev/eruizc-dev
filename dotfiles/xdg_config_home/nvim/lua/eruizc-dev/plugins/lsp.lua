@@ -57,7 +57,7 @@ return {
 					},
 				},
 				vimls = {},
-				bufls = {},
+				buf_ls = {},
 				rust_analyzer = {},
 				bashls = {},
 				yamlls = {},

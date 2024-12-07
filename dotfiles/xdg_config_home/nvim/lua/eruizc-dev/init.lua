@@ -18,5 +18,8 @@ require'lazy'.setup{
   },
   spec = {
     import = 'eruizc-dev.plugins'
-  }
+  },
+  rocks = {
+    enabled = false
+  },
 }
