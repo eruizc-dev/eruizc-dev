@@ -12,25 +12,11 @@ nnoremap    <C-p>   <cmd>cprev<cr>
 nnoremap    <C-h>   <C-o>
 nnoremap    <C-l>   <C-i>
 
-"""GOTOS"""
-nnoremap    gr  <cmd>Telescope lsp_references<cr>
-nnoremap    gd  <cmd>Telescope lsp_definitions<cr>
-nnoremap    gi  <cmd>Telescope lsp_implementations<cr>
-
 """SPLITS"""
 nnoremap    <C-o> <cmd>ZoomWinTabToggle<cr>
 
 """GIT"""
 nnoremap    <leader>diff  <cmd>Gdiffsplit!<cr>
-
-"""SEARCH FILES"""
-nnoremap    <leader>p     <cmd>Telescope find_files find_command=rg,--files,--hidden,--no-ignore-global,-g,!.git/<CR>
-nnoremap    <leader>P     <cmd>Telescope grep_string prompt_title=Rip\ &\ Tear search=<CR>
-nnoremap    <leader>con   <cmd>Telescope find_files prompt_title=Configuration cwd=~/.config/nvim<cr>
-nnoremap    <leader>z     <cmd>Telescope zoxide list<cr>
-
-"""HELPERS"""
-nnoremap    <leader>k     <cmd>Telescope help_tags<cr>
 
 """LANGUAGE SMARTNESS"""
 nnoremap ?         <cmd>lua vim.lsp.buf.hover()<cr>

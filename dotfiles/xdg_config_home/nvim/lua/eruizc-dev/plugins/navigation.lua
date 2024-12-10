@@ -9,11 +9,21 @@ return {
 			'nvim-treesitter/nvim-treesitter',
 			-- Extensions
 			'natecraddock/telescope-zf-native.nvim',
-			'jvgrootveld/telescope-zoxide'
+			'jvgrootveld/telescope-zoxide',
 		},
 		cmd = 'Telescope',
 		version = false,
-		config = function(_, opts)
+		keys = {
+			{ '<leader>p', function() require'telescope.builtin'.find_files{ find_command = { 'rg', '--files', '--hidden', '--no-ignore-global', '-g', '!.git/' }} end, desc = "foo" },
+			{ '<leader>P', function() require'telescope.builtin'.grep_string{ prompt_title='Rip & Tear', search='' } end, desc = "foo" },
+			{ '<leader>con', function() require'telescope.builtin'.find_files{ prompt_title='Configuration', cwd='~/.config/nvim' } end, desc = "foo" },
+			{ '<leader>z', function() require'telescope'.extensions.zoxide.list() end, desc = "foo" },
+			{ '<leader>k', function() require'telescope.builtin'.help_tags() end, desc = "foo" },
+			{ 'gr', function() require'telescope.builtin'.lsp_references() end, desc = "foo" },
+			{ 'gd', function() require'telescope.builtin'.lsp_definitions() end, desc = "foo" },
+			{ 'gi', function() require'telescope.builtin'.lsp_implementations() end, desc = "foo" },
+		},
+		config = function()
 			require'telescope'.setup {
 				defaults = {
 					prompt_prefix = " ",
@@ -43,7 +53,8 @@ return {
 					},
 				},
 				extensions = {
-					["zf-native"] = {
+					['zoxide'] = {},
+					['zf-native'] = {
 						file = {
 							enable = true,
 							highlight_results = true,
@@ -57,10 +68,6 @@ return {
 					}
 				}
 			}
-
-			-- Load extensions
-			require'telescope'.load_extension'zf-native'
-			require'telescope'.load_extension'zoxide'
 		end,
 	},
 	{
