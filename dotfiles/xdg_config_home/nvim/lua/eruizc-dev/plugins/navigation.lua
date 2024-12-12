@@ -10,6 +10,7 @@ return {
 			-- Extensions
 			'natecraddock/telescope-zf-native.nvim',
 			'jvgrootveld/telescope-zoxide',
+			'ThePrimeagen/git-worktree.nvim',
 		},
 		cmd = 'Telescope',
 		version = false,
@@ -53,6 +54,7 @@ return {
 					},
 				},
 				extensions = {
+					['git_worktree'] = {},
 					['zoxide'] = {},
 					['zf-native'] = {
 						file = {
