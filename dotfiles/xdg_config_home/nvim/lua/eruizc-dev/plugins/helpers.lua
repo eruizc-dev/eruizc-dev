@@ -32,7 +32,7 @@ return {
 	},
 	{
 		'williamboman/mason.nvim',
-		cmd = { 'Mason', 'MasonLog' },
+		cmd = { 'Mason', 'MasonLog', 'MasonUpdate' },
 		opts = {
 			registries = {
 				'github:mason-org/mason-registry',
