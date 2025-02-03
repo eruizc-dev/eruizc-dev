@@ -1,4 +1,5 @@
-vim.cmd[[set tabstop=4]]
+vim.cmd[[setlocal tabstop=4]]
+vim.cmd[[setlocal colorcolumn=120]]
 
 require'eruizc-dev.utils.mason'.ensure_installed({
 	'jdtls',
