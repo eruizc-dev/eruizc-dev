@@ -1,5 +1,12 @@
 return {
 	{
+		'tpope/vim-fugitive',
+		cmd = {
+			'Git',
+			'Gvdiffsplit',
+		}
+	},
+	{
 		'rhysd/git-messenger.vim',
 		cmd = 'GitMessenger',
 		keys = {
