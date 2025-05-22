@@ -7,10 +7,16 @@ require'eruizc-dev.utils.mason'.ensure_installed({
 	'java-debug-adapter',
 })
 
+local available_runtimes = vim.split(vim.fn.glob('$HOME/.sdkman/candidates/java/21*'), '\n')
+
 require'jdtls'.start_or_attach({
 	cmd = {
 		vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls',
-		('--jvm-arg=-javaagent:%s'):format(vim.fn.expand'$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar')
+		('--jvm-arg=-javaagent:%s'):format(vim.fn.expand'$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar'),
+		'-data', vim.fn.glob'$HOME/.cache/jdtls'
+	},
+	cmd_env = {
+		JAVA_HOME = available_runtimes[#available_runtimes]
 	},
 	init_options = {
 		bundles = vim.split(vim.fn.glob('$HOME/.local/share/nvim/mason/packages/java-*/extension/server/*.jar', true), '\n'),
