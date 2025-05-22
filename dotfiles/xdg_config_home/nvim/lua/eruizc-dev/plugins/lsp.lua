@@ -77,4 +77,21 @@ return {
 			vim.diagnostic.config(opts) -- Must be after setup
 		end,
 	},
+	{
+		'nvimtools/none-ls.nvim',
+		config = function()
+			local null_ls = require('null-ls')
+			null_ls.setup({
+				sources = {
+					null_ls.builtins.diagnostics.checkstyle.with({
+						timeout = 20000,
+						filetypes = { 'java' },
+						args = function(params)
+							return { '-f', 'sarif', '-c', './checkstyle.xml', params.bufname, }
+						end,
+					}),
+				},
+			})
+		end,
+	},
 }
