@@ -28,6 +28,12 @@ return {
 				dapui.close({})
 			end
 		end,
+		keys = {
+			{ '<leader>db', function() require'dap'.toggle_breakpoint() end },
+			{ '<leader>dc', function() require'dap'.continue() end },
+			{ '<leader>do', function() require'dap'.step_over() end },
+			{ '<leader>di', function() require'dap'.step_into() end }
+		},
 	},
 	{
 		'theHamsta/nvim-dap-virtual-text',
