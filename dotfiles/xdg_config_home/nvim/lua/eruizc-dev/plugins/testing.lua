@@ -33,7 +33,8 @@ return {
 			vim.diagnostic.config({
 				virtual_text = {
 					format = function(diagnostic)
-						return diagnostic.message:gsub('\n', ' '):gsub('\t', ' '):gsub('%s+', ' '):gsub('^%s+', '')
+						local fmt, _err = diagnostic.message:gsub('\n', ' '):gsub('\t', ' '):gsub('%s+', ' '):gsub('^%s+', '')
+						return fmt
 					end,
 				},
 			}, neotest_ns)

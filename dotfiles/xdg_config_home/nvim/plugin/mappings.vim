@@ -12,20 +12,11 @@ nnoremap    <C-p>   <cmd>cprev<cr>
 nnoremap    <C-h>   <C-o>
 nnoremap    <C-l>   <C-i>
 
-"""GIT"""
-nnoremap    <leader>diff  <cmd>Gdiffsplit!<cr>
-
 """LANGUAGE SMARTNESS"""
 nnoremap ?         <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<cr>
 nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<cr>
 vnoremap <leader>a <cmd>lua vim.lsp.buf.range_code_action()<cr>
-
-"""TESTING"""
-nnoremap tt <cmd>TestLast<cr>
-nnoremap ts <cmd>TestSuite<cr>
-nnoremap tf <cmd>TestFile<cr>
-nnoremap tn <cmd>TestNearest<cr>
 
 """DEBUG COMMANDS"""
 command! DebugToggleBreakpoint lua require'dap'.toggle_breakpoint()
