@@ -12,9 +12,6 @@ nnoremap    <C-p>   <cmd>cprev<cr>
 nnoremap    <C-h>   <C-o>
 nnoremap    <C-l>   <C-i>
 
-"""SPLITS"""
-nnoremap    <C-o> <cmd>ZoomWinTabToggle<cr>
-
 """GIT"""
 nnoremap    <leader>diff  <cmd>Gdiffsplit!<cr>
 
@@ -23,9 +20,6 @@ nnoremap ?         <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<cr>
 nnoremap <leader>a <cmd>lua vim.lsp.buf.code_action()<cr>
 vnoremap <leader>a <cmd>lua vim.lsp.buf.range_code_action()<cr>
-
-"""UNMAP"""
-let g:zoomwintab_remap = v:false " Don't remap my <C-w-o> pls
 
 """TESTING"""
 nnoremap tt <cmd>TestLast<cr>
@@ -43,8 +37,3 @@ command! DebugRestart lua require'dap'.restart()
 command! DebugClose lua require'dap'.close()
 command! DebugEval lua require'dapui'.eval()
 command! DebugToggle lua require'dapui'.toggle()
-
-nnoremap <leader>db <cmd>DebugToggleBreakpoint<cr>
-nnoremap <leader>dc <cmd>DebugContinue<cr>
-nnoremap <leader>do <cmd>DebugStepOver<cr>
-nnoremap <leader>di <cmd>DebugStepInto<cr>

@@ -83,5 +83,14 @@ return {
 			{ "'d", function() require'harpoon.ui'.nav_file(3) end, desc = 'Jump to harpoon file 3' },
 			{ "'f", function() require'harpoon.ui'.nav_file(4) end, desc = 'Jump to harpoon file 4' },
 		}
+	},
+	{
+		'troydm/zoomwintab.vim',
+		init = function()
+			vim.g.zoomwintab_remap = false
+		end,
+		keys = {
+			{ '<C-o>', '<cmd>ZoomWinTabToggle<cr>', desc = 'Toggle focus on this buffer' }
+		}
 	}
 }
