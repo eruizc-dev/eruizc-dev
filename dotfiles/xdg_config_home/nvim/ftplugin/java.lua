@@ -35,9 +35,6 @@ jdtls.start_or_attach({
 	},
 	settings = {
 		java = {
-			['imports.gradle.wrapper.checksums'] = {
-				{ sha256 = '81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f', allowed = true }
-			},
 			signature_help = { enabled = true },
 			['jdt.ls.lombokSupport'] = { enabled = true },
 			completion = { importOrder = { } },
