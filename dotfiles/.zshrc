@@ -22,9 +22,6 @@ setopt autocd
 unsetopt beep extendedglob
 
 # Variables
-
-export LANG=en_US.UTF-8
-
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_BIN_HOME=$HOME/.local/bin
 export XDG_CACHE_HOME=$HOME/.cache
@@ -33,6 +30,12 @@ export PATH=$PATH:$XDG_BIN_HOME
 
 export EDITOR='nvim'
 export BROWSER='firefox'
+
+if [[ $(uname -n) == 'toolbx' ]]; then
+    alias podman='flatpak-spawn --host podman'
+    alias buildah='flatpak-spawn --host buildah'
+    alias flatpak='flatpak-spawn --host flatpak'
+fi
 
 if type bat > /dev/null 2>&1; then
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -65,12 +68,11 @@ if [[ -s /usr/share/nvm/init-nvm.sh ]] ; then
     source /usr/share/nvm/init-nvm.sh
 fi
 
-export GOPATH="$HOME/.local/state/go"
-export PATH="$GOPATH/bin:$PATH"
 if type go > /dev/null 2>&1; then
+    export GOPATH="$HOME/.local/state/go"
+    export PATH="$GOPATH/bin:$PATH"
 fi
 
-# Java stuff
 export SDKMAN_DIR="$HOME/.local/state/sdkman"
 if [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]; then
     source "$SDKMAN_DIR/bin/sdkman-init.sh"
@@ -84,3 +86,6 @@ alias ld='lazydocker'
 alias so='source'
 alias t='tree -L 2 -I .git -I node_modules'
 alias tt='tree -L 3 -I .git -I node_modules'
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/var/home/eru/.lmstudio/bin"
