@@ -34,7 +34,8 @@ return {
 				'lua',
 				'java',
 				'ruby',
-				'go', 'gomod', 'gowork', 'gosum', 'templ'
+				'go', 'gomod', 'gowork', 'gosum', 'templ',
+				'markdown', 'yaml'
 			},
 			highlight = {
 				enable = true,
