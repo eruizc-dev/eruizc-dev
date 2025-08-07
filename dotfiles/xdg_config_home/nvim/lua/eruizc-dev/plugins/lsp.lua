@@ -90,6 +90,9 @@ return {
 						args = function(params)
 							return { '-f', 'sarif', '-c', './checkstyle.xml', params.bufname, }
 						end,
+						condition = function(utils)
+							return utils.root_has_file({ 'checkstyle.xml' })
+						end,
 					}),
 				},
 			})

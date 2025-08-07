@@ -9,6 +9,7 @@ end
 
 require'eruizc-dev.utils.mason'.ensure_installed({
 	'jdtls',
+	'lombok-nightly',
 	'java-test',
 	'java-debug-adapter',
 })
