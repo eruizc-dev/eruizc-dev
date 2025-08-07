@@ -1,0 +1,40 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "share": "disabled",
+    "autoupdate": false,
+    "theme": "dracula",
+    "permission": {
+        "edit": "allow",
+        "bash": {
+            // git
+            "git status": "allow",
+            "git diff": "allow",
+            "git log": "allow",
+
+            // read files
+            "ls": "allow",
+            "cat": "allow",
+            "bat": "allow",
+            "grep": "allow",
+
+            // gradle
+            "./gradlew test": "allow",
+            "./gradlew build": "allow",
+            "./gradlew checkstyleMain": "allow",
+
+            "*": "ask"
+        }
+    },
+    "lsp": {
+        "jdt.language.server": {
+            "env": {
+                "JAVA_HOME": "/Users/ecarletti/.sdkman/candidates/java/23-tem"
+            },
+            "command": [
+                "/Users/ecarletti/.local/share/nvim/mason/bin/jdtls",
+                "--jvm-arg=-javaagent:/Users/ecarletti/.local/share/nvim/mason/packages/jdtls/lombok.jar"
+            ],
+            "extensions": [ ".java" ]
+        }
+    }
+}
