@@ -1,8 +1,0 @@
-git:
-  pull:
-    mode: 'rebase'
-customCommands:
-  - key: 'F'
-    context: 'files'
-    description: 'absorb and rebase'
-    command: 'git absorb --and-rebase'

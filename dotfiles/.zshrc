@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
 # Oh My ZSH
-export ZSH=/usr/share/oh-my-zsh
-export ZSH_CUSTOM="$ZSH"/custom
-export ZSH_COMPDUMP="$HOME"/.cache/oh-my-zsh/compdump
+#export ZSH=/usr/share/oh-my-zsh
+#export ZSH_CUSTOM="$ZSH"/custom
+#export ZSH_COMPDUMP="$HOME"/.cache/oh-my-zsh/compdump
 
 ZSH_THEME='refined'
 CASE_SENSITIVE=false
@@ -73,19 +73,11 @@ if type go > /dev/null 2>&1; then
     export PATH="$GOPATH/bin:$PATH"
 fi
 
-export SDKMAN_DIR="$HOME/.local/state/sdkman"
-if [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]]; then
-    source "$SDKMAN_DIR/bin/sdkman-init.sh"
-fi
-
 # Aliases
 alias cls='clear'
 alias la='ls -lhA --color=always'
 alias lg='lazygit'
 alias ld='lazydocker'
 alias so='source'
-alias t='tree -L 2 -I .git -I node_modules'
-alias tt='tree -L 3 -I .git -I node_modules'
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/var/home/eru/.lmstudio/bin"
+alias t='tree -a -L 2 -I .git -I node_modules'
+alias tt='tree -a -L 3 -I .git -I node_modules'
