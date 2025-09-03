@@ -1,14 +1,20 @@
 [core]
     editor = nvim
     autocrlf = input
+    ignoreCase = false
     excludesfile = ~/.gitignore
+    symlinks = false
 [init]
     defaultBranch = master
 [pull]
     rebase = true
 [alias]
+    clone-wt = "!sh $HOME/scripts/git-clone-worktree.sh"
     nuke = "!f() { read -p 'You rly wanna nuke? (y/N): ' choice; case $choice in y|Y ) git reset --hard && git clean -fd;; * ) echo 'ABORTING';; esac }; f"
     purge = "clean -fX"
+    prune = "remote prune origin"
+    logline = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    tags = log -n1 --pretty=format:%h%d
 [fetch]
     prune = true
 [diff]
@@ -25,3 +31,11 @@
     path = ~/repos/melisource/.gitconfig
 [includeIf "gitdir/i:~/repos/mercadolibre/"]
     path = ~/repos/mercadolibre/.gitconfig
+[includeIf "gitdir/i:~/repos/eruizc-dev/"]
+    path = ~/repos/eruizc-dev/.gitconfig
+[push]
+    autoSetupRemote = true
+[url "git@github.com:"]
+    insteadOf = git@github.com-emu:
+[url "git@github.com:melisource"]
+    insteadOf = https://github.com/melisource

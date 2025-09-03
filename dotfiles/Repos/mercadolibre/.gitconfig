@@ -1,0 +1,6 @@
+[core]
+    hooksPath = /dev/null
+[user]
+    name = Emiliano Ruiz Carletti
+    email = emiliano.carletti@mercadolibre.com
+    signinkey = 05608A63C33327E08B4908A1C425242667FE4C5C
