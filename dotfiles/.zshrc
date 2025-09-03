@@ -1,9 +1,11 @@
 #!/usr/bin/env zsh
 
+# zmodload zsh/zprof # Profiling
+
 # Oh My ZSH
 #export ZSH=/usr/share/oh-my-zsh
 #export ZSH_CUSTOM="$ZSH"/custom
-#export ZSH_COMPDUMP="$HOME"/.cache/oh-my-zsh/compdump
+export ZSH_COMPDUMP="$HOME"/.cache/oh-my-zsh/compdump
 
 ZSH_THEME='refined'
 CASE_SENSITIVE=false
@@ -81,3 +83,5 @@ alias ld='lazydocker'
 alias so='source'
 alias t='tree -a -L 2 -I .git -I node_modules'
 alias tt='tree -a -L 3 -I .git -I node_modules'
+
+#zprof # Profiling
