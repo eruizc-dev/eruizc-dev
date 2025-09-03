@@ -8,27 +8,15 @@ if not jdtls_enabled then
 end
 
 require'eruizc-dev.utils.mason'.ensure_installed({
-	'jdtls',
-	'lombok-nightly',
 	'java-test',
 	'java-debug-adapter',
 })
 
-local function latest_runtime(major)
-	major = major or '21'
-	local root = ('$SDKMAN_DIR/candidates/java/%s*'):format(major)
-	local runtimes = vim.split(vim.fn.glob(root), '\n')
-	return runtimes[#runtimes]
-end
-
 jdtls.start_or_attach({
 	cmd = {
-		vim.fn.expand'$HOME/.local/share/nvim/mason/bin/jdtls',
-		('--jvm-arg=-javaagent:%s/lombok.jar'):format(require'mason-core.installer.InstallLocation'.global():package('lombok-nightly')),
-		'-data', ('%s/.local/share/nvim/jdtls-workspace/%s'):format(os.getenv'HOME', vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t'))
-	},
-	cmd_env = {
-		JAVA_HOME = latest_runtime('21')
+		'jdtls',
+		('--jvm-arg=-javaagent:%s'):format(vim.fn.expand'$LMBK/share/java/lombok.jar'),
+		--'-data', ('%s/.local/share/nvim/jdtls-workspace/%s'):format(os.getenv'HOME', vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t'))
 	},
 	root_dir = require('jdtls.setup').find_root { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle' },
 	init_options = {
@@ -53,14 +41,7 @@ jdtls.start_or_attach({
 				parameterNames = {
 					enabled = 'all', -- literals, all, none
 				},
-			},
-			configuration = {
-				runtimes = {
-					{ name = 'JavaSE-17', path = latest_runtime('17') },
-					{ name = 'JavaSE-21', path = latest_runtime('21') },
-					{ name = 'JavaSE-23', path = latest_runtime('23') },
-				}
-			},
+			}
 		}
 	},
 	capabilities = jdtls.extendedClientCapabilities,
