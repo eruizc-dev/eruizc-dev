@@ -26,15 +26,31 @@
         }
     },
     "lsp": {
+        "bash-language-server": {
+            "command": [ "bash-language-server", "start" ],
+            "extensions": [ ".sh", ".bash" ]
+        },
+        "nixd": {
+            "command": [ "nixd" ],
+            "extensions": [ ".nix" ]
+        },
         "jdt.language.server": {
-            "env": {
-                "JAVA_HOME": "/Users/ecarletti/.sdkman/candidates/java/23-tem"
-            },
             "command": [
                 "/Users/ecarletti/.local/share/nvim/mason/bin/jdtls",
                 "--jvm-arg=-javaagent:/Users/ecarletti/.local/share/nvim/mason/packages/jdtls/lombok.jar"
             ],
             "extensions": [ ".java" ]
         }
+    },
+    "mcp": {
+        //"github": {
+        //    "type": "local",
+        //    "enabled": true,
+        //    "command": [
+        //        "docker", "run", "-i", "--rm",
+        //        "-e", "GITHUB_PERSONAL_ACCESS_TOKEN",
+        //        "ghcr.io/github/github-mcp-server"
+        //    ]
+        //}
     }
 }
