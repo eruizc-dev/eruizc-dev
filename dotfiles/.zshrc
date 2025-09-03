@@ -3,25 +3,31 @@
 # zmodload zsh/zprof # Profiling
 
 # Oh My ZSH
-#export ZSH=/usr/share/oh-my-zsh
-#export ZSH_CUSTOM="$ZSH"/custom
 export ZSH_COMPDUMP="$HOME"/.cache/oh-my-zsh/compdump
 
 ZSH_THEME='refined'
 CASE_SENSITIVE=false
-HYPHEN_INSENSITIVE=true
 COMPLETION_WAITING_DOTS=true
 DISABLE_AUTO_UPDATE=true
 ENABLE_CORRECTION=false
+HYPHEN_INSENSITIVE=true
 
 # $ZSH/plugins and $ZSH_CUSTOM/plugins
-plugins=()
+plugins=(
+    #nix-shell
+)
 
 [[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
 
 # Shell Options
-setopt autocd
+bindkey -e
+setopt autocd nomatch notify
 unsetopt beep extendedglob
+
+# History
+HISTFILE="$HOME/.cache/histfile"
+HISTSIZE=1000
+SAVEHIST=1000
 
 # Variables
 export XDG_DATA_HOME=$HOME/.local/share
@@ -32,12 +38,6 @@ export PATH=$PATH:$XDG_BIN_HOME
 
 export EDITOR='nvim'
 export BROWSER='firefox'
-
-if [[ $(uname -n) == 'toolbx' ]]; then
-    alias podman='flatpak-spawn --host podman'
-    alias buildah='flatpak-spawn --host buildah'
-    alias flatpak='flatpak-spawn --host flatpak'
-fi
 
 if type bat > /dev/null 2>&1; then
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -70,9 +70,8 @@ if [[ -s /usr/share/nvm/init-nvm.sh ]] ; then
     source /usr/share/nvm/init-nvm.sh
 fi
 
-if type go > /dev/null 2>&1; then
-    export GOPATH="$HOME/.local/state/go"
-    export PATH="$GOPATH/bin:$PATH"
+if type direnv > /dev/null 2&>1; then
+    eval "$(direnv hook zsh)"
 fi
 
 # Aliases
