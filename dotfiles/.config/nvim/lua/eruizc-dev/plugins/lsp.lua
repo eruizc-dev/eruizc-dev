@@ -67,6 +67,7 @@ return {
 				htmx = {},
 				cssls = {},
 				ts_ls = {},
+				nixd = {},
 			},
 		},
 		config = function(_, opts)
