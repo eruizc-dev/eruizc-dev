@@ -99,37 +99,5 @@ return {
 				},
 			}
 		end,
-	},
-	{
-		'robitx/gp.nvim',
-		cmd = {
-			'GpAppend',
-			'GpChatFinder',
-			'GpChatNew',
-			'GpChatToggle',
-			'GpContext',
-			'GpEnew',
-			'GpImplement',
-			'GpNew',
-			'GpNextAgent',
-			'GpPopup',
-			'GpPrepend',
-			'GpRewrite',
-			'GpStop',
-			'GpTabnew',
-			'GpVnew',
-			'GpWhisper',
-			'GpWhisperAppend',
-			'GpWhisperEnew',
-			'GpWhisperNew',
-			'GpWhisperPopup',
-			'GpWhisperPrepend',
-			'GpWhisperRewrite',
-			'GpWhisperTabnew',
-			'GpWhisperVnew',
-			'GpExplain',
-			'GpReview',
-		},
-		opts = {}
 	}
 }
