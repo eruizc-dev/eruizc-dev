@@ -35,10 +35,7 @@
             "extensions": [ ".nix" ]
         },
         "jdt.language.server": {
-            "command": [
-                "/Users/ecarletti/.local/share/nvim/mason/bin/jdtls",
-                "--jvm-arg=-javaagent:/Users/ecarletti/.local/share/nvim/mason/packages/jdtls/lombok.jar"
-            ],
+            "command": [ "jdtls" ],
             "extensions": [ ".java" ]
         }
     },

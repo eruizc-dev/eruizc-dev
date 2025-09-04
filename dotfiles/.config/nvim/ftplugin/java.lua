@@ -13,11 +13,7 @@ require'eruizc-dev.utils.mason'.ensure_installed({
 })
 
 jdtls.start_or_attach({
-	cmd = {
-		'jdtls',
-		('--jvm-arg=-javaagent:%s'):format(vim.fn.expand'$LMBK/share/java/lombok.jar'),
-		--'-data', ('%s/.local/share/nvim/jdtls-workspace/%s'):format(os.getenv'HOME', vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t'))
-	},
+	cmd = { 'jdtls' },
 	root_dir = require('jdtls.setup').find_root { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle' },
 	init_options = {
 		bundles = vim.split(vim.fn.glob('$HOME/.local/share/nvim/mason/packages/java-*/extension/server/*.jar', true), '\n'),
