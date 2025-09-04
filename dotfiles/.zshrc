@@ -70,7 +70,7 @@ if [[ -s /usr/share/nvm/init-nvm.sh ]] ; then
     source /usr/share/nvm/init-nvm.sh
 fi
 
-if type direnv > /dev/null 2&>1; then
+if type direnv > /dev/null 2>&1; then
     eval "$(direnv hook zsh)"
 fi
 
