@@ -7,11 +7,6 @@ if not jdtls_enabled then
 	return
 end
 
-require'eruizc-dev.utils.mason'.ensure_installed({
-	'java-test',
-	'java-debug-adapter',
-})
-
 jdtls.start_or_attach({
 	cmd = { 'jdtls' },
 	root_dir = require('jdtls.setup').find_root { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle' },

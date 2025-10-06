@@ -6,7 +6,6 @@ return {
 			'mfussenegger/nvim-dap',
 			'rcarriga/nvim-dap-ui',
 			'hrsh7th/cmp-nvim-lsp',
-			'williamboman/mason.nvim',
 		},
 	},
 	{

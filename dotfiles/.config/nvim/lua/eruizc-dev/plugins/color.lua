@@ -15,7 +15,6 @@ return {
 		build = ':TSUpdate',
 		event = { 'BufReadPost', 'BufNewFile' },
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-		dependencies = 'williamboman/mason.nvim',
 		init = function(plugin)
 			-- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
 			-- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
@@ -47,7 +46,6 @@ return {
 		},
 		---@param opts TSConfig
 		config = function(_, opts)
-			require'eruizc-dev.utils.mason'.ensure_installed({ 'tree-sitter-cli' })
 			require("nvim-treesitter.configs").setup(opts)
 		end
 	}

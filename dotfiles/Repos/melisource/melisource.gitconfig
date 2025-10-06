@@ -1,6 +1,6 @@
 [core]
     hooksPath = /dev/null
-    excludesfile = ./melisource.gitignore
+    excludesfile = ~/Repos/melisource/melisource.gitignore
 [user]
     name = Emiliano Ruiz Carletti
     email = emiliano.carletti@mercadolibre.com
