@@ -13,7 +13,7 @@
         mkShell {
           buildInputs = [
             vim-language-server
-            vscode-extensions.sumneko.lua
+            lua-language-server
           ];
         };
     });

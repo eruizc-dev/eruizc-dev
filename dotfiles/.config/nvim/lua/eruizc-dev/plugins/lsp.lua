@@ -73,7 +73,8 @@ return {
 			local completion_capabilities = require'cmp_nvim_lsp'.default_capabilities()
 			for server, server_opts in pairs(opts.servers) do
 				local final_opts = vim.tbl_extend('force', { capabilities = completion_capabilities }, server_opts)
-				require('lspconfig')[server].setup(final_opts)
+				vim.lsp.config(server, final_opts)
+				vim.lsp.enable(server)
 			end
 			vim.diagnostic.config(opts) -- Must be after setup
 		end,
