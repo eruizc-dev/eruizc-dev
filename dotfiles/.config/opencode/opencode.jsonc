@@ -1,5 +1,6 @@
 {
     "$schema": "https://opencode.ai/config.json",
+    "model": "github-copilot/claude-sonnet-4",
     "share": "disabled",
     "autoupdate": false,
     "theme": "dracula",
@@ -16,11 +17,14 @@
             "cat": "allow",
             "bat": "allow",
             "grep": "allow",
+            "rg": "allow",
+            "tree": "allow",
 
             // gradle
-            "./gradlew test": "allow",
-            "./gradlew build": "allow",
-            "./gradlew checkstyleMain": "allow",
+            "./gradlew *": "allow",
+
+            // ruby
+            "bundle exec rspec *": "allow",
 
             "*": "ask"
         }
