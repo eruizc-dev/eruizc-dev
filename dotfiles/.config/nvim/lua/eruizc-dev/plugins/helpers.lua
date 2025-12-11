@@ -8,11 +8,10 @@ return {
 		event = { 'BufReadPre', 'BufNewFile' },
 	},
 	{
-		'iamcco/markdown-preview.nvim',
-		ft = 'markdown',
-		build = function()
-			vim.fn['mkdp#util#install']()
-		end,
+		'brianhuster/live-preview.nvim',
+		dependencies = {
+			'nvim-telescope/telescope.nvim',
+		},
 	},
 	{
 		'sudormrfbin/cheatsheet.nvim',
