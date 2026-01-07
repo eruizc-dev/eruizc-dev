@@ -13,12 +13,14 @@
             "git log": "allow",
 
             // read files
-            "ls": "allow",
-            "cat": "allow",
-            "bat": "allow",
-            "grep": "allow",
-            "rg": "allow",
-            "tree": "allow",
+            "ls *": "allow",
+            "cat *": "allow",
+            "bat *": "allow",
+            "grep *": "allow",
+            "rg *": "allow",
+            "tree *": "allow",
+            "tail *": "allow",
+            "head *": "allow",
 
             // gradle
             "./gradlew *": "allow",
