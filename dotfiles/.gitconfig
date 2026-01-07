@@ -29,6 +29,8 @@
     gpgsign = true
 [includeIf "gitdir/i:~/repos/melisource/"]
     path = ~/repos/melisource/melisource.gitconfig
+[includeIf "gitdir/i:~/repos/ecarletti_meli//"]
+    path = ~/repos/melisource/ecarletti_meli.gitconfig
 [includeIf "gitdir/i:~/repos/mercadolibre/"]
     path = ~/repos/mercadolibre/.gitconfig
 [includeIf "gitdir/i:~/repos/eruizc-dev/"]

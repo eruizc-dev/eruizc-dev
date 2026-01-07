@@ -1,5 +1,5 @@
 [core]
-    hooksPath = /dev/null
+    #hooksPath = /dev/null
     excludesfile = ~/Repos/melisource/melisource.gitignore
 [user]
     name = Emiliano Ruiz Carletti
