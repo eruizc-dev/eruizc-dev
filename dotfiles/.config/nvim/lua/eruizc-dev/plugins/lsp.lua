@@ -86,16 +86,16 @@ return {
 			local null_ls = require('null-ls')
 			null_ls.setup({
 				sources = {
-					null_ls.builtins.diagnostics.checkstyle.with({
-						timeout = 20000,
-						filetypes = { 'java' },
-						args = function(params)
-							return { '-f', 'sarif', '-c', './checkstyle.xml', params.bufname, }
-						end,
-						condition = function(utils)
-							return utils.root_has_file({ 'checkstyle.xml' })
-						end,
-					}),
+					--null_ls.builtins.diagnostics.checkstyle.with({
+					--	timeout = 20000,
+					--	filetypes = { 'java' },
+					--	args = function(params)
+					--		return { '-f', 'sarif', '-c', './checkstyle.xml', params.bufname, }
+					--	end,
+					--	condition = function(utils)
+					--		return utils.root_has_file({ 'checkstyle.xml' })
+					--	end,
+					--}),
 				},
 			})
 		end,
