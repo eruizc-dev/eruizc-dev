@@ -20,6 +20,8 @@
     "permission": {
         "edit": "allow",
         "bash": {
+            "*": "ask",
+
             // git
             "git status": "allow",
             "git diff*": "allow",
@@ -30,58 +32,58 @@
             "echo*": "allow",
 
             // read files
-            "ls *": "allow",
-            "cat *": "allow",
-            "bat *": "allow",
-            "grep *": "allow",
-            "rg *": "allow",
-            "tree *": "allow",
-            "tail *": "allow",
-            "head *": "allow",
+            "ls*": "allow",
+            "cat*": "allow",
+            "bat*": "allow",
+            "grep*": "allow",
+            "rg*": "allow",
+            "tree*": "allow",
+            "tail*": "allow",
+            "head*": "allow",
+            "wc*": "allow",
+            "fd*": "allow",
 
             // gradle
-            "./gradlew *": "allow",
+            "./gradlew*": "allow",
 
             // ruby
-            "bundle exec rspec *": "allow",
-
-            //"*": "ask"
+            "bundle exec rspec*": "allow"
         }
     },
     "lsp": {
-        //"bash-language-server": {
-        //    "command": [ "bash-language-server", "start" ],
-        //    "extensions": [ ".sh", ".bash" ]
-        //},
-        //"yaml-language-server": {
-        //    "command": [ "yaml-language-server", "--stdio" ],
-        //    "extensions": [ ".yml", ".yaml" ],
-        //    "initialization": {
-        //        "redhat": { "telemetry": { "enabled": false } },
-        //        "yaml": {
-        //            "schemas": {
-        //                "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*",
-        //                "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/v1.32.1-standalone-strict/all.json": "/*.k8s.yaml"
-        //            }
-        //        }
-        //    }
-        //},
-        //"docker-language-server": {
-        //    "command": [ "docker-langserver", "--stdio" ],
-        //    "extensions": [ "Dockerfile", "Dockerfile.runtime" ]
-        //},
-        //"vscode-json-languageserver": {
-        //    "command": [ "vscode-json-languageserver", "--stdio" ],
-        //    "extensions": [ ".json", ".jsonc" ]
-        //},
-        //"nixd": {
-        //    "command": [ "nixd" ],
-        //    "extensions": [ ".nix" ]
-        //},
-        //"jdt.language.server": {
-        //    "command": [ "jdtls" ],
-        //    "extensions": [ ".java" ]
-        //}
+        "bash-language-server": {
+            "command": [ "bash-language-server", "start" ],
+            "extensions": [ ".sh", ".bash" ]
+        },
+        "yaml-language-server": {
+            "command": [ "yaml-language-server", "--stdio" ],
+            "extensions": [ ".yml", ".yaml" ],
+            "initialization": {
+                "redhat": { "telemetry": { "enabled": false } },
+                "yaml": {
+                    "schemas": {
+                        "https://json.schemastore.org/github-workflow.json": "/.github/workflows/*",
+                        "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/v1.32.1-standalone-strict/all.json": "/*.k8s.yaml"
+                    }
+                }
+            }
+        },
+        "docker-language-server": {
+            "command": [ "docker-langserver", "--stdio" ],
+            "extensions": [ "Dockerfile", "Dockerfile.runtime" ]
+        },
+        "vscode-json-languageserver": {
+            "command": [ "vscode-json-languageserver", "--stdio" ],
+            "extensions": [ ".json", ".jsonc" ]
+        },
+        "nixd": {
+            "command": [ "nixd" ],
+            "extensions": [ ".nix" ]
+        },
+        "jdt.language.server": {
+            "command": [ "jdtls" ],
+            "extensions": [ ".java" ]
+        }
     },
     "mcp": {
         //"github": {
