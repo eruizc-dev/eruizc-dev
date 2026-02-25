@@ -17,7 +17,7 @@ return {
 		keys = {
 			{ '<leader>p', function() require'telescope.builtin'.find_files{ find_command = { 'rg', '--files', '--hidden', '--no-ignore-global', '-g', '!.git/' }} end, desc = "foo" },
 			{ '<leader>P', function() require'telescope.builtin'.grep_string{ prompt_title='Rip & Tear', search='' } end, desc = "foo" },
-			{ '<leader>con', function() require'telescope.builtin'.find_files{ prompt_title='Configuration', cwd='~/.config/nvim' } end, desc = "foo" },
+			{ '<leader>con', function() require'telescope.builtin'.find_files{ prompt_title='Configuration', cwd='~/.config' } end, desc = "foo" },
 			{ '<leader>z', function() require'telescope'.extensions.zoxide.list() end, desc = "foo" },
 			{ '<leader>k', function() require'telescope.builtin'.help_tags() end, desc = "foo" },
 			{ 'gr', function() require'telescope.builtin'.lsp_references() end, desc = "foo" },
