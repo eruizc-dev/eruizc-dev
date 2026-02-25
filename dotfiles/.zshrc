@@ -4,6 +4,7 @@
 
 # Oh My ZSH
 export ZSH_COMPDUMP="$HOME"/.cache/oh-my-zsh/compdump
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME='refined'
 CASE_SENSITIVE=false
@@ -15,6 +16,7 @@ HYPHEN_INSENSITIVE=true
 # $ZSH/plugins and $ZSH_CUSTOM/plugins
 plugins=(
     #nix-shell
+    direnv
 )
 
 [[ -s "$ZSH/oh-my-zsh.sh" ]] && source "$ZSH/oh-my-zsh.sh"
@@ -30,14 +32,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 # Variables
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_BIN_HOME=$HOME/.local/bin
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
 export PATH=$PATH:$XDG_BIN_HOME
 
 export EDITOR='nvim'
-export BROWSER='firefox'
 
 if type bat > /dev/null 2>&1; then
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -70,8 +67,18 @@ if [[ -s /usr/share/nvm/init-nvm.sh ]] ; then
     source /usr/share/nvm/init-nvm.sh
 fi
 
-if type direnv > /dev/null 2>&1; then
-    eval "$(direnv hook zsh)"
+if [[ -s $HOME/.fury/fury_venv/bin/fury ]] ; then
+    export FURY_BIN_LOCATION="/Users/ecarletti/.fury/fury_venv/bin"
+    export PATH="$PATH:$FURY_BIN_LOCATION"
+fi
+
+if type opencode > /dev/null 2>&1; then
+    export OPENCODE_DISABLE_LSP_DOWNLOAD=true
+    export OPENCODE_DISABLE_DEFAULT_PLUGINS=true
+fi
+
+if [ $(whoami) = 'ecarletti' ]; then
+    export JIRA_API_TOKEN=$(security find-generic-password -a ecarletti -s JiraMcpAccessToken -w)
 fi
 
 # Aliases

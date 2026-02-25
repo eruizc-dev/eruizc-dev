@@ -4,40 +4,39 @@
     ignoreCase = false
     excludesfile = ~/.gitignore
     symlinks = false
+	hooksPath = /Users/ecarletti/.config/git/hooks
 [init]
     defaultBranch = master
+[fetch]
+    prune = true
+[push]
+    autoSetupRemote = true
 [pull]
     rebase = true
 [alias]
-    clone-wt = "!sh $HOME/scripts/git-clone-worktree.sh"
     nuke = "!f() { read -p 'You rly wanna nuke? (y/N): ' choice; case $choice in y|Y ) git reset --hard && git clean -fd;; * ) echo 'ABORTING';; esac }; f"
     purge = "clean -fX"
     prune = "remote prune origin"
     logline = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     tags = log -n1 --pretty=format:%h%d
-[fetch]
-    prune = true
 [diff]
     colorMoved = zebra
 [user]
     name = Emiliano Ruiz Carletti
     email = contact@eruizc.dev
-    signinkey = 5E56C9712AA24818
 [gpg]
     program = gpg
 [commit]
-    gpgsign = true
+    gpgsign = false
 [includeIf "gitdir/i:~/repos/melisource/"]
     path = ~/repos/melisource/melisource.gitconfig
-[includeIf "gitdir/i:~/repos/ecarletti_meli//"]
-    path = ~/repos/melisource/ecarletti_meli.gitconfig
+[includeIf "gitdir/i:~/repos/ecarletti_meli/"]
+    path = ~/repos/ecarletti_meli/ecarletti_meli.gitconfig
 [includeIf "gitdir/i:~/repos/mercadolibre/"]
     path = ~/repos/mercadolibre/.gitconfig
 [includeIf "gitdir/i:~/repos/eruizc-dev/"]
     path = ~/repos/eruizc-dev/.gitconfig
-[push]
-    autoSetupRemote = true
-[url "git@github.com:"]
-    insteadOf = git@github.com-emu:
+[url "git@github.com:melisource"]
+    insteadOf = git@github.com-emu:melisource
 [url "git@github.com:melisource"]
     insteadOf = https://github.com/melisource
