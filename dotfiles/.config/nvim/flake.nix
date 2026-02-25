@@ -4,17 +4,16 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      devShell = with pkgs;
-        mkShell {
-          buildInputs = [
-            vim-language-server
-            lua-language-server
-          ];
-        };
-    });
+  outputs = { self, nixpkgs, flake-utils }: flake-utils.lib.eachDefaultSystem (system:
+  let
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    devShells.default = with pkgs;
+      mkShell {
+        buildInputs = [
+          vim-language-server
+          lua-language-server
+        ];
+      };
+  });
 }
