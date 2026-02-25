@@ -48,27 +48,11 @@ return {
 			},
 		}
 	},
-	{
-		'lukas-reineke/indent-blankline.nvim',
-		version = '2',
-		event = { 'BufReadPost', 'BufNewFile' },
-		opts = {
-			char = '▏',
-			show_trailing_blankline_indent = false,
-			show_current_context = true,
-			show_current_context_start = false,
-			filetype_exclude = {
-				'help',
-				'alpha',
-				'dashboard',
-				'neo-tree',
-				'Trouble',
-				'lazy',
-				'mason',
-				'notify',
-				'toggleterm',
-				'lazyterm',
-			},
-		},
-	}
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        ---@module "ibl"
+				---@type ibl.config
+				opts = { },
+    }
 }
