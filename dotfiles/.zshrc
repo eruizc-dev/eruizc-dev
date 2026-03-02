@@ -54,8 +54,8 @@ if type fzf > /dev/null 2>&1; then
     eval "$(fzf --zsh)"
 fi
 
-if [[ -s /etc/profile.d/nix.sh ]]; then
-    source /etc/profile.d/nix.sh
+if [[ -s /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
+    source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh 
 fi
 
 if type zoxide > /dev/null 2>&1; then
