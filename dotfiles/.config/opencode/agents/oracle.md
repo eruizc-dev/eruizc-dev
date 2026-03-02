@@ -6,6 +6,7 @@ tools:
   *: false
   websearch: false # https://opencode.ai/docs/tools/#websearch
   question: true
+  open-url: true
   webfetch: true
   furydocs*: true
 ---

@@ -6,6 +6,7 @@ mode: primary
 tools:
   *: false
   question: true
+  open-url: true
   jira*: true
 ---
 
