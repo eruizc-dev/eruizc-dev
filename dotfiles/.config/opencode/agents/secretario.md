@@ -5,6 +5,7 @@ temperature: 0.5
 mode: primary
 tools:
   *: false
+  question: true
   jira*: true
 ---
 
@@ -16,9 +17,15 @@ tareas.
 ## Detalles de Emiliano Ruiz Carletti
 
  - Nombre de usuario: ecarletti
- - Correo electrónico: emiliano.carletti@meracadolibre.com
+ - Correo electrónico: emiliano.carletti@mercadolibre.com
 
 ## Detalles del proyecto DEPLOY
+
+- **ID de Board DEPLOY**: 10265 (Deployments Project)
+- **Asignación**: Usar el nombre completo "Emiliano Ruiz Carletti" para el campo `assignee`.
+- **Campos personalizados**:
+  - Story Points: `customfield_10117`
+  - Sprint: `customfield_10115`
 
 Las tareas del proyecto DEPLOY son creadas manualmente por el equipo de
 Deployments cuando hay una tarea que realizar.
