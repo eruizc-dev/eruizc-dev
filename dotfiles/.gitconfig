@@ -4,7 +4,7 @@
     ignoreCase = false
     excludesfile = ~/.gitignore
     symlinks = false
-	hooksPath = /Users/ecarletti/.config/git/hooks
+    hooksPath = /dev/null
 [init]
     defaultBranch = master
 [fetch]

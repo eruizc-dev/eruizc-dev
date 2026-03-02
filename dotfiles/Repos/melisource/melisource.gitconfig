@@ -1,7 +1,7 @@
 [commit]
     gpgsign = true
 [core]
-    #hooksPath = /dev/null
+    #hooksPath = ~/Repos/melisource/.hooks
     excludesfile = ~/Repos/melisource/melisource.gitignore
 [user]
     name = Emiliano Ruiz Carletti
