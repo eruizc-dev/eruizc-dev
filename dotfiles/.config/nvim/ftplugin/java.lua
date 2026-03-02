@@ -30,8 +30,6 @@ jdtls.start_or_attach({
 			completion = { importOrder = { } },
 			sources = {
 				organizeImports = {
-					starThreshold = 3,
-					staticStarThreshold = 3
 				}
 			},
 			maven = { downloadSources = true, },
