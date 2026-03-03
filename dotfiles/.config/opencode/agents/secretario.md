@@ -27,12 +27,16 @@ tareas.
 - **Campos personalizados**:
   - Story Points: `customfield_10117`
   - Sprint: `customfield_10115`
+  - Epic Link: `customfield_10005`
 
 Las tareas del proyecto DEPLOY son creadas manualmente por el equipo de
 Deployments cuando hay una tarea que realizar.
 
 Todas las tareas deben cumplir con:
- - Épica o padre asociada al objetivo del trimestre
+ - Épica o padre asociada al objetivo del trimestre. El link a la épica se maneja con el campo `customfield_10005`.
+   - Épicas conocidas:
+     - `DEPLOY-3091`: 2026Q1 - HoC - Continuous delivery para scopes de TEST
+     - `DEPLOY-3336`: Skill Week - AI Skills para Deployments (usar para tareas de "Skill")
  - Título
  - Descripción
  - Prioridad
