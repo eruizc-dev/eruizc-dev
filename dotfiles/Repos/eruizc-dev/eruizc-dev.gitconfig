@@ -1,0 +1,10 @@
+[commit]
+    gpgsign = false
+[core]
+    hookspath = /dev/null
+    excludesfile = ~/repos/eruizc-dev/eruizc-dev.gitignore
+[user]
+    name = emiliano ruiz carletti
+    email = contact@eruizc.dev
+    #signingkey = 5a88186bc3a0e3ac2613d26f0f9cb6aed3c4d807
+

@@ -4,7 +4,7 @@
     ignoreCase = false
     excludesfile = ~/.gitignore
     symlinks = false
-    hooksPath = /dev/null
+	hooksPath = /Users/ecarletti/.config/git/hooks
 [init]
     defaultBranch = master
 [fetch]
@@ -35,7 +35,7 @@
 [includeIf "gitdir/i:~/repos/mercadolibre/"]
     path = ~/repos/mercadolibre/.gitconfig
 [includeIf "gitdir/i:~/repos/eruizc-dev/"]
-    path = ~/repos/eruizc-dev/.gitconfig
+    path = ~/repos/eruizc-dev/eruizc-dev.gitconfig
 [url "git@github.com:melisource"]
     insteadOf = git@github.com-emu:melisource
 [url "git@github.com:melisource"]

@@ -12,3 +12,6 @@
 
 # C
 .cache/clangd
+
+# Mercadolibre config
+.config/git/

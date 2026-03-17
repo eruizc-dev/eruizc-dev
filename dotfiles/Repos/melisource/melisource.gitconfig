@@ -1,9 +1,9 @@
 [commit]
     gpgsign = true
 [core]
-    #hooksPath = ~/Repos/melisource/.hooks
-    excludesfile = ~/Repos/melisource/melisource.gitignore
+    hookspath = ~/.config/git/hooks
+    excludesfile = ~/repos/melisource/melisource.gitignore
 [user]
-    name = Emiliano Ruiz Carletti
+    name = emiliano ruiz carletti
     email = emiliano.carletti@mercadolibre.com
-    signingkey = 5A88186BC3A0E3AC2613D26F0F9CB6AED3C4D807
+    signingkey = 5a88186bc3a0e3ac2613d26f0f9cb6aed3c4d807
