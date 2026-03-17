@@ -18,6 +18,9 @@
       "git show*": "allow",
       "git status*": "allow",
 
+      // github
+      "gh pr view*": "allow",
+
       // Utils
       "which *": "allow",
       "echo *": "allow",
@@ -29,7 +32,7 @@
       "cat *": "allow",
       "grep *": "allow",
       "head*": "allow",
-      "ls *": "allow",
+      "ls*": "allow",
       "mkdir*": "allow",
       "rg *": "allow",
       "tail*": "allow",
