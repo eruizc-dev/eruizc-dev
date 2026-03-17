@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 # zmodload zsh/zprof # Profiling
+export XDG_BIN_HOME=$HOME/.local/bin
 
 # Oh My ZSH
 export ZSH_COMPDUMP="$HOME"/.cache/oh-my-zsh/compdump
